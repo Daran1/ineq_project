@@ -199,19 +199,22 @@ rm(cxxr)
 #Making it look better (hopefully) 
 
 
-#renaming the variable rb030 and pb 030 to id 
-
-silc.r <- silc.r %>% rename(id = rb030)
-silc.p <- silc.p %>% rename(id = pb030)
-
-#Putting the datasets together creating one data set containing personal data and register
-
-silc.rp <- left_join(silc.r, silc.p)
-
 #renaming variables in the dataset for clarity
 
-silc.rp <- silc.rp %>% rename(country = rb020)
-silc.rp <- silc.rp %>% rename(survey_year = rb010)
+silc.r <- silc.r %>% rename(id = rb030)
+
+silc.p <- silc.p %>% rename(id = pb030)
+
+silc.r <- silc.r %>% rename(country = rb020)
+
+silc.r <- silc.r %>% rename(survey_year = rb010)
+
+#Putting the datasets together creating one data set containing personal data and register
+#
+#Better to merge beforehand using unique IDs for merging ?
+#silc.rp <- left_join(silc.r, silc.p)
+
+
 
 #Create new variables (age, gender and household ID)
 
