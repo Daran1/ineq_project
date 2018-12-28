@@ -10,14 +10,14 @@ if(!exists(c("country", "year"))) {
 #Personal Data  
 silc.p <- tbl(pg, "pp") %>%
   filter(pb020 == "AT" & pb010 %in% c(2005:2017)) %>%
-  select(pb010, pb030, py010g, py050g, py080g, py090g, py100g, py110g, py120g, 
-         py130g, py140g) %>%
+  select(pb010, pb020, pb030, pb040, pb150, py010g, py020g, py050g, py050n, 
+         py080g, py090g, py100g, py110g, py120g, px010,px030 py130g, py140g) %>%
   collect(n = Inf)
 
 #Household data
 silc.h <- tbl(pg, "hh") %>%
   filter(hb020 == "AT" & hb010 %in% c(2005:2017)) %>%
-  select(hb010, hb020, hb030, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, 
+  select(hb010, hb020, hb030, hy010, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, 
          hy080g, hy090g, hy110g, hy120g, hy130g, hy140g, hx040, hx050) %>%
   collect(n = Inf)
 
@@ -30,13 +30,40 @@ silc.d <- tbl(pg, "dd") %>%
 #Personal register
 silc.r <- tbl(pg, "rr") %>% 
   filter(rb020 == "AT" & rb010 %in% c(2005:2017)) %>%
-  select(rb010, rb020, rb030, rb050, rb080, rb090, rx030) %>%
+  select(rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030) %>%
   collect(n = Inf)
 
 #### Include variable for cars and other non cash benefits py021g for entire timeframe
 
-#######not done
-#######
+
+# Download c[YY]p tables from 2007 - 2013
+c07p <- tbl(pg, "c07p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c08p <- tbl(pg, "c08p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c09p <- tbl(pg, "c09p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c10p <- tbl(pg, "c10p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c11p <- tbl(pg, "c11p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c12p <- tbl(pg, "c12p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+c13p <- tbl(pg, "c13p") %>% filter(pb020 %in% country) %>% select(pb010, pb030, 
+                                                                  py021g) %>% collect(n = Inf)
+
+cxxp <- bind_rows(c07p, c08p, c09p, c10p, c11p, c12p, c13p)
+rm(c07p, c08p, c09p, c10p, c11p, c12p, c13p)
+# Merge cxxp with silc.p to include the py021g variable for 2007-2013
+
+silc.p <- left_join(silc.p, cxxp %>% select(py021g, pb010, pb030))
+rm(cxxp)
 
 #renaming the variable rb030 and pb 030 to personal_id 
 
