@@ -5,6 +5,8 @@ if(!exists(c("country", "year"))) {
   stop("Please specify country and year.")
 }
 
+source('./R/_connection.R')
+
 # Download Data using required variables -------------------------------------------------
 ## For the years 2005-2013 because of the variable for non cash income
 ##Seperate dowload for this timeframe
@@ -205,15 +207,42 @@ silc.r <- silc.r %>% rename(id = rb030)
 
 silc.p <- silc.p %>% rename(id = pb030)
 
-silc.r <- silc.r %>% rename(country = rb020)
-
-silc.r <- silc.r %>% rename(survey_year = rb010)
 
 #Putting the datasets together creating one data set containing personal data and register
 #
 #Better to merge beforehand using unique IDs for merging ?
-#silc.rp <- left_join(silc.r, silc.p)
+# Create unique IDs for merging
+silc.p <- silc.p %>% mutate(id_h = paste0(pb020, px030))
 
+silc.h <- silc.h %>% mutate(id_h = paste0(hb020, hb030))
+
+silc.d <- silc.d %>% mutate(id_h = paste0(db020, db030))
+
+silc.r <- silc.r %>% mutate(id_h = paste0(rb020, rb030))
+
+#Merging datasets
+silc.rp <- left_join(silc.r, silc.p)
+silc.pd <- left_join(silc.p, silc.d)
+
+###Create new variable combining py020g and py021g:car 
+
+time1 <- seq(2004,2006,1)
+time2 <- seq(2007,2016,1)
+set1 <- silc.pd %>% filter(pb010 %in% time1)
+set2 <- silc.pd %>% filter(pb010 %in% time2)
+set1$car <- set1$py020g
+set2$car <- set2$py021g
+
+silc.pd <- bind_rows(set1,set2)
+
+set3 <- silc.rp %>% filter(rb010 %in% time1)
+set4 <- silc.rp %>% filter(rb010 %in% time2)
+set3$car <- set3$py020g
+set4$car <- set4$py020g
+
+silc.rp <- bind_rows(set3,set4)
+
+rm(time1,time2,set1,set2, set3, set4)
 
 
 #Create new variables (age, gender and household ID)
@@ -223,14 +252,7 @@ silc.rp <- silc.rp %>%
          gender = factor(rb090, labels = c('Male','Female')),
          id_h = paste0(rb020, rx030)) 
 
-# Create unique IDs for merging
-#silc.p <- silc.p %>% mutate(id_h = paste0(pb020, px030))
 
-silc.h <- silc.h %>% mutate(id_h = paste0(hb020, hb030 #,hb010?
-))
-
-silc.d <- silc.d %>% mutate(id_h = paste0(db020, db030 #,db010
-))
 #Merge datasets using unique IDs
 
 silc.rph <- left_join(silc.rp, silc.h)
@@ -245,6 +267,22 @@ silc.rph[is.na(silc.rph)] <- 0
 #### Create different income versions
 
 #Income 1: Pre-tax factor income (Canberra: primary income)
+#personal:pers_inc
+silc.rph <- silc.rph %>% mutate(pers_inc = py010 + py050g + py080g +car)
+
+#household:house_inc
+silc.rph <- silc.rph%>% mutate(house_inc = hy040g, hy090g, hy110g)
+
+#sum pers_inc
+silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
+  mutate(sum_pers_inc = sum(pers_inc))
+
+#Canberra pre tax factor income: Combining
+silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc) /hx050)
+
+
+
+
 #Income 2: Pre-tax national income
 #Income 3: Post-tax disposable income
 
