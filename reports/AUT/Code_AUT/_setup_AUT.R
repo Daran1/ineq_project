@@ -227,7 +227,7 @@ silc.pd <- left_join(silc.p, silc.d)
 ###Create new variable combining py020g and py021g:car 
 
 time1 <- seq(2004,2006,1)
-time2 <- seq(2007,2016,1)
+time2 <- seq(2007,2017,1)
 set1 <- silc.pd %>% filter(pb010 %in% time1)
 set2 <- silc.pd %>% filter(pb010 %in% time2)
 set1$car <- set1$py020g
