@@ -263,9 +263,9 @@ silc.rph <- left_join(silc.rp, silc.h)
 #Replace not answered NA
 silc.rph[is.na(silc.rph)] <- 0
 
-#####Continue here !!!!
 #### Create different income versions
 
+############
 #Income 1: Pre-tax factor income (Canberra: primary income)
 #personal:pers_inc
 silc.rph <- silc.rph %>% mutate(pers_inc = py010 + py050g + py080g +car)
@@ -282,17 +282,39 @@ silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc) /hx050)
 
 
 
-
+##########
 #Income 2: Pre-tax national income
-#Income 3: Post-tax disposable income
+#Pensions and benefits: pensben
+silc.rph <- silc.rph %>% mutate(pensben = py090 + py100g)
+silc.rph <- silc.rph %>% group_by(id_h) %>% mutate(sum_pensben = sum(pensben))
 
-# Create total personal income --------------------------------------------
+#national:
+silc.rph <- silc.rph %>% mutate(prenatincom = (Can_inc + sum_pensben/hx050))
+
+#########
+#Income 3: Post-tax disposable income
+#All transfers
+silc.rph <- silc.rph %>% mutate(perstransf = 
+                                  py110g + py120g + py130g + py140g)
+silc.rph <- silc.rph %>% mutate(houstransf = 
+                                  hy050g + hy060g + hy070g + hy080g)
+
+silc.rph <- silc.rph %>% group_by(id_h) %>% mutate( 
+                                  sum_perstransf = sum(perstransf))
+
+# Tax transfers
+silc.rph <- silc.rph %>% mutate(tax = hy120g + hy130g + hy140g)
+
+#Post tax income 
+silc.rph <- silc.rph %>% mutate(posttax = prenatincome + 
+                                  (perstransf + housetransf - tax)/hx050)
+
+
 
 
 # Find string "py" (i.e. income variables) for summing up total personal income. 
-silc.pd <- silc.pd %>% 
-  mutate(total.inc = rowSums(silc.pd[, grep("py", colnames(silc.pd))], 
-                             na.rm = TRUE)) 
+#silc.pd <- silc.pd %>% 
+#  mutate(total.inc = rowSums(silc.pd[, grep("py", colnames(silc.pd))], na.rm = TRUE)) 
 
 # Fin ---------------------------------------------------------------------
 
