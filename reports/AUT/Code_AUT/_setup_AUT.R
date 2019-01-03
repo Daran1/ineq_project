@@ -281,7 +281,6 @@ silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
 silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc) /hx050)
 
 
-
 ##########
 #Income 2: Pre-tax national income
 #Pensions and benefits: pensben
