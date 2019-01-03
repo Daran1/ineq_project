@@ -210,13 +210,13 @@ rm(cxxr)
 #
 #Better to merge beforehand using unique IDs for merging ?
 # Create unique IDs for merging
-silc.p <- silc.p %>% mutate(id_h = paste0(pb020, px030))
+silc.p <- silc.p %>% mutate(id_h = paste0(pb030, pb010))
 
-silc.h <- silc.h %>% mutate(id_h = paste0(hb020, hb030))
+silc.h <- silc.h %>% mutate(id_h = paste0(hb030, hb010))
 
-silc.d <- silc.d %>% mutate(id_h = paste0(db020, db030))
+silc.d <- silc.d %>% mutate(id_h = paste0(db030, db010))
 
-silc.r <- silc.r %>% mutate(id_h = paste0(rb020, rb030))
+silc.r <- silc.r %>% mutate(id_h = paste0(rb030, rb010))
 
 #Merging datasets
 silc.rp <- left_join(silc.r, silc.p)
@@ -248,12 +248,15 @@ rm(time1,time2,set1,set2, set3, set4)
 silc.rp <- silc.rp %>% 
   mutate(age = rb010 - rb080,
          gender = factor(rb090, labels = c('Male','Female')),
-         id_h = paste0(rb020, rx030)) 
+         id_h = paste0(rx030, rb010)) 
 
 
 #Merge datasets using unique IDs
 
-silc.rph <- left_join(silc.rp, silc.h)
+
+silc.rph <- left_join(silc.rp, silc.h, by = c("id_h", "rb010" = "hb010", 
+                                              "rb020" = "hb020", 
+                                              "rx030" = "hb030"))
 
 #silc.rphd <- left_join(silc.rph, silc.d)
 #cannot allocate vector of size 220.9Mb (Error)
@@ -266,23 +269,23 @@ silc.rph[is.na(silc.rph)] <- 0
 ############
 #Income 1: Pre-tax factor income (Canberra: primary income)
 #personal:pers_inc
-silc.rph <- silc.rph %>% mutate(pers_inc = py010 + py050g + py080g + car)
+silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g + hy110g + car)
 
 #household:house_inc
-silc.rph <- silc.rph%>% mutate(house_inc = hy040g, hy090g, hy110g)
+silc.rph <- silc.rph%>% mutate(house_inc = hy040g, hy090g, py080g)
 
 #sum pers_inc
 silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
   mutate(sum_pers_inc = sum(pers_inc))
 
 #Canberra pre tax factor income: Combining
-silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc) /hx050)
+silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc)/hx050)
 
 
 ##########
 #Income 2: Pre-tax national income
 #Pensions and benefits: pensben
-silc.rph <- silc.rph %>% mutate(pensben = py090 + py100g)
+silc.rph <- silc.rph %>% mutate(pensben = py090g + py100g)
 silc.rph <- silc.rph %>% group_by(id_h) %>% mutate(sum_pensben = sum(pensben))
 
 #national:
@@ -303,8 +306,8 @@ silc.rph <- silc.rph %>% group_by(id_h) %>% mutate(
 silc.rph <- silc.rph %>% mutate(tax = hy120g + hy130g + hy140g)
 
 #Post tax income 
-silc.rph <- silc.rph %>% mutate(posttax = prenatincome + 
-                                  (perstransf + housetransf - tax)/hx050)
+silc.rph <- silc.rph %>% mutate(posttax = prenatincom + 
+                                  (perstransf + houstransf - tax)/hx050)
 
 
 ######P2 (wid.world):Nur Personen >= 20 Jahre & partial sharing of resources 
