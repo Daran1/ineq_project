@@ -1,9 +1,8 @@
 # Setup data for Austria -----------------------------------------------------------------
 
-library(dplyr)
-if(!exists(c("country", "year"))) {
-  stop("Please specify country and year.")
-}
+#library(dplyr)
+#if(!exists(c("country", "year"))) {
+#stop("Please specify country and year.")}
 
 source('./R/_connection.R')
 
@@ -306,6 +305,12 @@ silc.rph <- silc.rph %>% mutate(tax = hy120g + hy130g + hy140g)
 #Post tax income 
 silc.rph <- silc.rph %>% mutate(posttax = prenatincome + 
                                   (perstransf + housetransf - tax)/hx050)
+
+
+######P2 (wid.world):Nur Personen >= 20 Jahre & partial sharing of resources 
+
+######HIER WEITERMACHEN!!!!##############################
+#########################################################
 
 
 

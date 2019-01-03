@@ -18,26 +18,55 @@ source("reports/AUT/Code_AUT/_setup_AUT.R")
 
 # Subsetting --------------------------------------------------------------
 
-# To get useful results we may want to subset to only positive income
-#Name ?
+#### To get useful results we may want to subset to only positive 
+#### income and people over 20
+
 #### Continue here
-silc.inc <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+# Positive income
+silc.inc_1 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
                                    posttax > 0 )
-#silc.d.age <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
-#                                  posttax > 0, age > 20)
+# Positive income > 20
+silc.inc_2 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+                                   posttax > 0, age > 20)
 
 # Creating Survey Objects -------------------------------------------------
+# Positive income
+silc.inc_1.svy <- svydesign(ids =  ~ id_h,
+                         strata = ~rb020,
+                         weights = ~rb050,
+                         data = silc.inc) %>% convey_prep()
 
-silc.inc.svy <- svydesign(ids =  ~ id_h,
-                         strata = ~db020,
-                         weights = ~pb040,
-                         data = silc.pd) %>% convey_prep()
-
-silc.hd.svy <- svydesign(ids = ~id_h,
+# Positive income > 20
+silc.inc_2.svy <- svydesign(ids = ~id_h,
                          strata = ~db020,
                          weights = ~db090,
                          data = silc.hd) %>% convey_prep()
 
+
+###### For each variable calculate indicators (Mean, Median, Gini, Top10%, 80/20)
+
+#### Pre-tax factor income (Canberra Income):Can_inc
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+#### Pre-tax national income:prenatincom
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+#### Post-tax disposable Income: posttax
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+# P2 (Wid. World)
 
 # Indicators --------------------------------------------------------------
 
