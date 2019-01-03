@@ -266,13 +266,16 @@ silc.rph[is.na(silc.rph)] <- 0
 
 #### Create different income versions
 
+
+###P1 (Eurostat): Gesamte Bevölkerung & equal sharing of resources within household
 ############
+
 #Income 1: Pre-tax factor income (Canberra: primary income)
 #personal:pers_inc
 silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g + hy110g + car)
 
 #household:house_inc
-silc.rph <- silc.rph%>% mutate(house_inc = hy040g, hy090g, py080g)
+silc.rph <- silc.rph%>% mutate(house_inc = hy040g + hy090g + py080g)
 
 #sum pers_inc
 silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
@@ -312,15 +315,35 @@ silc.rph <- silc.rph %>% mutate(posttax = prenatincom +
 
 ######P2 (wid.world):Nur Personen >= 20 Jahre & partial sharing of resources 
 
+
+
 ######HIER WEITERMACHEN!!!!##############################
 #########################################################
 
 
+# Add a new variable including all over 20
+silc.rph <- silc.rph %>% 
+  add_count(age >= 20, id_h)
+ 
+
+# Pre-tax factor income: Canberra income
+silc.rph <- silc.rph %>%
+  mutate(income_wid_1 = (sum_pers_inc - hy110g) + (house_inc/n))
+           
+
+# Pre-tax income
+silc.rph <- silc.rph %>%
+  mutate(income_wid_2 = income_wid_1 + py090g + py100g)
+
+# Post-tax (disposable) income
+silc.rph <- silc.rph %>%
+  mutate(income_wid_3 = income_wid_2 + py110g + py120g + py130g + py140g + 
+           ((houstransf-tax)/n))
 
 
 # Find string "py" (i.e. income variables) for summing up total personal income. 
 #silc.pd <- silc.pd %>% 
 #  mutate(total.inc = rowSums(silc.pd[, grep("py", colnames(silc.pd))], na.rm = TRUE)) 
 
-# Fin ---------------------------------------------------------------------
+# Fin -----------------------------------------------------
 
