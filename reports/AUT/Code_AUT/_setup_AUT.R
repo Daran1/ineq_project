@@ -196,16 +196,6 @@ rm(c14r, c15r, c16r, c17r)
 rm(cxxr)
 
 
-
-#Making Data look better (hopefully) 
-
-#renaming variables in the dataset for clarity
-
-#silc.r <- silc.r %>% rename(id = rb030)
-
-#silc.p <- silc.p %>% rename(id = pb030)
-
-
 #Putting the datasets together creating one data set containing personal data and register
 #
 #Better to merge beforehand using unique IDs for merging ?
@@ -316,11 +306,6 @@ silc.rph <- silc.rph %>% mutate(posttax = prenatincom +
 ######P2 (wid.world):Nur Personen >= 20 Jahre & partial sharing of resources 
 
 
-
-######HIER WEITERMACHEN!!!!##############################
-#########################################################
-
-
 # Add a new variable including all over 20
 silc.rph <- silc.rph %>% 
   add_count(age >= 20, id_h)
@@ -341,9 +326,5 @@ silc.rph <- silc.rph %>%
            ((houstransf-tax)/n))
 
 
-# Find string "py" (i.e. income variables) for summing up total personal income. 
-#silc.pd <- silc.pd %>% 
-#  mutate(total.inc = rowSums(silc.pd[, grep("py", colnames(silc.pd))], na.rm = TRUE)) 
-
-# Fin -----------------------------------------------------
+# Le Fin -----------------------------------------------------
 
