@@ -1,8 +1,6 @@
 # ------------------------------------------------------------------------
 #
-# Indicators R-Script
-# Autoren: Engelen & Kuschnig
-# Datum: 2018-11-08
+# Indicators AUT
 #
 # -------------------------------------------------------------------------
 
@@ -10,23 +8,27 @@ library(dplyr)
 library(survey)
 library(convey)
 
-country <- "CZ"
-year <- 2013
+#country <- "AT"
+#year <- 2005-2017
 
 # Source the Setup scripts to provide merged household and personal data
 source("R/_connection.R")
-source("R/_setup.R")
+source("reports/AUT/Code_AUT/_setup_AUT.R")
 
 
 # Subsetting --------------------------------------------------------------
 
 # To get useful results we may want to subset to only positive income
-silc.pd.inc <- silc.pd %>% filter(py010g > 0)
-silc.hd.inc <- silc.hd %>% filter(hy010 > 0)
+#Name ?
+#### Continue here
+silc.inc <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+                                   posttax > 0 )
+#silc.d.age <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+#                                  posttax > 0, age > 20)
 
 # Creating Survey Objects -------------------------------------------------
 
-silc.pd.svy <- svydesign(ids =  ~ id_h,
+silc.inc.svy <- svydesign(ids =  ~ id_h,
                          strata = ~db020,
                          weights = ~pb040,
                          data = silc.pd) %>% convey_prep()
