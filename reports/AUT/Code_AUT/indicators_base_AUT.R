@@ -34,13 +34,13 @@ silc.inc_2 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0,
 silc.inc_1.svy <- svydesign(ids =  ~ id_h,
                          strata = ~rb020,
                          weights = ~rb050,
-                         data = silc.inc) %>% convey_prep()
+                         data = silc.inc_1) %>% convey_prep()
 
 # Positive income > 20
 silc.inc_2.svy <- svydesign(ids = ~id_h,
-                         strata = ~db020,
-                         weights = ~db090,
-                         data = silc.hd) %>% convey_prep()
+                         strata = ~rb020,
+                         weights = ~rb050,
+                         data = silc.inc_2) %>% convey_prep()
 
 
 ###### For each variable calculate indicators (Mean, Median, Gini, Top10%, 80/20)
@@ -72,7 +72,7 @@ silc.inc_2.svy <- svydesign(ids = ~id_h,
 
 # Mean Income
 #
-svymean(~total.inc, silc.pd.svy)
+svymean(~Can_inc, silc.inc_1.svy)
 svymean(~hy010, silc.hd.svy)
 # For comparing countries
 # svyby(~total.inc, ~as.factor(db020), silc.pd.svy, svymean)
