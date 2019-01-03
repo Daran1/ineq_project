@@ -1,8 +1,6 @@
 # ------------------------------------------------------------------------
 #
-# Indicators R-Script
-# Autoren: Engelen & Kuschnig
-# Datum: 2018-11-08
+# Indicators AUT
 #
 # -------------------------------------------------------------------------
 
@@ -10,32 +8,65 @@ library(dplyr)
 library(survey)
 library(convey)
 
-country <- "CZ"
-year <- 2013
+#country <- "AT"
+#year <- 2005-2017
 
 # Source the Setup scripts to provide merged household and personal data
 source("R/_connection.R")
-source("R/_setup.R")
+source("reports/AUT/Code_AUT/_setup_AUT.R")
 
 
 # Subsetting --------------------------------------------------------------
 
-# To get useful results we may want to subset to only positive income
-silc.pd.inc <- silc.pd %>% filter(py010g > 0)
-silc.hd.inc <- silc.hd %>% filter(hy010 > 0)
+#### To get useful results we may want to subset to only positive 
+#### income and people over 20
+
+#### Continue here
+# Positive income
+silc.inc_1 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+                                   posttax > 0 )
+# Positive income > 20
+silc.inc_2 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
+                                   posttax > 0, age > 20)
 
 # Creating Survey Objects -------------------------------------------------
+# Positive income
+silc.inc_1.svy <- svydesign(ids =  ~ id_h,
+                         strata = ~rb020,
+                         weights = ~rb050,
+                         data = silc.inc) %>% convey_prep()
 
-silc.pd.svy <- svydesign(ids =  ~ id_h,
-                         strata = ~db020,
-                         weights = ~pb040,
-                         data = silc.pd) %>% convey_prep()
-
-silc.hd.svy <- svydesign(ids = ~id_h,
+# Positive income > 20
+silc.inc_2.svy <- svydesign(ids = ~id_h,
                          strata = ~db020,
                          weights = ~db090,
                          data = silc.hd) %>% convey_prep()
 
+
+###### For each variable calculate indicators (Mean, Median, Gini, Top10%, 80/20)
+
+#### Pre-tax factor income (Canberra Income):Can_inc
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+#### Pre-tax national income:prenatincom
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+#### Post-tax disposable Income: posttax
+# Mean 
+# Median
+# Gini
+# Top 10% Share
+# 80/20 Ratio
+
+# P2 (Wid. World)
 
 # Indicators --------------------------------------------------------------
 

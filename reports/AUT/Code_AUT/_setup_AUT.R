@@ -1,9 +1,8 @@
 # Setup data for Austria -----------------------------------------------------------------
 
-library(dplyr)
-if(!exists(c("country", "year"))) {
-  stop("Please specify country and year.")
-}
+#library(dplyr)
+#if(!exists(c("country", "year"))) {
+#stop("Please specify country and year.")}
 
 source('./R/_connection.R')
 
@@ -197,15 +196,14 @@ rm(c14r, c15r, c16r, c17r)
 rm(cxxr)
 
 
-#### Done preparing Data
-#Making it look better (hopefully) 
 
+#Making Data look better (hopefully) 
 
 #renaming variables in the dataset for clarity
 
-silc.r <- silc.r %>% rename(id = rb030)
+#silc.r <- silc.r %>% rename(id = rb030)
 
-silc.p <- silc.p %>% rename(id = pb030)
+#silc.p <- silc.p %>% rename(id = pb030)
 
 
 #Putting the datasets together creating one data set containing personal data and register
@@ -268,7 +266,7 @@ silc.rph[is.na(silc.rph)] <- 0
 ############
 #Income 1: Pre-tax factor income (Canberra: primary income)
 #personal:pers_inc
-silc.rph <- silc.rph %>% mutate(pers_inc = py010 + py050g + py080g +car)
+silc.rph <- silc.rph %>% mutate(pers_inc = py010 + py050g + py080g + car)
 
 #household:house_inc
 silc.rph <- silc.rph%>% mutate(house_inc = hy040g, hy090g, hy110g)
@@ -279,7 +277,6 @@ silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
 
 #Canberra pre tax factor income: Combining
 silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc) /hx050)
-
 
 
 ##########
@@ -310,6 +307,12 @@ silc.rph <- silc.rph %>% mutate(posttax = prenatincome +
                                   (perstransf + housetransf - tax)/hx050)
 
 
+######P2 (wid.world):Nur Personen >= 20 Jahre & partial sharing of resources 
+
+######HIER WEITERMACHEN!!!!##############################
+#########################################################
+
+
 
 
 # Find string "py" (i.e. income variables) for summing up total personal income. 
@@ -318,4 +321,3 @@ silc.rph <- silc.rph %>% mutate(posttax = prenatincome +
 
 # Fin ---------------------------------------------------------------------
 
-message("Prepared data for ", country, " in ", year, ".")
