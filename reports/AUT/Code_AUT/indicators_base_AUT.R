@@ -422,9 +422,9 @@ table_p2_1
 
 # Pre-tax income
 
-table_p2_2 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_2, median_p2_1$income_wid_2, 
-                         Gini_p2_1$income_wid_2, p8020_p2_2$income_wid_2, 
-                         years_top10_p2_1$income_wid_2, Theil_p2_1$income_wid_2)
+table_p2_2 <- data.frame(mean_p2_2$rb010, mean_p2_2$income_wid_2, median_p2_2$income_wid_2, 
+                         Gini_p2_2$income_wid_2, p8020_p2_2$income_wid_2, 
+                         years_top10_p2_2$income_wid_2, Theil_p2_2$income_wid_2)
 
 colnames(table_p2_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%", "Theil")
@@ -433,9 +433,9 @@ table_p2_2
 
 # Post-tax (disposable) income
 
-table_p2_3 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_3, median_p2_1$income_wid_3, 
-                         Gini_p2_1$income_wid_3, p8020_p2_1$income_wid_3, 
-                         years_top10_p2_1$income_wid_3, Theil_p2_1$income_wid_3)
+table_p2_3 <- data.frame(mean_p2_3$rb010, mean_p2_3$income_wid_3, median_p2_3$income_wid_3, 
+                         Gini_p2_3$income_wid_3, p8020_p2_3$income_wid_3, 
+                         years_top10_p2_3$income_wid_3, Theil_p2_3$income_wid_3)
 
 colnames(table_p2_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%", "Theil")
