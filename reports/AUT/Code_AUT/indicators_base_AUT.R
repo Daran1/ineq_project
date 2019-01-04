@@ -4,15 +4,17 @@
 #
 # -------------------------------------------------------------------------
 
+
+
 library(dplyr)
 library(survey)
 library(convey)
 
-#country <- "AT"
-#year <- 2005-2017
 
-# Source the Setup scripts to provide data
+# Source connection 
 source("R/_connection.R")
+
+# Source Setup scripts to provide data
 source("reports/AUT/Code_AUT/_setup_AUT.R")
 
 
@@ -24,19 +26,19 @@ source("reports/AUT/Code_AUT/_setup_AUT.R")
 #### Continue here
 # Positive income
 silc.inc_1 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
-                                   posttax > 0 )
+                                   posttax > 0)
 # Positive income > 20
 silc.inc_2 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
                                    posttax > 0, age > 20)
 
 # Creating Survey Objects -------------------------------------------------
-# Positive income
+# Positive income for all 
 silc.inc_1.svy <- svydesign(ids =  ~ id_h,
                          strata = ~rb020,
                          weights = ~rb050,
                          data = silc.inc_1) %>% convey_prep()
 
-# Positive income > 20
+# Positive income > 20 (only for people over 20 years of age)
 silc.inc_2.svy <- svydesign(ids = ~id_h,
                          strata = ~rb020,
                          weights = ~rb050,
@@ -373,7 +375,8 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 
 
 ######################################################################################
-########################################################################################
+###############################Technic-Team foundation################################
+######################################################################################
 
 
 # Indicators --------------------------------------------------------------
