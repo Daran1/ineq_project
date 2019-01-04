@@ -12,7 +12,7 @@ library(convey)
 
 
 # Source connection 
-source("R/_connection.R")
+# source("R/_connection.R")
 
 # Source Setup scripts to provide data
 source("reports/AUT/Code_AUT/_setup_AUT.R")
@@ -59,12 +59,14 @@ mean_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svymean)
 svyquantile(~Can_inc, silc.inc_1.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, 
+                     FUN=svyquantile, c(0.5), ci=TRUE)
 
 
 # Top 10% Share 
 svytotal(~Can_inc, subset(silc.inc_1.svy, pb020 == "AT" & Can_inc >= 
-                              as.numeric(svyquantile(~Can_inc, silc.inc_1.svy, quantile = 0.9)))) / 
+                              as.numeric(
+                                svyquantile(~Can_inc, silc.inc_1.svy, quantile = 0.9)))) / 
   svytotal(~Can_inc, subset(silc.inc_1.svy, pb020 == "AT"))
 
 # Top 10% Share yearly
@@ -87,13 +89,15 @@ p8020_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svyqsr)
 svygini(~Can_inc, silc.inc_1.svy)
 
 #Gini yearly
-Gini_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svygini, c(0.5), ci=TRUE)
+Gini_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svygini, 
+                   c(0.5), ci=TRUE)
 
 # Theil Index for whole period
 svygei(~Can_inc, silc.inc_1.svy, epsilon = 1)
 
 # Theil Index yearly
-Theil_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svygei, epsilon = 1)
+Theil_p1_1 <- svyby(~Can_inc, by=~rb010, design=silc.inc_1.svy, FUN=svygei,
+                    epsilon = 1)
 
 
 #########-------------------------------------------------------------------------
@@ -109,11 +113,13 @@ mean_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svymean)
 svyquantile(~prenatincom, silc.inc_1.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile,
+                     c(0.5), ci=TRUE)
 
 # Top 10% Share 
 svytotal(~prenatincom, subset(silc.inc_1.svy, pb020 == "AT" & prenatincom >= 
-                                as.numeric(svyquantile(~prenatincom, silc.inc_1.svy, quantile = 0.9)))) / 
+                                as.numeric(svyquantile(~prenatincom, silc.inc_1.svy, 
+                                                       quantile = 0.9)))) / 
   svytotal(~prenatincom, subset(silc.inc_1.svy, pb020 == "AT"))
 
 # Top 10% Share yearly
@@ -136,13 +142,15 @@ p8020_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svyqsr)
 svygini(~Prenatincom, silc.inc_1.svy)
 
 #Gini yearly
-Gini_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svygini, c(0.5), ci=TRUE)
+Gini_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svygini, 
+                   c(0.5), ci=TRUE)
 
 # Theil Index for whole period
 svygei(~prenatincom, silc.inc_1.svy, epsilon = 1)
 
 # Theil Index yearly
-Theil_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svygei, epsilon = 1)
+Theil_p1_2 <- svyby(~prenatincom, by=~rb010, design=silc.inc_1.svy, FUN=svygei,
+                    epsilon = 1)
 
 
 
@@ -158,12 +166,14 @@ mean_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svymean)
 svyquantile(~posttax, silc.inc_1.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile,
+                     c(0.5), ci=TRUE)
 
 
 # Top 10% Share 
 svytotal(~posttax, subset(silc.inc_1.svy, pb020 == "AT" & posttax >= 
-                            as.numeric(svyquantile(~posttax, silc.inc_1.svy, quantile = 0.9)))) / 
+                            as.numeric(svyquantile(~posttax, silc.inc_1.svy, 
+                                                   quantile = 0.9)))) / 
   svytotal(~posttax, subset(silc.inc_1.svy, pb020 == "AT"))
 
 # Top 10% Share yearly
@@ -186,29 +196,26 @@ p8020_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svyqsr)
 svygini(~posttax, silc.inc_1.svy)
 
 #Gini yearly
-Gini_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svygini, c(0.5), ci=TRUE)
+Gini_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svygini,
+                   c(0.5), ci=TRUE)
 
 # Theil Index for whole period
 svygei(~posttax, silc.inc_1.svy, epsilon = 1)
 
 # Theil Index yearly
-Theil_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svygei, epsilon = 1)
+Theil_p1_3 <- svyby(~posttax, by=~rb010, design=silc.inc_1.svy, FUN=svygei, 
+                    epsilon = 1)
 
 
-
-########################################################################################
-#########################################################################################
-#########################################################################################
-
-#########-------------------------------------------------------------------------
-#########
-#######P2 (Wid. World)
-
-
-#########-------------------------------------------------------------------------
-###### For each variable calculate indicators (Mean, Median, Gini, Top10%, 80/20)
-
-#### Pre-tax factor income (Canberra Income):income_wid_1
+#-------------------------------------------------------------------------
+#
+# P2 (Wid. World)
+#
+#-------------------------------------------------------------------------
+#
+#For each variable calculate indicators (Mean, Median, Gini, Top10%, 80/20)
+#
+# Pre-tax factor income (Canberra Income):income_wid_1
 
 # Mean for whole period
 svymean(~income_wid_1, silc.inc_2.svy)
@@ -220,7 +227,7 @@ mean_p2_1 <- svyby(~income_wid_1, by=~rb010, design=silc.inc_2.svy, FUN=svymean)
 svyquantile(~income_wid_1, silc.inc_2.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p2_1 <- svyby(~income_wid_1, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p2_1 <- svyby(~income_wid_1, by=~rb010, design=silc.inc_2.svy, FUN=svyquantile, c(0.5), ci=TRUE)
 
 
 # Top 10% Share 
@@ -271,7 +278,7 @@ mean_p2_2 <- svyby(~income_wid_2, by=~rb010, design=silc.inc_2.svy, FUN=svymean)
 svyquantile(~income_wid_2, silc.inc_2.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p2_2 <- svyby(~income_wid_2, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p2_2 <- svyby(~income_wid_2, by=~rb010, design=silc.inc_2.svy, FUN=svyquantile, c(0.5), ci=TRUE)
 
 
 # Top 10% Share 
@@ -323,7 +330,7 @@ mean_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svymean)
 svyquantile(~income_wid_3, silc.inc_2.svy, quantiles = c(0.5))
 
 #Median yearly
-median_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_1.svy, FUN=svyquantile, c(0.5), ci=TRUE)
+median_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svyquantile, c(0.5), ci=TRUE)
 
 # Top 10% Share 
 svytotal(~income_wid_3, subset(silc.inc_2.svy, pb020 == "AT" & income_wid_3 >= 
@@ -357,6 +364,103 @@ svygei(~income_wid_3, silc.inc_2.svy, epsilon = 1)
 
 # Theil Index yearly
 Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei, epsilon = 1)
+
+
+
+#------------------------------------------------------------------------------------------
+#
+#Cretaing tables containig all variables over the years
+#
+#------------------------------------------------------------------------------------------
+
+# P1 Eurostat Income
+# Pre-tax factor income (Canberra: primary income): Can_inc
+
+table_p1_1 <- data.frame(mean_p1_1$rb010, mean_p1_1$Can_inc, median_p1_1$Can_inc, 
+                         Gini_p1_1$Can_inc, p8020_p1_1$Can_inc, years_top10_p1_1$Can_inc, 
+                         Theil_p1_1$Can_inc)
+
+colnames(table_p1_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p1_1
+
+# Pre-tax national income: prenatincom
+
+table_p1_2 <- data.frame(mean_p1_2$rb010, mean_p1_2$prenatincom, median_p1_2$prenatincom, 
+                         Gini_p1_2$prenatincom, p8020_p1_2$prenatincom, 
+                         years_top10_p1_2$prenatincom, Theil_p1_2$prenatincom)
+
+colnames(table_p1_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p1_2
+
+# Post-tax disposable income: posttax
+
+table_p1_3 <- data.frame(mean_p1_3$rb010, mean_p1_3$posttax, median_p1_3$posttax, 
+                         Gini_p1_3$posttax, p8020_p1_3$posttax, years_top10_p1_3$posttax, 
+                         Theil_p1_3$posttax)
+
+colnames(table_p1_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p1_3
+
+#P2 wid.world
+
+# Pre-tax factor income: Canberra income
+
+table_p2_1 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_1, median_p2_1$income_wid_1, 
+                         Gini_p2_1$income_wid_1, p8020_p2_1$income_wid_1, 
+                         years_top10_p2_1$income_wid_1, Theil_p2_1$income_wid_1)
+
+colnames(table_p2_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p2_1
+
+# Pre-tax income
+
+table_p2_2 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_2, median_p2_1$income_wid_2, 
+                         Gini_p2_1$income_wid_2, p8020_p2_2$income_wid_2, 
+                         years_top10_p2_1$income_wid_2, Theil_p2_1$income_wid_2)
+
+colnames(table_p2_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p2_2
+
+# Post-tax (disposable) income
+
+table_p2_3 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_3, median_p2_1$income_wid_3, 
+                         Gini_p2_1$income_wid_3, p8020_p2_1$income_wid_3, 
+                         years_top10_p2_1$income_wid_3, Theil_p2_1$income_wid_3)
+
+colnames(table_p2_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
+                         "Top10%", "Theil")
+
+table_p2_3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
