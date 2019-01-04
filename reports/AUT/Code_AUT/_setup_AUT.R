@@ -173,22 +173,22 @@ rm(cxxd)
 # for personal register (r)
 c14r <- tbl(pg, "c14r") %>% 
   filter(rb020 == 'AT') %>%
-  select(rb010, rb020, rb030, rb050, rb090, rx010, rx030) %>%
+  select(rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030) %>%
   collect(n = Inf)
 
 c15r <- tbl(pg, "c15r") %>% 
   filter(rb020 == 'AT') %>%
-  select(rb010, rb020, rb030, rb050, rb090, rx010, rx030) %>%
+  select(rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030) %>%
   collect(n = Inf)
 
 c16r <- tbl(pg, "c16r") %>% 
   filter(rb020 == 'AT') %>%
-  select(rb010, rb020, rb030, rb050, rb090, rx010, rx030) %>%
+  select(rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030) %>%
   collect(n = Inf)
 
 c17r <- tbl(pg, "c17r") %>% 
   filter(rb020 == 'AT') %>%
-  select(rb010, rb020, rb030, rb050, rb090, rx010, rx030) %>%
+  select(rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030) %>%
   collect(n = Inf)
 
 cxxr <- bind_rows(c14r, c15r, c16r, c17r)
