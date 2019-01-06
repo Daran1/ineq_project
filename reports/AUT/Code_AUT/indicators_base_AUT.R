@@ -381,7 +381,7 @@ table_p1_1 <- data.frame(mean_p1_1$rb010, mean_p1_1$Can_inc, median_p1_1$Can_inc
                          Theil_p1_1$Can_inc)
 
 colnames(table_p1_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p1_1
 
@@ -392,7 +392,7 @@ table_p1_2 <- data.frame(mean_p1_2$rb010, mean_p1_2$prenatincom, median_p1_2$pre
                          years_top10_p1_2$prenatincom, Theil_p1_2$prenatincom)
 
 colnames(table_p1_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p1_2
 
@@ -403,7 +403,7 @@ table_p1_3 <- data.frame(mean_p1_3$rb010, mean_p1_3$posttax, median_p1_3$posttax
                          Theil_p1_3$posttax)
 
 colnames(table_p1_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p1_3
 
@@ -416,7 +416,7 @@ table_p2_1 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_1, median_p2_1$in
                          years_top10_p2_1$income_wid_1, Theil_p2_1$income_wid_1)
 
 colnames(table_p2_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p2_1
 
@@ -427,7 +427,7 @@ table_p2_2 <- data.frame(mean_p2_2$rb010, mean_p2_2$income_wid_2, median_p2_2$in
                          years_top10_p2_2$income_wid_2, Theil_p2_2$income_wid_2)
 
 colnames(table_p2_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p2_2
 
@@ -438,7 +438,7 @@ table_p2_3 <- data.frame(mean_p2_3$rb010, mean_p2_3$income_wid_3, median_p2_3$in
                          years_top10_p2_3$income_wid_3, Theil_p2_3$income_wid_3)
 
 colnames(table_p2_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
-                         "Top10%", "Theil")
+                         "Top10%")
 
 table_p2_3
 
