@@ -266,10 +266,10 @@ silc.rph[is.na(silc.rph)] <- 0
 
 #Income 1: Pre-tax factor income (Canberra: primary income)
 #personal:pers_inc
-silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g + hy110g + car)
+silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g + py080g  + car)
 
 #household:house_inc
-silc.rph <- silc.rph%>% mutate(house_inc = hy040g + hy090g + py080g)
+silc.rph <- silc.rph%>% mutate(house_inc = hy040g + hy090g + hy110g)
 
 #sum pers_inc
 silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
