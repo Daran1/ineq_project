@@ -9,7 +9,7 @@
 library(dplyr)
 library(survey)
 library(convey)
-
+library(knitr)
 
 # Source connection 
 # source("R/_connection.R")
@@ -377,35 +377,39 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 # Pre-tax factor income (Canberra: primary income): Can_inc
 
 table_p1_1 <- data.frame(mean_p1_1$rb010, mean_p1_1$Can_inc, median_p1_1$Can_inc, 
-                         Gini_p1_1$Can_inc, p8020_p1_1$Can_inc, years_top10_p1_1$Can_inc, 
-                         Theil_p1_1$Can_inc)
+                         Gini_p1_1$Can_inc, p8020_p1_1$Can_inc, years_top10_p1_1$Can_inc)
 
 colnames(table_p1_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p1_1
 
+write.csv(table_p1_1, "./reports/AUT/tables/_tables_AUT_p1_1.csv")
+
 # Pre-tax national income: prenatincom
 
 table_p1_2 <- data.frame(mean_p1_2$rb010, mean_p1_2$prenatincom, median_p1_2$prenatincom, 
                          Gini_p1_2$prenatincom, p8020_p1_2$prenatincom, 
-                         years_top10_p1_2$prenatincom, Theil_p1_2$prenatincom)
+                         years_top10_p1_2$prenatincom)
 
 colnames(table_p1_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p1_2
 
+write.csv(table_p1_2, "./reports/AUT/tables/_tables_AUT_p1_2.csv")
+
 # Post-tax disposable income: posttax
 
 table_p1_3 <- data.frame(mean_p1_3$rb010, mean_p1_3$posttax, median_p1_3$posttax, 
-                         Gini_p1_3$posttax, p8020_p1_3$posttax, years_top10_p1_3$posttax, 
-                         Theil_p1_3$posttax)
+                         Gini_p1_3$posttax, p8020_p1_3$posttax, years_top10_p1_3$posttax)
 
 colnames(table_p1_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p1_3
+
+write.csv(table_p1_3, "./reports/AUT/tables/_tables_AUT_p1_3.csv")
 
 #P2 wid.world
 
@@ -413,37 +417,40 @@ table_p1_3
 
 table_p2_1 <- data.frame(mean_p2_1$rb010, mean_p2_1$income_wid_1, median_p2_1$income_wid_1, 
                          Gini_p2_1$income_wid_1, p8020_p2_1$income_wid_1, 
-                         years_top10_p2_1$income_wid_1, Theil_p2_1$income_wid_1)
+                         years_top10_p2_1$income_wid_1)
 
 colnames(table_p2_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p2_1
 
+write.csv(table_p2_1, "./reports/AUT/tables/_tables_AUT_p2_1.csv")
+
 # Pre-tax income
 
 table_p2_2 <- data.frame(mean_p2_2$rb010, mean_p2_2$income_wid_2, median_p2_2$income_wid_2, 
                          Gini_p2_2$income_wid_2, p8020_p2_2$income_wid_2, 
-                         years_top10_p2_2$income_wid_2, Theil_p2_2$income_wid_2)
+                         years_top10_p2_2$income_wid_2)
 
 colnames(table_p2_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p2_2
 
+write.csv(table_p2_2, "./reports/AUT/tables/_tables_AUT_p2_2.csv")
+
 # Post-tax (disposable) income
 
 table_p2_3 <- data.frame(mean_p2_3$rb010, mean_p2_3$income_wid_3, median_p2_3$income_wid_3, 
                          Gini_p2_3$income_wid_3, p8020_p2_3$income_wid_3, 
-                         years_top10_p2_3$income_wid_3, Theil_p2_3$income_wid_3)
+                         years_top10_p2_3$income_wid_3)
 
 colnames(table_p2_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
 table_p2_3
 
-
-
+write.csv(table_p2_3, "./reports/AUT/tables/_tables_AUT_p2_3.csv")
 
 
 
