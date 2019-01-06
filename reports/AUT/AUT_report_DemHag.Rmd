@@ -19,6 +19,12 @@ abstract: Dieses Dokument stellt einige Funktionen von Rmarkdown vor und bietet 
 
 ```{r setup, include=FALSE}
 
+library(readr)
+library(dplyr)
+library(survey)
+library(convey)
+library(knitr)
+
 ```
 
 \newpage
@@ -42,106 +48,96 @@ In den Jahren 2015 und 2016 wurde in Österreich eine Steuerreform durchgeführt
 
 Der weitere Text gliedert sich wie folgt: In Sektion Zwei werden Datenauswahl, die ausgewählten Einkommenskonzepte sowie Indikatoren erläutert. Sektion Drei stellt die Ergebnisse vor, die wichtigsten Erkenntnisse werden in Sektion Vier nochmals wiederholt und besprochen.
 
+\newpage
 
-```{r, include=FALSE}
-cat("Ausgeführt, nichts angezeigt")
-```
+#Datenauswahl und Methodik
 
-```{r, eval=FALSE}
-cat("Nicht ausgeführt, angezeigt")
+Als Grundlage dieser Seminararbeiten dienen Daten einer Erhebung der Europäischen Union: die European Union Statistics on Income and Living Conditions  (EU-SILC;  Gemeinschaftsstatistik über Einkommen und Lebensbedingungen). Seit 2005 erfasst das Europäische Statistische System Daten zu  Einkommen, Armut, soziale Ausgrenzung und Lebensbedingungen. In einigen Ländern reicht die Zeitspanne der Erhebung weiter zurück (e.g. österreichische Daten können auch bereits für das Jahr 2003 eingesehen werden). Dabei werden zwei verschiedene Arten von Daten erhoben: Es handelt sich dabei einerseits um Querschnittsdaten über einen bestimmten Zeitpunkt, andererseits Längsschnittdaten welche Veränderungen auf individueller Ebene über einen gewissen Zeitraum beobachten (Europäische Union). 
+Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozesse bezüglich der Existenz von Armut und sozialer Exklusion der Bevölkerung. Generell umfassen die EU-SILC daten 4 verschiedene Arten von Daten: 
+ 
+(i) Variablen gemessen auf Haushaltsebene;
+(ii) Informationen über Haushaltsgröße, Zusammenstellung und Grundmerkmale der Haushaltsmitglieder;
+(iii) Einkommen und andere, komplexere, variablen die als “basic variables” bezeichnet werden und auf der persönlichen Ebene gemessen werden und normalerweise aggregiert werden um Variablen auf Haushalts-level konstruieren zu können; und 
+(iv) Variablen die auf persönlicher Ebene gesammelt und analysiert werden, sogenannte “detailed variables” (GESIS).
+
+
+#Variablen
+Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. aus den Datensätzen wurden die folgenden variablen herangezogen:
+(i) Household Register: db010, db020, db030, db040, db090
+(ii) Household Data: hb010, hb020, hb030, hy010, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, hy080g, hy090g, hy110g, hy120g, hy130g, hy140g, hx040, hx050
+(iii) Personal Register: rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030
+(iv) Personal Data: pb010, pb020, pb030, pb040, pb150, py010g, py020g, py050g, py050n, 
+         py080g, py090g, py100g, py110g, py120g, px010,px030, py130g, py140g
+
+Genauere Beschreibungen dieser Daten werden von GESIS angeboten und sind unter der  Homepage https://www.gesis.org/en/missy/metadata/EU-SILC/ verfügbar. 
+Die Daten wurden im Anschluss mit Hilfe der Programmiersprache R eingelesen und bearbeitet um in Folge die gewünschten Analysen durchführen zu können. 
+Unter anderem werden in dieser Analyse folgende Indikatoren für Österreich berechnet: 
+Gini:
+Theil:
+20/80 share ratio:
+Top 10 Share:
+
+\newpage
+
+#Einkommens-Versionen
+
+Die Ergebnisse jeder empirischen untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig (Kitterer). In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben (Kitterer). Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
+
+Generell ist es möglich zwischen Haushaltseinkommen und persönlichem Einkommen zu unterscheiden. Laut Canberra Group besteht Haushaltseinkommen aus allen Bezügen, monetär oder anderer Art, die von einem Haushalt oder von Individuen dieses Haushaltes in regelmäßigen Abständen erhalten werden (Canberra Group). Darüber hinaus gibt es das persönliche Einkommen welches durch die Individuen kreiert wird und daher auch einen Teil des Haushaltseinkommens bildet. 
+
+In der im Zuge dieser Seminararbeit durchgeführten Analyse  wurden folgende Einkommenskonzepte, bestehend aus den unten angegebenen Variablen der EU-SILC Daten, herangezogen und berechnet: 
+
+##1. Pre-tax factor income (Canberra: primary income)
+Summe aus:
+(1) Einkommen aus Arbeit (inkl. Selbstständige): gross employee cash or near cash income (py010g), company car (py021g), gross cash benefits or losses from self-employment (including royalties) (py050g), income received by people aged under 16 (hy110g).
+(2) Vermögenseinkommen: income from rental of a property or land (hy040g), interests, dividends, profit from capital investments in unincorporated business (hy090g), pensions received from individual private plans (py080g).
+ 
+##2. Pre-tax national income: 
+Summe aus:
+(1), (2), (3) Pensionen und Arbeitslosengeld: unemployment benefits (py090g), old-age benefits (py100g).
+ 
+##3. Post-tax disposable income:
+Summe aus:
+(1), (2), (3), (4) Alle anderen erhaltenen Transferzahlungen: survivor' benefits (py110g), sickness benefits (py120g), disability benefits (py130g), education-related allowances (py140g), family/children related allowances (hy050g), social exclusion not elsewhere classified (hy060g), housing allowances (hy070g), regular inter-household cash transfers received (hy080g); abzüglich (5) alle steuern und sozialversicherungsabgaben:regular taxes on wealth (hy120g), regular inter-household cash transfer paid (hy130g), tax on income and social insurance contributions (hy140g).
+Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschiedene Grundgesamtheiten berechnet. Einerseits werden alle Individuen zur Berechnung hergenommen, und die Einkommen auf alle Individuen aufgeteilt. Andererseits werden die oben angeführten Einkommensaggregate nur für jene Personen berechnet, die zum Zeitpunkt der Befragung das 20. Lebensjahr begonnen haben. 
+
+\newpage
+
+#Ergebnisse
+
+
+```{r echo=FALSE}
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_1.rds"))
 ```
 
 ```{r echo=FALSE}
-cat("Ausgeführt, Output angezeigt")
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_2.rds"))
 ```
 
-```{r}
-cat("Ausgeführt, alles angezeigt")
+```{r echo=FALSE}
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_3.rds"))
+```
+
+```{r echo=FALSE}
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_1.rds"))
+```
+
+```{r echo=FALSE}
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_2.rds"))
+```
+
+```{r echo=FALSE}
+kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_3.rds"))
 ```
 
 <!-- Kommentare im Dokument -->
 
 Text *kursiv* und **fett**.
 
-R-Code im Text: `r pi`
 
-LaTeX Formeln inline: ($e = mc^2$) und:
-
-$$\hat{\beta} = (X'X)^{-1}X'Y$$
-
-![Bilder einfügen (xkcd)](img/xkcd_comparison.png){width=60%}
-
-[Links einfügen (Bildquelle)](https://what-if.xkcd.com/118/)
-
-Zitieren aus *BibTeX*:
-
-- [@marmot2010fair; @lancee2012income]
-- [@humer2013bedeutung, p. 571]
-- @humer2013bedeutung
-
-Block-Zitate:
-
-> "Don't quote me on that."
-
-Ungeordnete Listen:
-
-- Einkommen
-- Kapital
-
-Geordnete Listen:
-
-1. Zahlen
-3. sind
-9. egal
-
-Simple Tabellen:
-<!-- Leerzeichen sind egal -->
-
-| Year | Mean | Median | Gini | P80/P20 | Top10% |  
-| ---     | ---   | ---   | --- | ---     | ---   |
-| 2005 | 20503.11 | 17754.91 | 0.4374358 | 37.72646 | 0.1753194 | 0.1753194 | 
-| 2006 | 19857.03 | 17805.73 | 0.4366296 | 43.79389 | 0.1500479 | 0.1500479 | 
-| 2007 | 21370.95 | 18394.66 | 0.4414253 | 31.89313 | 0.1965082 | 0.1965082 | 
-| 2008 | 23631.33 | 19771.72 | 0.4637785 | 46.58540 | 0.2692517 | 0.2692517 | 
-| 2009 | 24675.53 | 20792.72 | 0.4682945 | 52.52155 | 0.2850549 | 0.2850549 | 
-| 2010 | 24910.33 | 20343.78 | 0.4857769 | 70.88285 | 0.3195989 | 0.3195989 | 
-| 2011 | 24820.37 | 20673.19 | 0.4738361 | 59.03666 | 0.3099027 | 0.3099027 | 
-| 2012 | 25498.53 | 21711.92 | 0.4756625 | 67.67786 | 0.3273899 | 0.3273899 | 
-| 2013 | 25596.24 | 21629.69 | 0.4705052 | 72.34576 | 0.3241640 | 0.3241640 | 
-| 2014 | 27367.82 | 23313.89 | 0.4717769 | 62.13651 | 0.3629344 | 0.3629344 | 
-| 2015 | 27308.42 | 23278.59 | 0.4685952 | 53.24993 | 0.3521259 | 0.3521259 | 
-| 2016 | 28454.03 | 24053.26 | 0.4594235 | 40.91943 | 0.3700419 | 0.3700419 | 
-| 2017 | 30229.64 | 25258.32 | 0.4570065 | 35.78919 | 0.3948536 | 0.3948536 | 
-
-
-
-
-
-
-R-Plots:
-
-```{r fig-rnorm, echo=FALSE, fig.cap="Inklusive Optionen", fig.width=4}
-plot(rnorm(50), rnorm(50))
-```
-
-Potentiell weniger simple Tabellen:
-
-
-Horizontale Linien:
-
----
 
 \newpage
 
-# Einführung
-
-# Methodologie
-
-## Daten
-
-## Indikatoren
-
-# Ergebnisse
 
 # Zusammenfassung
 
