@@ -5,11 +5,12 @@
 # -------------------------------------------------------------------------
 
 
-
+library(readr)
 library(dplyr)
 library(survey)
 library(convey)
 library(knitr)
+library(ggplot2)
 
 # Source connection 
 # source("R/_connection.R")
@@ -369,7 +370,7 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 
 #------------------------------------------------------------------------------------------
 #
-#Cretaing tables containig all variables over the years
+#Cretaing tables containig all indicators over the years
 #
 #------------------------------------------------------------------------------------------
 
@@ -386,6 +387,8 @@ table_p1_1
 
 write.csv(table_p1_1, "./reports/AUT/tables/_tables_AUT_p1_1.csv")
 
+write_rds(table_p1_1, "./reports/AUT/tables/_tables_AUT_p1_1.rds")
+
 # Pre-tax national income: prenatincom
 
 table_p1_2 <- data.frame(mean_p1_2$rb010, mean_p1_2$prenatincom, median_p1_2$prenatincom, 
@@ -399,6 +402,8 @@ table_p1_2
 
 write.csv(table_p1_2, "./reports/AUT/tables/_tables_AUT_p1_2.csv")
 
+write_rds(table_p1_2, "./reports/AUT/tables/_tables_AUT_p1_2.rds")
+
 # Post-tax disposable income: posttax
 
 table_p1_3 <- data.frame(mean_p1_3$rb010, mean_p1_3$posttax, median_p1_3$posttax, 
@@ -410,6 +415,8 @@ colnames(table_p1_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20",
 table_p1_3
 
 write.csv(table_p1_3, "./reports/AUT/tables/_tables_AUT_p1_3.csv")
+
+write_rds(table_p1_3, "./reports/AUT/tables/_tables_AUT_p1_3.rds")
 
 #P2 wid.world
 
@@ -426,6 +433,8 @@ table_p2_1
 
 write.csv(table_p2_1, "./reports/AUT/tables/_tables_AUT_p2_1.csv")
 
+write_rds(table_p2_1, "./reports/AUT/tables/_tables_AUT_p2_1.rds")
+
 # Pre-tax income
 
 table_p2_2 <- data.frame(mean_p2_2$rb010, mean_p2_2$income_wid_2, median_p2_2$income_wid_2, 
@@ -438,6 +447,10 @@ colnames(table_p2_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20",
 table_p2_2
 
 write.csv(table_p2_2, "./reports/AUT/tables/_tables_AUT_p2_2.csv")
+
+write_rds(table_p2_2, "./reports/AUT/tables/_tables_AUT_p2_2.rds")
+
+
 
 # Post-tax (disposable) income
 
@@ -452,104 +465,113 @@ table_p2_3
 
 write.csv(table_p2_3, "./reports/AUT/tables/_tables_AUT_p2_3.csv")
 
+write_rds(table_p2_3, "./reports/AUT/tables/_tables_AUT_p2_3.rds")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-######################################################################################
-###############################Technic-Team foundation################################
-######################################################################################
-
-
-# Indicators --------------------------------------------------------------
-
-# Mean Income
+#------------------------------------------------------------------------------------------
 #
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy, svymean)
-# svyby(~hy010, ~as.factor(db020), silc.hd.svy, svymean)
-
-# Median Income
+#Cretaing plots for certain indicators over the years
 #
-svyquantile(~total.inc, silc.pd.svy, quantiles = c(0.5))
-svyquantile(~hy010, silc.hd.svy, quantiles = c(0.5))
+#------------------------------------------------------------------------------------------
 
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy,
-#       svyquantile, ~total.inc, quantiles = c(0.5), keep.var = FALSE)
-# svyby(~hy010, ~as.factor(db020), silc.hd.svy,
-#       svyquantile, ~hy010, quantiles = c(0.5), keep.var = FALSE)
+## Gini plot für P1
+gini_p1 <- ggplot() +
+  geom_line(mapping = aes(y = table_p1_1$Gini,x = table_p1_1$Year,
+                          color = "Gini vor Steuern (Pre-tax factor income)"), size = 1 ) +
+  geom_line(mapping = aes(y = table_p1_2$Gini,x = table_p1_2$Year,
+                          color = "Gini vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_3$Gini,x = table_p1_3$Year,
+                          color = "Gini nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Gini vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Gini vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Gini nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Gini", 
+       title = "Gini-Koeffizient des Einkommens der \n gesamten Bevölkerung") + 
+  ylim(0, 0.6) +
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position="bottom", legend.direction = "vertical", 
+        panel.grid.major = element_blank())
 
-# Decile Points
-#
-svyquantile(~total.inc, silc.pd.svy, quantiles = seq(0, 1, 0.1))
-svyquantile(~hy010, silc.hd.svy, quantiles = seq(0, 1, 0.1))
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy, 
-#       svyquantile, ~total.inc, quantiles = seq(0, 1, 0.1), keep.var = FALSE)
-# svyby(~hy010, ~as.factor(hb020), silc.pd.svy, 
-#       svyquantile, ~total.inc, quantiles = seq(0, 1, 0.1), keep.var = FALSE)
+gini_p1
 
-# Quantile Share Ratio
-#
-svyqsr(~total.inc, silc.pd.svy, 0.2, 0.8)
-svyqsr(~hy010, silc.hd.svy, 0.2, 0.8)
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy, svyqsr, 0.2, 0.8)
-# svyby(~hy010, ~as.factor(db020), silc.hd.svy, svyqsr, 0.2, 0.8)
 
-# Top 10% Income Share
-#
-svytotal(~total.inc, subset(silc.pd.svy, pb020 == country & total.inc >= 
-                           as.numeric(svyquantile(~total.inc, silc.pd.svy, quantile = 0.9)))) / 
-  svytotal(~total.inc, subset(silc.pd.svy, pb020 == country))
-svytotal(~hy010, subset(silc.hd.svy, db020 == country & hy010 >= 
-                          as.numeric(svyquantile(~hy010, silc.hd.svy, quantile = 0.9)))) /
-  svytotal(~hy010,subset(silc.hd.svy, db020 == country))
+### Gini plot für p2
+gini_p2 <- ggplot() +
+  geom_line(mapping = aes(y = table_p2_1$Gini,x = table_p2_1$Year,
+                          color = "Gini vor Steuern (Pre-tax factor income)"), size = 1 ) +
+  geom_line(mapping = aes(y = table_p2_2$Gini,x = table_p2_2$Year,
+                          color = "Gini vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_3$Gini,x = table_p2_3$Year,
+                          color = "Gini nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Gini vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Gini vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Gini nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  scale_x_discrete(limits=2005:2017) + 
+  ylim(0, 0.6) +
+  labs(color = '', x = "Jahr", y = "Gini", 
+       title = "Gini-Koeffizient des Einkommens von \n Personen über 20 Jahren") +
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position="bottom", legend.direction="vertical", 
+        panel.grid.major = element_blank())
+        
+gini_p2
 
-# Gini Coefficient
-#
-svygini(~total.inc, silc.pd.svy)
-svygini(~hy010, silc.hd.svy)
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy, svygini)
-# svyby(~hy010, ~as.factor(db020), silc.hd.svy, svygini)
 
-# Theil Index
-#
-svygei(~total.inc, silc.pd.svy, epsilon = 1)
-svygei(~hy010, silc.hd.svy, epsilon = 1)
-# For comparing countries
-# svyby(~total.inc, ~as.factor(db020), silc.pd.svy,
-#      svygei, epsilon = 1)
-# svyby(~hy010, ~as.factor(db020), silc.hd.svy,
-#      svygei, epsilon = 1)
+
+###Top 10% Share (P1)
+
+Top10_p1 <- ggplot() +
+  geom_line(mapping = aes(y = table_p1_1$"Top10%", x = table_p1_1$Year,
+                          color = "Top10% vor Steuern (Pre-tax factor income)"), size = 1 ) +
+  geom_line(mapping = aes(y = table_p1_2$"Top10%", x = table_p1_2$Year,
+                          color = "Top10% vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_3$"Top10%", x = table_p1_3$Year,
+                          color = "Top10% nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Top10% vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Top10% vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Top10% nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Top10%", 
+       title = "Top10%  des Einkommens der \n gesamten Bevölkerung") + 
+  scale_x_discrete(limits=2005:2017) + 
+  ylim(0,0.5) +
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position="bottom", legend.direction = "vertical", 
+        panel.grid.major = element_blank())
+
+Top10_p1
+
+
+###Top 10% Share (P2)
+
+Top10_p2 <- ggplot() +
+  geom_line(mapping = aes(y = table_p2_1$"Top10%", x = table_p2_1$Year,
+                          color = "Top10% vor Steuern (Pre-tax factor income)"), size = 1 ) +
+  geom_line(mapping = aes(y = table_p2_2$"Top10%", x = table_p2_2$Year,
+                          color = "Top10% vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_3$"Top10%", x = table_p2_3$Year,
+                          color = "Top10% nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Top10% vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Top10% vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Top10% nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Top10%", 
+       title = "Top10%  des Einkommens der \n Bevölkerung über 20 Jahre") + 
+  scale_x_discrete(limits=2005:2017) + 
+  ylim(0,0.5) +
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position="bottom", legend.direction = "vertical", 
+        panel.grid.major = element_blank())
+
+Top10_p2
+
+
+
+
+
+
+
