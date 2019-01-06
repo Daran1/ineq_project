@@ -264,18 +264,18 @@ silc.rph[is.na(silc.rph)] <- 0
 ###P1 (Eurostat): Gesamte Bevölkerung & equal sharing of resources within household
 ############
 
-#Income 1: Pre-tax factor income (Canberra: primary income)
-#personal:pers_inc
-silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g + py080g  + car)
+# Income 1: Pre-tax factor income (Canberra: primary income)
+# Arbeitseinkommen:pers_inc
+silc.rph <- silc.rph %>% mutate(pers_inc = py010g + py050g +  hy110g + car)
 
-#household:house_inc
-silc.rph <- silc.rph%>% mutate(house_inc = hy040g + hy090g + hy110g)
+# Vermögenseinkommen:house_inc
+silc.rph <- silc.rph%>% mutate(house_inc = hy040g + hy090g + py080g)
 
-#sum pers_inc
+# sum pers_inc
 silc.rph <- silc.rph %>% group_by(id_h, rb010) %>%
   mutate(sum_pers_inc = sum(pers_inc))
 
-#Canberra pre tax factor income: Combining
+# Canberra pre tax factor income: Combining
 silc.rph <- silc.rph %>% mutate(Can_inc = (sum_pers_inc + house_inc)/hx050)
 
 
