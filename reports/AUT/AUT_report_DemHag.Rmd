@@ -13,8 +13,7 @@ output:
 keywords: a, b, c
 bibliography: references.bib
 subtitle: 2063 - Ökonomie der Verteilung
-abstract: Dieses Dokument stellt einige Funktionen von Rmarkdown vor und bietet eine
-  simple Grundstruktur für Länder-Reports.
+abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich
 ---
 
 ```{r setup, include=FALSE}
@@ -50,7 +49,7 @@ Der weitere Text gliedert sich wie folgt: In Sektion Zwei werden Datenauswahl, d
 
 \newpage
 
-#Datenauswahl und Methodik
+#Daten und Methodologie
 
 Als Grundlage dieser Seminararbeiten dienen Daten einer Erhebung der Europäischen Union: die European Union Statistics on Income and Living Conditions  (EU-SILC;  Gemeinschaftsstatistik über Einkommen und Lebensbedingungen). Seit 2005 erfasst das Europäische Statistische System Daten zu  Einkommen, Armut, soziale Ausgrenzung und Lebensbedingungen. In einigen Ländern reicht die Zeitspanne der Erhebung weiter zurück (e.g. österreichische Daten können auch bereits für das Jahr 2003 eingesehen werden). Dabei werden zwei verschiedene Arten von Daten erhoben: Es handelt sich dabei einerseits um Querschnittsdaten über einen bestimmten Zeitpunkt, andererseits Längsschnittdaten welche Veränderungen auf individueller Ebene über einen gewissen Zeitraum beobachten (Europäische Union). 
 Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozesse bezüglich der Existenz von Armut und sozialer Exklusion der Bevölkerung. Generell umfassen die EU-SILC daten 4 verschiedene Arten von Daten: 
@@ -61,8 +60,9 @@ Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozes
 (iv) Variablen die auf persönlicher Ebene gesammelt und analysiert werden, sogenannte “detailed variables” (GESIS).
 
 
-#Variablen
+##Variablen
 Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. aus den Datensätzen wurden die folgenden variablen herangezogen:
+
 (i) Household Register: db010, db020, db030, db040, db090
 (ii) Household Data: hb010, hb020, hb030, hy010, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, hy080g, hy090g, hy110g, hy120g, hy130g, hy140g, hx040, hx050
 (iii) Personal Register: rb010, rb020, rb030, rb050, rb080, rb090, rx010, rx030
@@ -71,15 +71,15 @@ Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht
 
 Genauere Beschreibungen dieser Daten werden von GESIS angeboten und sind unter der  Homepage https://www.gesis.org/en/missy/metadata/EU-SILC/ verfügbar. 
 Die Daten wurden im Anschluss mit Hilfe der Programmiersprache R eingelesen und bearbeitet um in Folge die gewünschten Analysen durchführen zu können. 
-Unter anderem werden in dieser Analyse folgende Indikatoren für Österreich berechnet: 
-Gini:
-Theil:
-20/80 share ratio:
-Top 10 Share:
+Unter anderem werden in dieser Analyse folgende Indikatoren für Österreich berechnet:   
 
-\newpage
+**Mittelwert**: Der Durschnittliche Wert aller Einkommen.   
+**Median**: Der sich in der Mitte befindende Wert aller Einkommen.
+**Gini**: Der Gini-Index dient zur Messung, inwieweit die Einkommensverteilung (oder in einigen Fällen die Konsumausgaben) zwischen Einzelpersonen, oder Haushalten innerhalb einer Volkswirtschaft, von einer vollkommen gleichen Verteilung abweicht. Dabei misst er den Bereich zwischen der Lorenz-Kurve und einer hypothetischen Linie der absoluten Gleichheit, ausgedrückt als Prozentsatz der maximalen Fläche unter der Linie. Dabei ist anzumerken, dass ein Gini von 0 perfekte Gleichheit darstellt, wohingegen ein Wert von 1 perfekte ungleichheit signalisiert (OECD).  
+**20/80 Share Ratio**: Die Einkommensquintilanteilsquote oder die S80/S20 Share Ratio ist ein Maß für die Ungleichheit der Einkommensverteilung. Sie wird als Verhältnis des Gesamteinkommens der 20% der Bevölkerung mit dem höchsten Einkommen (dem obersten Quintil) zu dem Einkommen der 20% der Bevölkerung mit dem niedrigsten Einkommen (dem unteren Quintil) berechnet. 
+**Top 10% Income Share**: Anteil des Einkommens das von den zehn höchsten Prozent gehalten wird. 
 
-#Einkommens-Versionen
+##Einkommens-Versionen
 
 Die Ergebnisse jeder empirischen untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig (Kitterer). In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben (Kitterer). Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
 
@@ -87,16 +87,16 @@ Generell ist es möglich zwischen Haushaltseinkommen und persönlichem Einkommen
 
 In der im Zuge dieser Seminararbeit durchgeführten Analyse  wurden folgende Einkommenskonzepte, bestehend aus den unten angegebenen Variablen der EU-SILC Daten, herangezogen und berechnet: 
 
-##1. Pre-tax factor income (Canberra: primary income)
+###1. Pre-tax factor income (Canberra: primary income)
 Summe aus:
 (1) Einkommen aus Arbeit (inkl. Selbstständige): gross employee cash or near cash income (py010g), company car (py021g), gross cash benefits or losses from self-employment (including royalties) (py050g), income received by people aged under 16 (hy110g).
 (2) Vermögenseinkommen: income from rental of a property or land (hy040g), interests, dividends, profit from capital investments in unincorporated business (hy090g), pensions received from individual private plans (py080g).
  
-##2. Pre-tax national income: 
+###2. Pre-tax national income: 
 Summe aus:
 (1), (2), (3) Pensionen und Arbeitslosengeld: unemployment benefits (py090g), old-age benefits (py100g).
  
-##3. Post-tax disposable income:
+###3. Post-tax disposable income:
 Summe aus:
 (1), (2), (3), (4) Alle anderen erhaltenen Transferzahlungen: survivor' benefits (py110g), sickness benefits (py120g), disability benefits (py130g), education-related allowances (py140g), family/children related allowances (hy050g), social exclusion not elsewhere classified (hy060g), housing allowances (hy070g), regular inter-household cash transfers received (hy080g); abzüglich (5) alle steuern und sozialversicherungsabgaben:regular taxes on wealth (hy120g), regular inter-household cash transfer paid (hy130g), tax on income and social insurance contributions (hy140g).
 Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschiedene Grundgesamtheiten berechnet. Einerseits werden alle Individuen zur Berechnung hergenommen, und die Einkommen auf alle Individuen aufgeteilt. Andererseits werden die oben angeführten Einkommensaggregate nur für jene Personen berechnet, die zum Zeitpunkt der Befragung das 20. Lebensjahr begonnen haben. 
@@ -105,42 +105,63 @@ Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschied
 
 #Ergebnisse
 
+Im folgenden werden die oben genannten Indikatoren für alle Formen des Einkommens, sowie Anhand der Unterscheidung zwischen den Grundgesamtheiten (Gesamte Bevölkerung sowie Personen über 20 Jahre) berechnet und aufgezeigt werden.    
+
+##Grundgesamtheit 1: Gesamte Bevölerkung
+
+###1. Pre-tax factor income (Canberra: primary income)
 
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_1.rds"))
 ```
 
+
+###2. Pre-tax national income
+
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_2.rds"))
 ```
+ 
+###3. Post-tax disposable income
 
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_3.rds"))
 ```
 
+##Grundgesamtheit 2: Personen über 20 Jahre
+
+###1. Pre-tax factor income (Canberra: primary income)
+
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_1.rds"))
 ```
 
+###2. Pre-tax national income
+
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_2.rds"))
-```
+``` 
+ 
+###3. Post-tax disposable income
 
 ```{r echo=FALSE}
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_3.rds"))
 ```
 
 
-
 \newpage
 
-##Grafiken zur entwicklung des Gini-Koeffizienten und der Top10% Share Ratio
+##Grafiken zur entwicklung des Gini-Koeffizienten und der Top10% Share Ratio  
+
+###Grundgesamtheit 1: Gesamte Bevölerkung
 
 ![Berechnung anhand der EU-SILC Daten](img/Gini_P1.png){width=80%}
 
-![Berechnung anhand der EU-SILC Daten](img/Gini_P2.png){width=80%}
-
 ![Berechnung anhand der EU-SILC Daten](img/Top10_p1.png){width=80%}
+
+###Grundgesamtheit 2: Personen über 20 Jahre
+
+![Berechnung anhand der EU-SILC Daten](img/Gini_P2.png){width=80%}
 
 ![Berechnung anhand der EU-SILC Daten](img/Top10_P2.png){width=80%}
 
@@ -149,6 +170,9 @@ kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_3.rds"))
 
 # Zusammenfassung
 
+##Ausblick  
+
+Des weiteren sind wir uns noch uneinig welche Spezialisierung wir in unserer Arbeit einbauen werden. Nach derzeitigem Stand wäre es für uns am interessantesten, das Gender-Pay-Gap einzuarbeiten. Jedoch ist sich dies in der derzeitigen Version der Seminararbeit noch nicht möglich und wird im finalen Bericht eingebaut
 
 # Literatur
 
