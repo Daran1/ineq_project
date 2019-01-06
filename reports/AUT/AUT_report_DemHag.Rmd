@@ -1,0 +1,151 @@
+---
+title: "Einkommensverteilung in Ã–sterreich"
+author: "Daran Demirol & Matthias Hagen"
+date: "06.01.2019"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  pdf_document:
+    includes:
+      in_header: header.tex
+    toc: yes
+keywords: a, b, c
+bibliography: references.bib
+subtitle: 2063 - Ökonomie der Verteilung
+abstract: Dieses Dokument stellt einige Funktionen von Rmarkdown vor und bietet eine
+  simple Grundstruktur für Länder-Reports.
+---
+
+```{r setup, include=FALSE}
+
+```
+
+\newpage
+
+# Einleitung
+
+In dieser Seminararbeit soll die Einkommensverteilung in Österreich genauer untersucht werden. Besonders in letzter Zeit sind Fragen der Verteilung von Einkommen und Vermögen immer stärker in den öffentlichen Diskurs gerückt und haben dementsprechend auch stärkeren Einfluss auf den wirtschaftlichen Bereich entwickelt. Hierbei schwächt eine ungleiche Verteilung dem Trade and Development Report 2012 der United Nations Conference on Trade and Development (UNCTAD) zufolge das Entwicklungspotenzial einer Volkswirtschaft aufgrund einer geringeren Nachfrage nach Gütern und Dienstleistungen.
+Des Weiteren sind diesem Bericht zufolge Bildungschancen und soziale Mobilität hierdurch eingeschränkt. Nichtsdestotrotz hat sich die Ungleichheit seit den 1980er Jahren laut UNCTAD sowohl zwischen armen und reichen Ländern, als auch innerhalb einer Großzahl an Ländern verstärkt.
+
+Infolge der Panama-Papers und anderen Enthüllungen sind besonders Themen wie die Vermeidung von Steuern über sogenannte Steueroasen, aber auch die ungleichmäßige Verteilung von Vermögen und Einkommen und die damit einhergehende Polarisierung von Einkommen und deren Ungleichheit an Relevanz gewonnen. Diese Seminararbeit setzt sich daher das Ziel in Form einer Aufstellung der wichtigsten Ungleichheitsindikatoren einen Beitrag zum öffentlichen Diskurs in Österreich zu leisten. Wir untersuchen daher verschiedene Einkommenskonzepte und Indikatoren auf Basis des EU-SILC Datensatzes für Österreich. Durch die Verwendung von Indikatoren und geläufigen Einkommenskonzepten soll eine gewisse Vergleichbarkeit mit anderen (EU-) Ländern möglich gemacht werden. 
+
+Eine ähnliche Analyse für Österreich wurde 2007 von Guger und Marterbauer durchgeführt. Diese beschäftigen sich in einer Studie des Österreichischen Instituts für Wirtschaftsforschung mit der langfristigen Entwicklung der Verteilung von Einkommen.  Die Autoren kommen zu dem Schluss, dass sich die ohnehin schon große Einkommensschere in den letzten Jahrzehnten weiter vergrößert hat. Sie führen diesen Trend unter anderem auf einen Anstieg der Arbeitslosigkeit sowie auf die Flexibilisierung des Arbeitsmarktes, e.g. Ausweitung der Teilzeitarbeit, zurück. Diese beiden Faktoren zeichnen sich auch für die großen geschlechtlichen Unterschiede bei Einkommen verantwortlich. 
+
+Christl und Lorenz (2005) kommen zu einer weniger düsteren Conclusio. Sie argumentieren, dass sich der Gini-Koeffizient des äquivalisierten Haushaltseinkommens in Österreich (vor und nach Sozialleistungen) in den letzten zwei Jahrzehnten nur unwesentlich verändert hat. Im EU-Vergleich weise Österreich daher eine relativ gleiche Verteilung von Einkommen aus. Eine Umverteilungsdebatte sei verzerrt, da sich die Trends durch veränderte Strukturen innerhalb der Bevölkerung erklären lassen. In diesem Sinn wird wie folgt argumentiert: “Nicht habgierige Arbeitgeber oder die Konkurrenz unter den Arbeitnehmern sorgen gegebenenfalls für mehr Ungleichheit in der Einkommensverteilung, sondern Demografie, Zuwanderung, Bildungsstand, kleinere Haushaltsgrößen und der Wunsch nach Teilzeitbeschäftigung.” (Christl et al., 2005)
+
+Humer et al. (2013) zufolge ermöglichen Haushaltserhebungen wie der EU-SILC und der HFCS eine umfassendere Analyse als nur administrative Datensätze, da hierbei Einkommensdaten um Vermögenseinkommen erweitert werden können. Ein Problem von Haushaltserhebungen sei jedoch die Untererfassung an den Rändern der Verteilung. Humer et al. (2013) finden für den Großteil der Bevölkerung einen nur sehr kleinen Einfluss von Vermögenseinkünften als Zuverdienst zur Erwerbstätigkeit. Ein Lebensunterhalt durch Vermögenseinkünfte sei daher nur für die obersten Perzentile möglich. 
+
+Verweibe und Fritsch (2011) untersuchen die Armut von Erwerbstätigen in Europa. Ihnen zufolge ist es für einen immer größer werdenden Teil der arbeitenden österreichischen Bevölkerung nicht mehr möglich durch ein Normalarbeitsverhältnis ein Leben außerhalb der Armut zu führen. In diesem Zusammenhang entdecken sie einen Anstieg der sozialen Ungleichheit. Das Phänomen des “working poor” wird mithilfe der EU-SILC Daten und dem dazugehörigen Bruttoeinkommen untersucht.
+
+In den Jahren 2015 und 2016 wurde in Österreich eine Steuerreform durchgeführt. Im Durchschnitt soll die Entlastung des verfügbaren äquivalisierten Haushaltseinkommens um 829€ (3,3%) ansteigen. In dieser Analyse des Budgetdienstes des Parlaments (Juni 2015) wird darauf hingewiesen, dass rund 52,6% des Entlastungsvolumens auf die oberen drei Dezile entfallen. Auf den ersten Blick scheint diese Reform dem Ziel einer gerechteren Verteilung entgegenzuwirken. Es wird jedoch darauf hingewiesen, dass Haushalte in den oberen Dezilen (voraussichtlich) stärker von den Gegenfinanzierungsmaßnahmen betroffen seien. Des Weiteren scheint es als ob Männer aufgrund des unterschiedlichen Erwerbsverhaltens wesentlich stärker von der Steuerentlastung profitieren würden als Frauen. 
+
+Der weitere Text gliedert sich wie folgt: In Sektion Zwei werden Datenauswahl, die ausgewählten Einkommenskonzepte sowie Indikatoren erläutert. Sektion Drei stellt die Ergebnisse vor, die wichtigsten Erkenntnisse werden in Sektion Vier nochmals wiederholt und besprochen.
+
+
+```{r, include=FALSE}
+cat("Ausgeführt, nichts angezeigt")
+```
+
+```{r, eval=FALSE}
+cat("Nicht ausgeführt, angezeigt")
+```
+
+```{r echo=FALSE}
+cat("Ausgeführt, Output angezeigt")
+```
+
+```{r}
+cat("Ausgeführt, alles angezeigt")
+```
+
+<!-- Kommentare im Dokument -->
+
+Text *kursiv* und **fett**.
+
+R-Code im Text: `r pi`
+
+LaTeX Formeln inline: ($e = mc^2$) und:
+
+$$\hat{\beta} = (X'X)^{-1}X'Y$$
+
+![Bilder einfügen (xkcd)](img/xkcd_comparison.png){width=60%}
+
+[Links einfügen (Bildquelle)](https://what-if.xkcd.com/118/)
+
+Zitieren aus *BibTeX*:
+
+- [@marmot2010fair; @lancee2012income]
+- [@humer2013bedeutung, p. 571]
+- @humer2013bedeutung
+
+Block-Zitate:
+
+> "Don't quote me on that."
+
+Ungeordnete Listen:
+
+- Einkommen
+- Kapital
+
+Geordnete Listen:
+
+1. Zahlen
+3. sind
+9. egal
+
+Simple Tabellen:
+<!-- Leerzeichen sind egal -->
+
+| Year | Mean | Median | Gini | P80/P20 | Top10% |  
+| ---     | ---   | ---   | --- | ---     | ---   |
+| 2005 | 20503.11 | 17754.91 | 0.4374358 | 37.72646 | 0.1753194 | 0.1753194 | 
+| 2006 | 19857.03 | 17805.73 | 0.4366296 | 43.79389 | 0.1500479 | 0.1500479 | 
+| 2007 | 21370.95 | 18394.66 | 0.4414253 | 31.89313 | 0.1965082 | 0.1965082 | 
+| 2008 | 23631.33 | 19771.72 | 0.4637785 | 46.58540 | 0.2692517 | 0.2692517 | 
+| 2009 | 24675.53 | 20792.72 | 0.4682945 | 52.52155 | 0.2850549 | 0.2850549 | 
+| 2010 | 24910.33 | 20343.78 | 0.4857769 | 70.88285 | 0.3195989 | 0.3195989 | 
+| 2011 | 24820.37 | 20673.19 | 0.4738361 | 59.03666 | 0.3099027 | 0.3099027 | 
+| 2012 | 25498.53 | 21711.92 | 0.4756625 | 67.67786 | 0.3273899 | 0.3273899 | 
+| 2013 | 25596.24 | 21629.69 | 0.4705052 | 72.34576 | 0.3241640 | 0.3241640 | 
+| 2014 | 27367.82 | 23313.89 | 0.4717769 | 62.13651 | 0.3629344 | 0.3629344 | 
+| 2015 | 27308.42 | 23278.59 | 0.4685952 | 53.24993 | 0.3521259 | 0.3521259 | 
+| 2016 | 28454.03 | 24053.26 | 0.4594235 | 40.91943 | 0.3700419 | 0.3700419 | 
+| 2017 | 30229.64 | 25258.32 | 0.4570065 | 35.78919 | 0.3948536 | 0.3948536 | 
+
+
+
+
+
+
+R-Plots:
+
+```{r fig-rnorm, echo=FALSE, fig.cap="Inklusive Optionen", fig.width=4}
+plot(rnorm(50), rnorm(50))
+```
+
+Potentiell weniger simple Tabellen:
+
+
+Horizontale Linien:
+
+---
+
+\newpage
+
+# Einführung
+
+# Methodologie
+
+## Daten
+
+## Indikatoren
+
+# Ergebnisse
+
+# Zusammenfassung
+
+
+# Literatur
+
+<!-- Leer lassen -->
