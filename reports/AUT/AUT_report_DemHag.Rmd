@@ -1,5 +1,5 @@
 ---
-title: "Einkommensverteilung in Ã–sterreich"
+title: "Einkommensverteilung in Österreich"
 author: "Daran Demirol & Matthias Hagen"
 date: "06.01.2019"
 output:
@@ -130,11 +130,19 @@ kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_2.rds"))
 kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_3.rds"))
 ```
 
-<!-- Kommentare im Dokument -->
-
-Text *kursiv* und **fett**.
 
 
+\newpage
+
+##Grafiken zur entwicklung des Gini-Koeffizienten und der Top10% Share Ratio
+
+![Berechnung anhand der EU-SILC Daten](img/Gini_P1.png){width=80%}
+
+![Berechnung anhand der EU-SILC Daten](img/Gini_P2.png){width=80%}
+
+![Berechnung anhand der EU-SILC Daten](img/Top10_p1.png){width=80%}
+
+![Berechnung anhand der EU-SILC Daten](img/Top10_P2.png){width=80%}
 
 \newpage
 
