@@ -171,23 +171,25 @@ Im folgenden Abschnitt befinden wird ein Überblick über die Entwicklung des Gi
 
 Im diesem Abshcnitt werden die Indikatoren auf Basis der gesamten Bevölkerung dargestellt. Die Einkommenskonzepte entsprechen den vorher erwähnten Konzepten. 
 
-![Berechnung anhand der EU-SILC Daten](img/Gini_P1.png){width=80%}
+![](img/Gini_P1.png){width=80%}
 
 Der Gini-Koeffizient, welcher einen Einblick in die Verteilung von Einkommen gibt, entwickelte sich in allen drei fällen eher konstant. Vor allem ist zu erkennen, dass dieser nach erledigten Steuerleistungen um einiges geringer ausfällt als davor. Ansonsten geht die Entwicklung in allen drei Fällen einen ähnlichen Weg. Mit einem Wert von knapp unter 0.3 muss gesagt werden, dass die Einkommensverteilung in Österreich weit von einer optimalen Verteilung entfernt ist. 
 
-![Berechnung anhand der EU-SILC Daten](img/Top10_p1.png){width=80%}
+![](img/Top10_p1.png){width=80%}
+  
 Ein anderes Bild ergibt sich bei betracht des Anteils der Top 10% am Einkommen. In allen Einkommenskonzepten ist eine ähnlich Entwiclung beobachtbar. nach einem kurzen Rückgang zwischen 2005 und 2006 steigt der Anteil danach kontinuirlich an. Seit 2006 hat sich dieser Wert in allen Fällen in etwa verdoppelt. Eine problematische Entwicklung da die höchsten Einkommen einen immer höheren Anteil der Einkommen einnehmen. Langfristig kann diese Entwicklung nicht zu einer ausgewogenen, fairen Verteilung beitragen. 
 
 ###Grundgesamtheit 2: Personen über 20 Jahre
 
-![Berechnung anhand der EU-SILC Daten](img/Gini_P2.png){width=80%}
+![](img/Gini_P2.png){width=80%}
+  
 Wie in der oberen Grafik ist die Entwicklung des Gini-Koeffizienten relativ konstant. Interessant ist es zu beobachten, dass in diesem Fall der Wert für alle Einkommenskonzepte höher ist. Der Unterschied zwischen Post-tax national income und Pre-tax national income im Vergleich zum Pre-tax factor income ist um einiges geringer. Die ersten beiden bewegen sich nahe der 0.4 Marke, um einiges höher als zuvor. 
 
-![Berechnung anhand der EU-SILC Daten](img/Top10_P2.png){width=80%}
+![](img/Top10_P2.png){width=80%}
+  
 Ähnlich wie in der Analyse der Top10% Income shares der gesamten Bevölkerung entwickelt sich der Indikator für eine Grundgesamtheit die alle über 20Jährigen berücksichtigt. Insgesamt hat sich der Wert 2017 in etwa verdoppelt verglichen mit dem Ausgangswert von 2005. Auch hier gab es eine rapide, konstante, Entwicklung nach oben welche lediglich zwischen 2005 und 2006 sowie zwischen 2010 un 2012, sowie 2014 und 2015 stagnierte, beziehungsweise Rückläufig war. 
 
 \newpage
-
 
 # Zusammenfassung
 
