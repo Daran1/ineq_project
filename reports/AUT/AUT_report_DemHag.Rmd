@@ -114,7 +114,7 @@ Im folgenden werden die oben genannten Indikatoren für alle Formen des Einkomme
 ###Table 1: Pre-tax factor income
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_1.rds"))
+kable(readRDS("tables/_tables_AUT_p1_1.rds"))
 ```
 
 Betrachtet man das factorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini, also das Maß für ungleichheit, sich konstant zwischen den Werten 0.43 und 0.49 bewegt. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt. Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten 10% verdient wird. Interessant ist es auch zu beobachten wie sich dieser Anteil in den letzten Jahren entwickelt hat. Dabei gab es einen Ansteig von 17% im Jahr 2005 auf beinahe 40% im Jahr 2017. Auch die Einkommensquatilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 72.34576. Jedoch sinkt diese Ratio danach wieder; im Jahr 2017 verdienen die am oberen Ende der Einkommen angesiedelten 20% in etwa 36 mal so viel wie jene am unteren Ende. 
@@ -122,7 +122,7 @@ Betrachtet man das factorale Einkommen der gesamten Bevölkerung vor der Versteu
 ###Table 2: Pre-tax national income
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_2.rds"))
+kable(readRDS("tables/_tables_AUT_p1_2.rds"))
 ```
  
 Inkludiert man sowohl Pension wie auch Arbeitslosengeld, also soziale Transferleistungen, so verändert sich das Bild maßgeblich. Sowohl Mittelwert als auch Median sind höher, genauer gesagt in etwa zwischen 3000 und 5000 höher als in der vorhergeangenen Berechnung. Der Gini-Koeffizient liegt im Jahr 2017 bei 0.35. Dies ist um 0.1 weniger als in der obigen Bemerkung und ist nicht überraschend, da sowohl Arbeitslosengeld wie auch Pensionen dazu beitragen sollten, dass Einkommen gleichmäßiger verteilt sind. Auch die Anteile der oberen im Vergleich zum unteren Ende verhält sich ausgeglichener. Diese bewegt sich zwischen 5.5 und 7.8 und betrug im Jahr 2017 circa 6.9. Somit verdienten die oberen 20% in etwa 7 mal so viel wie jene am unteren Ende. Nicht so stark veränderte sich der Anteil der Top10% am Einkommen. Zwar ist dieses geringer als zuvor, übertrifft aber im Jahr 2017 immer noch 35%. Auch hier hat sich der Wert seit 2005 fast verdoppeln können. 
@@ -130,7 +130,7 @@ Inkludiert man sowohl Pension wie auch Arbeitslosengeld, also soziale Transferle
 ###Table 3: Post-tax disposable income
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p1_3.rds"))
+kable(readRDS("tables/_tables_AUT_p1_3.rds"))
 ```
 
 Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte inklusive aller anderen transferzahlungen abzüglich geleisteter Steuerleistungen. Wie zu erwarten sind Mittelwert und Median geringer als bei den obigen Tabellen. Das Österreichische Steuersystem dient auch dazu, Einkommen umzuverteilen. Dies lässt sich im Gini-Koeffizienten feststellen. Dieser ist zwar mit über 0.25 noch immer hoch, ist aber besser als in den vorherigen Einkommenskonzepten. Somit kann man sagen, dass eine Umverteilung durch Steuern zumindest in einem gewissen Ausmaß erfolgreich ist. Auch die Einkommensquantile lassen auf eine ausgewogenere Aufteilung der Einkommen schließen. Diese ist jetzt durchgehend unter fünf. Der Anteil der Top10% am Einkommen hingegen ist weiterhin relativ hoch mit einem Wert von über 35% im Jahre 2017. 
@@ -140,7 +140,7 @@ Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte in
 ###Table 4: Pre-tax factor income (Canberra: primary income)
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_1.rds"))
+kable(readRDS("tables/_tables_AUT_p2_1.rds"))
 ```
 
 Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient sich aber anders als die obigen Tables einer anderen Grundgesamtheit, nämlich lediglich jenen ÖsterreicherInnen die über 20 Jahre alt sind. Dabei sieht man gleich, dass sowohl Mittelwert als auch Median deutlich höher sind als bei Verwendung der anderen Grundgesamtheit. Im Jahr 2017 ist der Mittelwert um etwa 25000 höher, der Median circa um 16000. Die Ungleichheit higegen ist leicht gestiegen, mit höchstwerten des Gini-Koeffizienten knapp unter der 0.5 Marke. Sichtbar ist das auch durch die Anteile der Top10% am Gesamteinkommen sowie die Einkommensquantil-Ratio welche beide höher sind mit je über 40000 und 106000. Letztere deutet sogar auf teilweise 326000 mal so hohe Einkommen der Personen in oberen Ende der Einkommensverteilung.
@@ -148,7 +148,7 @@ Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient
 ###Table 5: Pre-tax national income
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_2.rds"))
+kable(readRDS("tables/_tables_AUT_p2_2.rds"))
 ``` 
  
 Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskonzept Mittelwert und Median um einen ähnlichen Betrag höher. Der Gini-Koeffizient ist mit 0.4 im Jahr 2017 jedoch noch relativ groß. In relation zum obigen Vergleichswert mit anderer Grundgesamtheit ist die 20/80 Share Ratio höher, jedoch der Anteil der obersten 10% am Einkommen ähnlich. 
@@ -156,7 +156,7 @@ Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskon
 ###Table 6: Post-tax disposable income
 
 ```{r echo=FALSE}
-kable(readRDS("./reports/AUT/tables/_tables_AUT_p2_3.rds"))
+kable(readRDS("tables/_tables_AUT_p2_3.rds"))
 ```
 
 Interessanterweise verändert sich der Gini hier nicht maßgeblich nach dem Abzug von Steuern. Berechnet man das Einkommen also nur für all jene über 20, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus. Der Anteil der oberen 10% am Gesamteinkommen ist im vergleich zum Einkommen vor der Steuer konstatn geblieben, bzw. leicht angestiegen. 
