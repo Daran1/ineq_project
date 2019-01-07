@@ -111,7 +111,7 @@ Im folgenden werden die oben genannten Indikatoren für alle Formen des Einkomme
 
 ## Grundgesamtheit 1: Gesamte Bevölerkung
 
-### Table 1: Pre-tax factor income
+<!-- ### Table 1: Pre-tax factor income -->
 
 ```{r echo=FALSE}
 table1 <- readRDS("tables/_tables_AUT_p1_1.rds")
@@ -119,7 +119,7 @@ table1[2:3] <- format(table1[2:3], digits = 5, big.mark = ",")
 table1$Gini <- round(table1$Gini, 2)
 table1$`P80/P20` <- round(table1$`P80/P20`, 1)
 table1$`Top10%` <- round(table1$`Top10%`, 2)
-kable(table1, caption = "Table 1: Pre-tax factor income")
+kable(table1, caption = "Pre-tax factor income")
 ```
 
 Betrachtet man das factorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini, also das Maß für ungleichheit, sich konstant zwischen den Werten 0.43 und 0.49 bewegt. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt. Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten 10% verdient wird. Interessant ist es auch zu beobachten wie sich dieser Anteil in den letzten Jahren entwickelt hat. Dabei gab es einen Ansteig von 17% im Jahr 2005 auf beinahe 40% im Jahr 2017. Auch die Einkommensquatilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 72.34576. Jedoch sinkt diese Ratio danach wieder; im Jahr 2017 verdienen die am oberen Ende der Einkommen angesiedelten 20% in etwa 36 mal so viel wie jene am unteren Ende. 
