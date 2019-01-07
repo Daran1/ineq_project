@@ -3,12 +3,12 @@ title: "Einkommensverteilung in Österreich"
 author: "Daran Demirol & Matthias Hagen"
 date: "06.01.2019"
 output:
-  html_document:
-    df_print: paged
-    toc: yes
   pdf_document:
     includes:
       in_header: header.tex
+    toc: yes
+  html_document:
+    df_print: paged
     toc: yes
 keywords: a, b, c
 bibliography: references.bib
@@ -49,7 +49,7 @@ Der weitere Text gliedert sich wie folgt: In Sektion Zwei werden Datenauswahl, d
 
 \newpage
 
-#Daten und Methodologie
+# Daten und Methodologie
 
 Als Grundlage dieser Seminararbeiten dienen Daten einer Erhebung der Europäischen Union: die European Union Statistics on Income and Living Conditions  (EU-SILC;  Gemeinschaftsstatistik über Einkommen und Lebensbedingungen). Seit 2005 erfasst das Europäische Statistische System Daten zu  Einkommen, Armut, soziale Ausgrenzung und Lebensbedingungen. In einigen Ländern reicht die Zeitspanne der Erhebung weiter zurück (e.g. österreichische Daten können auch bereits für das Jahr 2003 eingesehen werden). Dabei werden zwei verschiedene Arten von Daten erhoben: Es handelt sich dabei einerseits um Querschnittsdaten über einen bestimmten Zeitpunkt, andererseits Längsschnittdaten welche Veränderungen auf individueller Ebene über einen gewissen Zeitraum beobachten (Europäische Union). 
 Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozesse bezüglich der Existenz von Armut und sozialer Exklusion der Bevölkerung. Generell umfassen die EU-SILC daten 4 verschiedene Arten von Daten: 
@@ -60,7 +60,7 @@ Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozes
 (iv) Variablen die auf persönlicher Ebene gesammelt und analysiert werden, sogenannte “detailed variables” (GESIS).
 
 
-##Variablen
+## Variablen
 Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. aus den Datensätzen wurden die folgenden variablen herangezogen:
 
 (i) Household Register: db010, db020, db030, db040, db090
@@ -79,7 +79,7 @@ Unter anderem werden in dieser Analyse folgende Indikatoren für Österreich ber
 **20/80 Share Ratio**: Die Einkommensquintilanteilsquote oder die S80/S20 Share Ratio ist ein Maß für die Ungleichheit der Einkommensverteilung. Sie wird als Verhältnis des Gesamteinkommens der 20% der Bevölkerung mit dem höchsten Einkommen (dem obersten Quintil) zu dem Einkommen der 20% der Bevölkerung mit dem niedrigsten Einkommen (dem unteren Quintil) berechnet.   
 **Top 10% Income Share**: Anteil des Einkommens das von den zehn höchsten Prozent gehalten wird.   
 
-##Einkommens-Versionen
+## Einkommens-Versionen
 
 Die Ergebnisse jeder empirischen untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig (Kitterer). In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben (Kitterer). Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
 
@@ -87,16 +87,16 @@ Generell ist es möglich zwischen Haushaltseinkommen und persönlichem Einkommen
 
 In der im Zuge dieser Seminararbeit durchgeführten Analyse  wurden folgende Einkommenskonzepte, bestehend aus den unten angegebenen Variablen der EU-SILC Daten, herangezogen und berechnet: 
 
-###1. Pre-tax factor income (Canberra: primary income)
+### 1. Pre-tax factor income (Canberra: primary income)
 Summe aus:
 (1) Einkommen aus Arbeit (inkl. Selbstständige): gross employee cash or near cash income (py010g), company car (py021g), gross cash benefits or losses from self-employment (including royalties) (py050g), income received by people aged under 16 (hy110g).
 (2) Vermögenseinkommen: income from rental of a property or land (hy040g), interests, dividends, profit from capital investments in unincorporated business (hy090g), pensions received from individual private plans (py080g).
  
-###2. Pre-tax national income: 
+### 2. Pre-tax national income: 
 Summe aus:
 (1), (2), (3) Pensionen und Arbeitslosengeld: unemployment benefits (py090g), old-age benefits (py100g).
  
-###3. Post-tax disposable income:
+### 3. Post-tax disposable income:
 Summe aus:
 (1), (2), (3), (4) Alle anderen erhaltenen Transferzahlungen: survivor' benefits (py110g), sickness benefits (py120g), disability benefits (py130g), education-related allowances (py140g), family/children related allowances (hy050g), social exclusion not elsewhere classified (hy060g), housing allowances (hy070g), regular inter-household cash transfers received (hy080g);   
 abzüglich:  
@@ -105,21 +105,26 @@ Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschied
 
 \newpage
 
-#Ergebnisse
+# Ergebnisse
 
 Im folgenden werden die oben genannten Indikatoren für alle Formen des Einkommens, sowie Anhand der Unterscheidung zwischen den Grundgesamtheiten (Gesamte Bevölkerung sowie Personen über 20 Jahre) berechnet und aufgezeigt werden.    
 
-##Grundgesamtheit 1: Gesamte Bevölerkung
+## Grundgesamtheit 1: Gesamte Bevölerkung
 
-###Table 1: Pre-tax factor income
+### Table 1: Pre-tax factor income
 
 ```{r echo=FALSE}
-kable(readRDS("tables/_tables_AUT_p1_1.rds"))
+table1 <- readRDS("tables/_tables_AUT_p1_1.rds")
+table1[2:3] <- format(table1[2:3], digits = 5, big.mark = ",")
+table1$Gini <- round(table1$Gini, 2)
+table1$`P80/P20` <- round(table1$`P80/P20`, 1)
+table1$`Top10%` <- round(table1$`Top10%`, 2)
+kable(table1, caption = "Table 1: Pre-tax factor income")
 ```
 
 Betrachtet man das factorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini, also das Maß für ungleichheit, sich konstant zwischen den Werten 0.43 und 0.49 bewegt. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt. Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten 10% verdient wird. Interessant ist es auch zu beobachten wie sich dieser Anteil in den letzten Jahren entwickelt hat. Dabei gab es einen Ansteig von 17% im Jahr 2005 auf beinahe 40% im Jahr 2017. Auch die Einkommensquatilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 72.34576. Jedoch sinkt diese Ratio danach wieder; im Jahr 2017 verdienen die am oberen Ende der Einkommen angesiedelten 20% in etwa 36 mal so viel wie jene am unteren Ende. 
 
-###Table 2: Pre-tax national income
+### Table 2: Pre-tax national income
 
 ```{r echo=FALSE}
 kable(readRDS("tables/_tables_AUT_p1_2.rds"))
@@ -127,7 +132,7 @@ kable(readRDS("tables/_tables_AUT_p1_2.rds"))
  
 Inkludiert man sowohl Pension wie auch Arbeitslosengeld, also soziale Transferleistungen, so verändert sich das Bild maßgeblich. Sowohl Mittelwert als auch Median sind höher, genauer gesagt in etwa zwischen 3000 und 5000 höher als in der vorhergeangenen Berechnung. Der Gini-Koeffizient liegt im Jahr 2017 bei 0.35. Dies ist um 0.1 weniger als in der obigen Bemerkung und ist nicht überraschend, da sowohl Arbeitslosengeld wie auch Pensionen dazu beitragen sollten, dass Einkommen gleichmäßiger verteilt sind. Auch die Anteile der oberen im Vergleich zum unteren Ende verhält sich ausgeglichener. Diese bewegt sich zwischen 5.5 und 7.8 und betrug im Jahr 2017 circa 6.9. Somit verdienten die oberen 20% in etwa 7 mal so viel wie jene am unteren Ende. Nicht so stark veränderte sich der Anteil der Top10% am Einkommen. Zwar ist dieses geringer als zuvor, übertrifft aber im Jahr 2017 immer noch 35%. Auch hier hat sich der Wert seit 2005 fast verdoppeln können. 
  
-###Table 3: Post-tax disposable income
+### Table 3: Post-tax disposable income
 
 ```{r echo=FALSE}
 kable(readRDS("tables/_tables_AUT_p1_3.rds"))
@@ -135,9 +140,9 @@ kable(readRDS("tables/_tables_AUT_p1_3.rds"))
 
 Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte inklusive aller anderen transferzahlungen abzüglich geleisteter Steuerleistungen. Wie zu erwarten sind Mittelwert und Median geringer als bei den obigen Tabellen. Das Österreichische Steuersystem dient auch dazu, Einkommen umzuverteilen. Dies lässt sich im Gini-Koeffizienten feststellen. Dieser ist zwar mit über 0.25 noch immer hoch, ist aber besser als in den vorherigen Einkommenskonzepten. Somit kann man sagen, dass eine Umverteilung durch Steuern zumindest in einem gewissen Ausmaß erfolgreich ist. Auch die Einkommensquantile lassen auf eine ausgewogenere Aufteilung der Einkommen schließen. Diese ist jetzt durchgehend unter fünf. Der Anteil der Top10% am Einkommen hingegen ist weiterhin relativ hoch mit einem Wert von über 35% im Jahre 2017. 
 
-##Grundgesamtheit 2: Personen über 20 Jahre
+## Grundgesamtheit 2: Personen über 20 Jahre
 
-###Table 4: Pre-tax factor income (Canberra: primary income)
+### Table 4: Pre-tax factor income (Canberra: primary income)
 
 ```{r echo=FALSE}
 kable(readRDS("tables/_tables_AUT_p2_1.rds"))
@@ -145,7 +150,7 @@ kable(readRDS("tables/_tables_AUT_p2_1.rds"))
 
 Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient sich aber anders als die obigen Tables einer anderen Grundgesamtheit, nämlich lediglich jenen ÖsterreicherInnen die über 20 Jahre alt sind. Dabei sieht man gleich, dass sowohl Mittelwert als auch Median deutlich höher sind als bei Verwendung der anderen Grundgesamtheit. Im Jahr 2017 ist der Mittelwert um etwa 25000 höher, der Median circa um 16000. Die Ungleichheit higegen ist leicht gestiegen, mit höchstwerten des Gini-Koeffizienten knapp unter der 0.5 Marke. Sichtbar ist das auch durch die Anteile der Top10% am Gesamteinkommen sowie die Einkommensquantil-Ratio welche beide höher sind mit je über 40000 und 106000. Letztere deutet sogar auf teilweise 326000 mal so hohe Einkommen der Personen in oberen Ende der Einkommensverteilung.
 
-###Table 5: Pre-tax national income
+### Table 5: Pre-tax national income
 
 ```{r echo=FALSE}
 kable(readRDS("tables/_tables_AUT_p2_2.rds"))
@@ -153,7 +158,7 @@ kable(readRDS("tables/_tables_AUT_p2_2.rds"))
  
 Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskonzept Mittelwert und Median um einen ähnlichen Betrag höher. Der Gini-Koeffizient ist mit 0.4 im Jahr 2017 jedoch noch relativ groß. In relation zum obigen Vergleichswert mit anderer Grundgesamtheit ist die 20/80 Share Ratio höher, jedoch der Anteil der obersten 10% am Einkommen ähnlich. 
 
-###Table 6: Post-tax disposable income
+### Table 6: Post-tax disposable income
 
 ```{r echo=FALSE}
 kable(readRDS("tables/_tables_AUT_p2_3.rds"))
@@ -163,11 +168,11 @@ Interessanterweise verändert sich der Gini hier nicht maßgeblich nach dem Abzu
 
 \newpage
 
-##Grafiken zur entwicklung des Gini-Koeffizienten und der Top10% Share Ratio  
+## Grafiken zur entwicklung des Gini-Koeffizienten und der Top10% Share Ratio  
 
 Im folgenden Abschnitt befinden wird ein Überblick über die Entwicklung des Gini-Koeffizienten, sowie der Top 10% Share Ratio gegeben. Diese werden durch Grafiken für beide Grundgesamtheiten und jeweils alle drei Einkommenskonzepte dargestellt. Darüber hinaus soll der Verlauf und die Entwicklung über im Zeitraum 2005 bis 2017 dargestellt werden. 
 
-###Grundgesamtheit 1: Gesamte Bevölerkung
+### Grundgesamtheit 1: Gesamte Bevölerkung
 
 Im diesem Abshcnitt werden die Indikatoren auf Basis der gesamten Bevölkerung dargestellt. Die Einkommenskonzepte entsprechen den vorher erwähnten Konzepten. 
 
@@ -179,13 +184,13 @@ Der Gini-Koeffizient, welcher einen Einblick in die Verteilung von Einkommen gib
   
 Ein anderes Bild ergibt sich bei betracht des Anteils der Top 10% am Einkommen. In allen Einkommenskonzepten ist eine ähnlich Entwiclung beobachtbar. nach einem kurzen Rückgang zwischen 2005 und 2006 steigt der Anteil danach kontinuirlich an. Seit 2006 hat sich dieser Wert in allen Fällen in etwa verdoppelt. Eine problematische Entwicklung da die höchsten Einkommen einen immer höheren Anteil der Einkommen einnehmen. Langfristig kann diese Entwicklung nicht zu einer ausgewogenen, fairen Verteilung beitragen. 
 
-###Grundgesamtheit 2: Personen über 20 Jahre
+### Grundgesamtheit 2: Personen über 20 Jahre
 
 ![](img/Gini_P2.png){width=80%}
   
 Wie in der oberen Grafik ist die Entwicklung des Gini-Koeffizienten relativ konstant. Interessant ist es zu beobachten, dass in diesem Fall der Wert für alle Einkommenskonzepte höher ist. Der Unterschied zwischen Post-tax national income und Pre-tax national income im Vergleich zum Pre-tax factor income ist um einiges geringer. Die ersten beiden bewegen sich nahe der 0.4 Marke, um einiges höher als zuvor. 
 
-![](img/Top10_P2.png){width=80%}
+![](img/Top10_p2.png){width=80%}
   
 Ähnlich wie in der Analyse der Top10% Income shares der gesamten Bevölkerung entwickelt sich der Indikator für eine Grundgesamtheit die alle über 20Jährigen berücksichtigt. Insgesamt hat sich der Wert 2017 in etwa verdoppelt verglichen mit dem Ausgangswert von 2005. Auch hier gab es eine rapide, konstante, Entwicklung nach oben welche lediglich zwischen 2005 und 2006 sowie zwischen 2010 un 2012, sowie 2014 und 2015 stagnierte, beziehungsweise Rückläufig war. 
 
@@ -193,7 +198,7 @@ Wie in der oberen Grafik ist die Entwicklung des Gini-Koeffizienten relativ kons
 
 # Zusammenfassung
 
-##Ausblick  
+## Ausblick  
 
 Des weiteren sind wir uns noch uneinig welche Spezialisierung wir in unserer Arbeit einbauen werden. Nach derzeitigem Stand wäre es für uns am interessantesten, das Gender-Pay-Gap einzuarbeiten. Jedoch ist sich dies in der derzeitigen Version der Seminararbeit noch nicht möglich und wird im finalen Bericht eingebaut
 
