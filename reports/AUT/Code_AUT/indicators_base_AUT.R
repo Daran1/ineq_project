@@ -492,7 +492,7 @@ gini_p1 <- ggplot() +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
   theme(legend.position="bottom", legend.direction = "vertical", 
-        panel.grid.major = element_blank())
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1))
 
 gini_p1
 
@@ -515,7 +515,7 @@ gini_p2 <- ggplot() +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
   theme(legend.position="bottom", legend.direction="vertical", 
-        panel.grid.major = element_blank())
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1))
         
 gini_p2
 
@@ -540,7 +540,7 @@ Top10_p1 <- ggplot() +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
   theme(legend.position="bottom", legend.direction = "vertical", 
-        panel.grid.major = element_blank())
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Top10_p1
 
@@ -549,7 +549,7 @@ Top10_p1
 
 Top10_p2 <- ggplot() +
   geom_line(mapping = aes(y = table_p2_1$"Top10%", x = table_p2_1$Year,
-                          color = "Top10% vor Steuern (Pre-tax factor income)"), size = 1 ) +
+                          color = "Top10% vor Steuern (Pre-tax factor income)"), size = 1) +
   geom_line(mapping = aes(y = table_p2_2$"Top10%", x = table_p2_2$Year,
                           color = "Top10% vor Steuern (Pre-tax national income)"), size = 1) +
   geom_line(mapping = aes(y = table_p2_3$"Top10%", x = table_p2_3$Year,
@@ -564,11 +564,12 @@ Top10_p2 <- ggplot() +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
   theme(legend.position="bottom", legend.direction = "vertical", 
-        panel.grid.major = element_blank())
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Top10_p2
 
 
+#####alternative line for the legend position theme(legend.position=c(0.25, 0.5), legend.direction = "vertical", 
 
 ####Test Top 10% alternative berechnung.....
 
