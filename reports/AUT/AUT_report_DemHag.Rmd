@@ -145,7 +145,7 @@ table3[2:3] <- format(table3[2:3], digits = 5, big.mark = ",")
 table3$Gini <- round(table3$Gini, 2)
 table3$`P80/P20` <- round(table3$`P80/P20`, 1)
 table3$`Top10%` <- round(table3$`Top10%`, 2)
-kable(table3, caption = "Pre-tax factor income")
+kable(table3, caption = "Post-tax disposable income")
 ```
 
 Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte inklusive aller anderen transferzahlungen abzüglich geleisteter Steuerleistungen. Wie zu erwarten sind Mittelwert und Median geringer als bei den obigen Tabellen. Das Österreichische Steuersystem dient auch dazu, Einkommen umzuverteilen. Dies lässt sich im Gini-Koeffizienten feststellen. Dieser ist zwar mit über 0.25 noch immer hoch, ist aber besser als in den vorherigen Einkommenskonzepten. Somit kann man sagen, dass eine Umverteilung durch Steuern zumindest in einem gewissen Ausmaß erfolgreich ist. Auch die Einkommensquantile lassen auf eine ausgewogenere Aufteilung der Einkommen schließen. Diese ist jetzt durchgehend unter fünf. Der Anteil der Top10% am Einkommen hingegen ist weiterhin relativ hoch mit einem Wert von über 35% im Jahre 2017. 
@@ -160,7 +160,7 @@ table4[2:3] <- format(table4[2:3], digits = 5, big.mark = ",")
 table4$Gini <- round(table4$Gini, 2)
 table4$`P80/P20` <- round(table4$`P80/P20`, 1)
 table4$`Top10%` <- round(table4$`Top10%`, 2)
-kable(table4, caption = "Pre-tax factor income")
+kable(table4, caption = "Pre-tax factor income (Canberra: primary income)")
 ```
 
 Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient sich aber anders als die obigen Tables einer anderen Grundgesamtheit, nämlich lediglich jenen ÖsterreicherInnen die über 20 Jahre alt sind. Dabei sieht man gleich, dass sowohl Mittelwert als auch Median deutlich höher sind als bei Verwendung der anderen Grundgesamtheit. Im Jahr 2017 ist der Mittelwert um etwa 25000 höher, der Median circa um 16000. Die Ungleichheit higegen ist leicht gestiegen, mit höchstwerten des Gini-Koeffizienten knapp unter der 0.5 Marke. Sichtbar ist das auch durch die Anteile der Top10% am Gesamteinkommen sowie die Einkommensquantil-Ratio welche beide höher sind mit je über 40000 und 106000. Letztere deutet sogar auf teilweise 326000 mal so hohe Einkommen der Personen in oberen Ende der Einkommensverteilung.
@@ -173,7 +173,7 @@ table5[2:3] <- format(table5[2:3], digits = 5, big.mark = ",")
 table5$Gini <- round(table5$Gini, 2)
 table5$`P80/P20` <- round(table5$`P80/P20`, 1)
 table5$`Top10%` <- round(table5$`Top10%`, 2)
-kable(table5, caption = "Pre-tax factor income")
+kable(table5, caption = "Pre-tax national income")
 ```
  
 Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskonzept Mittelwert und Median um einen ähnlichen Betrag höher. Der Gini-Koeffizient ist mit 0.4 im Jahr 2017 jedoch noch relativ groß. In relation zum obigen Vergleichswert mit anderer Grundgesamtheit ist die 20/80 Share Ratio höher, jedoch der Anteil der obersten 10% am Einkommen ähnlich. 
@@ -186,7 +186,7 @@ table6[2:3] <- format(table6[2:3], digits = 5, big.mark = ",")
 table6$Gini <- round(table6$Gini, 2)
 table6$`P80/P20` <- round(table6$`P80/P20`, 1)
 table6$`Top10%` <- round(table6$`Top10%`, 2)
-kable(table6, caption = "Pre-tax factor income")
+kable(table6, caption = "Post-tax disposable income")
 ```
 
 Interessanterweise verändert sich der Gini hier nicht maßgeblich nach dem Abzug von Steuern. Berechnet man das Einkommen also nur für all jene über 20, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus. Der Anteil der oberen 10% am Gesamteinkommen ist im vergleich zum Einkommen vor der Steuer konstatn geblieben, bzw. leicht angestiegen. 
