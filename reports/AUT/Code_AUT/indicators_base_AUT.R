@@ -26,11 +26,10 @@ source("reports/AUT/Code_AUT/_setup_AUT.R")
 
 #### Continue here
 # Positive income
-silc.inc_1 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
-                                   posttax > 0)
+silc.inc_1 <- silc.rph 
+
 # Positive income > 20
-silc.inc_2 <- silc.rph %>% filter(Can_inc > 0, prenatincom > 0, 
-                                   posttax > 0, age > 20)
+silc.inc_2 <- silc.rph %>% filter(age >= 20) 
 
 # Creating Survey Objects -------------------------------------------------
 # Positive income for all 
@@ -571,7 +570,12 @@ Top10_p2
 
 
 
+####Test Top 10% alternative berechnung.....
 
 
+table_new__1_1 <- svyby(~posttax, by= ~as.factor(rb010), silc.inc_1.svy, FUN=svyquantile, ~posttax, quantiles = seq(0, 1, 0.1), keep.var = FALSE)
+table_new
 
-
+table_new$qsr <- table_new$statistic9/table_new$statistic3
+table_new$qsr <- table_new$qsr/10
+table_new$qsr
