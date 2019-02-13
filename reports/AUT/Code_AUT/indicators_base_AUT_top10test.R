@@ -761,9 +761,8 @@ svytotal(~Can_inc, subset(test.svy17, pb020 == "AT" & Can_inc >=
   svytotal(~Can_inc, subset(test.svy17, pb020 == "AT"))
 
 
-time <- seq(2005:2017, 1)
 
-testtop10Can_inc <- #c(0.31382, 0.31524, 0.32488, 0.32979, 0.33647, 0.34559, 0.33004, 0.33174, 0.33372, 0.33882, 0.33943, 0.33948, 0.34348)
+testtop10Can_inc <- c(0.31382, 0.31524, 0.32488, 0.32979, 0.33647, 0.34559, 0.33004, 0.33174, 0.33372, 0.33882, 0.33943, 0.33948, 0.34348)
 
 dim(testtop10Can_inc) <- c(13,1)
 colnames(testtop10Can_inc) <- c("Can_inc")
@@ -958,9 +957,7 @@ svytotal(~prenatincom, subset(test.svy17, pb020 == "AT" & prenatincom >=
   svytotal(~prenatincom, subset(test.svy17, pb020 == "AT"))
 
 
-time <- seq(2005:2017, 1)
-
-testtop10prenatincom <- #c(0.26932, 0.25895, 0.26934, 0.27479, 0.27911, 0.28489, 0.27504, 0.27982, 0.27993, 0.28257, 0.27824, 0.27948, 0.28391)
+testtop10prenatincom <- c(0.26932, 0.25895, 0.26934, 0.27479, 0.27911, 0.28489, 0.27504, 0.27982, 0.27993, 0.28257, 0.27824, 0.27948, 0.28391)
 
 dim(testtop10prenatincom) <- c(13,1)
 colnames(testtop10prenatincom) <- c("prenatincom")
@@ -1167,22 +1164,216 @@ testtop10posttax
 
 #########################P2 Berechnung
 ###############Top10
-#############income_wid_1
+#############income_wid_2
 
 
 ###########################################################################################################
+#TOP10 income_wid_2
+#2005
+test05income_wid_2 <- silc.rph %>% filter(rb010 == "2005", age >= 20)
+
+test.svy05income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test05income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy05, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy05, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy05, pb020 == "AT"))
+
+#2006
+
+test06income_wid_2 <- silc.rph %>% filter(rb010 == "2006",age >= 20)
+
+test.svy06income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test06income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy06, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy06, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy06, pb020 == "AT"))
+
+
+#2007
+test07income_wid_2 <- silc.rph %>% filter(rb010 == "2007", age >= 20)
+
+test.svy07income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test07income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy07, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy07, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy07, pb020 == "AT"))
+
+
+#2008
+test08income_wid_2 <- silc.rph %>% filter(rb010 == "2008", age >= 20)
+
+test.svy08income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test08income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy08, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy08, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy08, pb020 == "AT"))
+
+#2009
+
+test09income_wid_2 <- silc.rph %>% filter(rb010 == "2009", age >= 20)
+
+test.svy09income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test09income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy09, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy09, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy09, pb020 == "AT"))
+
+#2010
+
+test10income_wid_2 <- silc.rph %>% filter(rb010 == "2010", age >= 20)
+
+test.svy10income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test10income_wid_2) %>% convey_prep()
+svytotal(~income_wid_2, subset(test.svy10, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy10, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy10, pb020 == "AT"))
+
+#2011
+
+test11income_wid_2 <- silc.rph %>% filter(rb010 == "2011", age >= 20)
+
+test.svy11income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test11income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy11, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy11, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy11, pb020 == "AT"))
+
+#2012
+
+test12income_wid_2 <- silc.rph %>% filter(rb010 == "2012", age >= 20)
+
+test.svy12income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test12income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy12, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy12, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy12, pb020 == "AT"))
+
+#2013
+
+test13income_wid_2 <- silc.rph %>% filter(rb010 == "2013", age >= 20)
+
+test.svy13income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test13income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy13, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy13, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy13, pb020 == "AT"))
+
+#2014
+
+test14income_wid_2 <- silc.rph %>% filter(rb010 == "2014", age >= 20)
+
+test.svy14income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test14income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy14, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy14, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy14, pb020 == "AT"))
+
+#2015
+
+test15income_wid_2 <- silc.rph %>% filter(rb010 == "2015", age >= 20)
+
+test.svy15income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test15income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy15, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy15, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy15, pb020 == "AT"))
+
+#2016
+
+test16income_wid_2 <- silc.rph %>% filter(rb010 == "2016", age >= 20)
+
+test.svy16income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test16income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy16, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy16, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy16, pb020 == "AT"))
+
+#2017
+
+test17income_wid_2 <- silc.rph %>% filter(rb010 == "2017", age >= 20)
+
+test.svy17income_wid_2 <- svydesign(ids =  ~ id_h,
+                               strata = ~rb020,
+                               weights = ~rb050,
+                               data = test17income_wid_2) %>% convey_prep()
+
+svytotal(~income_wid_2, subset(test.svy17, pb020 == "AT" & income_wid_2 >= 
+                            as.numeric(
+                              svyquantile(~income_wid_2, test.svy17, quantile = 0.9)))) / 
+  svytotal(~income_wid_2, subset(test.svy17, pb020 == "AT"))
+
+
+testtop10income_wid_2 <- c(0.28684, 0.27328, 0.28238, 0.29415, 0.29307, 0.30238, 0.29064, 0.29593, 0.29449, 0.2936, 0.28739, 0.28821, 0.29676)
+
+dim(testtop10income_wid_2) <- c(13,1)
+colnames(testtop10income_wid_2) <- c("income_wid_2")
+class(testtop10income_wid_2)
+testtop10income_wid_2 <- as.data.frame(testtop10income_wid_2)
+
+testtop10income_wid_2
+
+
+#########################################income_wid_2  
+
 #TOP10 income_wid_1
 #2005
 test05income_wid_1 <- silc.rph %>% filter(rb010 == "2005", age >= 20)
 
 test.svy05income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test05income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test05income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy05, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy05, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy05, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy05, pb020 == "AT"))
 
 #2006
@@ -1190,13 +1381,13 @@ svytotal(~income_wid_1, subset(test.svy05, pb020 == "AT" & income_wid_1 >=
 test06income_wid_1 <- silc.rph %>% filter(rb010 == "2006",age >= 20)
 
 test.svy06income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test06income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test06income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy06, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy06, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy06, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy06, pb020 == "AT"))
 
 
@@ -1204,13 +1395,13 @@ svytotal(~income_wid_1, subset(test.svy06, pb020 == "AT" & income_wid_1 >=
 test07income_wid_1 <- silc.rph %>% filter(rb010 == "2007", age >= 20)
 
 test.svy07income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test07income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test07income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy07, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy07, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy07, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy07, pb020 == "AT"))
 
 
@@ -1218,13 +1409,13 @@ svytotal(~income_wid_1, subset(test.svy07, pb020 == "AT" & income_wid_1 >=
 test08income_wid_1 <- silc.rph %>% filter(rb010 == "2008", age >= 20)
 
 test.svy08income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test08income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test08income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy08, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy08, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy08, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy08, pb020 == "AT"))
 
 #2009
@@ -1232,13 +1423,13 @@ svytotal(~income_wid_1, subset(test.svy08, pb020 == "AT" & income_wid_1 >=
 test09income_wid_1 <- silc.rph %>% filter(rb010 == "2009", age >= 20)
 
 test.svy09income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test09income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test09income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy09, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy09, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy09, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy09, pb020 == "AT"))
 
 #2010
@@ -1246,12 +1437,12 @@ svytotal(~income_wid_1, subset(test.svy09, pb020 == "AT" & income_wid_1 >=
 test10income_wid_1 <- silc.rph %>% filter(rb010 == "2010", age >= 20)
 
 test.svy10income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test10income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test10income_wid_1) %>% convey_prep()
 svytotal(~income_wid_1, subset(test.svy10, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy10, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy10, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy10, pb020 == "AT"))
 
 #2011
@@ -1259,13 +1450,13 @@ svytotal(~income_wid_1, subset(test.svy10, pb020 == "AT" & income_wid_1 >=
 test11income_wid_1 <- silc.rph %>% filter(rb010 == "2011", age >= 20)
 
 test.svy11income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test11income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test11income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy11, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy11, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy11, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy11, pb020 == "AT"))
 
 #2012
@@ -1273,13 +1464,13 @@ svytotal(~income_wid_1, subset(test.svy11, pb020 == "AT" & income_wid_1 >=
 test12income_wid_1 <- silc.rph %>% filter(rb010 == "2012", age >= 20)
 
 test.svy12income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test12income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test12income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy12, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy12, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy12, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy12, pb020 == "AT"))
 
 #2013
@@ -1287,13 +1478,13 @@ svytotal(~income_wid_1, subset(test.svy12, pb020 == "AT" & income_wid_1 >=
 test13income_wid_1 <- silc.rph %>% filter(rb010 == "2013", age >= 20)
 
 test.svy13income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test13) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test13) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy13, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy13, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy13, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy13, pb020 == "AT"))
 
 #2014
@@ -1301,13 +1492,13 @@ svytotal(~income_wid_1, subset(test.svy13, pb020 == "AT" & income_wid_1 >=
 test14income_wid_1 <- silc.rph %>% filter(rb010 == "2014", age >= 20)
 
 test.svy14income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test14income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test14income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy14, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy14, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy14, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy14, pb020 == "AT"))
 
 #2015
@@ -1315,13 +1506,13 @@ svytotal(~income_wid_1, subset(test.svy14, pb020 == "AT" & income_wid_1 >=
 test15income_wid_1 <- silc.rph %>% filter(rb010 == "2015", age >= 20)
 
 test.svy15income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test15income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test15income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy15, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy15, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy15, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy15, pb020 == "AT"))
 
 #2016
@@ -1329,13 +1520,13 @@ svytotal(~income_wid_1, subset(test.svy15, pb020 == "AT" & income_wid_1 >=
 test16income_wid_1 <- silc.rph %>% filter(rb010 == "2016", age >= 20)
 
 test.svy16income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test16income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test16income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy16, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy16, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy16, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy16, pb020 == "AT"))
 
 #2017
@@ -1343,24 +1534,218 @@ svytotal(~income_wid_1, subset(test.svy16, pb020 == "AT" & income_wid_1 >=
 test17income_wid_1 <- silc.rph %>% filter(rb010 == "2017", age >= 20)
 
 test.svy17income_wid_1 <- svydesign(ids =  ~ id_h,
-                               strata = ~rb020,
-                               weights = ~rb050,
-                               data = test17income_wid_1) %>% convey_prep()
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test17income_wid_1) %>% convey_prep()
 
 svytotal(~income_wid_1, subset(test.svy17, pb020 == "AT" & income_wid_1 >= 
-                            as.numeric(
-                              svyquantile(~income_wid_1, test.svy17, quantile = 0.9)))) / 
+                                 as.numeric(
+                                   svyquantile(~income_wid_1, test.svy17, quantile = 0.9)))) / 
   svytotal(~income_wid_1, subset(test.svy17, pb020 == "AT"))
 
 
 testtop10income_wid_1 <- c(0.31388, 0.30532, 0.31369, 0.32371, 0.32293, 0.33445, 0.32136, 0.3269, 0.32672, 0.32594, 0.31927, 0.31925, 0.32892)
 
 dim(testtop10income_wid_1) <- c(13,1)
-colnames(testtop10income_wid_1) <- c("posttax")
+colnames(testtop10income_wid_1) <- c("income_wid_1")
 class(testtop10income_wid_1)
 testtop10income_wid_1 <- as.data.frame(testtop10income_wid_1)
 
 testtop10income_wid_1
 
 
-###############income_wid_2 und _3 noch machen 
+
+
+####################################################################################################
+###########################################################################################################
+#TOP10 income_wid_3
+#2005
+test05income_wid_3 <- silc.rph %>% filter(rb010 == "2005", age >= 20)
+
+test.svy05income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test05income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy05, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy05, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy05, pb020 == "AT"))
+
+#2006
+
+test06income_wid_3 <- silc.rph %>% filter(rb010 == "2006",age >= 20)
+
+test.svy06income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test06income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy06, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy06, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy06, pb020 == "AT"))
+
+
+#2007
+test07income_wid_3 <- silc.rph %>% filter(rb010 == "2007", age >= 20)
+
+test.svy07income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test07income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy07, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy07, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy07, pb020 == "AT"))
+
+
+#2008
+test08income_wid_3 <- silc.rph %>% filter(rb010 == "2008", age >= 20)
+
+test.svy08income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test08income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy08, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy08, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy08, pb020 == "AT"))
+
+#2009
+
+test09income_wid_3 <- silc.rph %>% filter(rb010 == "2009", age >= 20)
+
+test.svy09income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test09income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy09, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy09, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy09, pb020 == "AT"))
+
+#2010
+
+test10income_wid_3 <- silc.rph %>% filter(rb010 == "2010", age >= 20)
+
+test.svy10income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test10income_wid_3) %>% convey_prep()
+svytotal(~income_wid_3, subset(test.svy10, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy10, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy10, pb020 == "AT"))
+
+#2011
+
+test11income_wid_3 <- silc.rph %>% filter(rb010 == "2011", age >= 20)
+
+test.svy11income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test11income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy11, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy11, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy11, pb020 == "AT"))
+
+#2012
+
+test12income_wid_3 <- silc.rph %>% filter(rb010 == "2012", age >= 20)
+
+test.svy12income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test12income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy12, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy12, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy12, pb020 == "AT"))
+
+#2013
+
+test13income_wid_3 <- silc.rph %>% filter(rb010 == "2013", age >= 20)
+
+test.svy13income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test13income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy13, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy13, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy13, pb020 == "AT"))
+
+#2014
+
+test14income_wid_3 <- silc.rph %>% filter(rb010 == "2014", age >= 20)
+
+test.svy14income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test14income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy14, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy14, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy14, pb020 == "AT"))
+
+#2015
+
+test15income_wid_3 <- silc.rph %>% filter(rb010 == "2015", age >= 20)
+
+test.svy15income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test15income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy15, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy15, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy15, pb020 == "AT"))
+
+#2016
+
+test16income_wid_3 <- silc.rph %>% filter(rb010 == "2016", age >= 20)
+
+test.svy16income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test16income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy16, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy16, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy16, pb020 == "AT"))
+
+#2017
+
+test17income_wid_3 <- silc.rph %>% filter(rb010 == "2017", age >= 20)
+
+test.svy17income_wid_3 <- svydesign(ids =  ~ id_h,
+                                    strata = ~rb020,
+                                    weights = ~rb050,
+                                    data = test17income_wid_3) %>% convey_prep()
+
+svytotal(~income_wid_3, subset(test.svy17, pb020 == "AT" & income_wid_3 >= 
+                                 as.numeric(
+                                   svyquantile(~income_wid_3, test.svy17, quantile = 0.9)))) / 
+  svytotal(~income_wid_3, subset(test.svy17, pb020 == "AT"))
+
+
+testtop10income_wid_3 <- c(0.28679, 0.27351, 0.27826, 0.29178, 0.2894, 0.29907, 0.28433, 0.28895, 0.28979, 0.28985, 0.28142, 0.28283, 0.28844)
+
+dim(testtop10income_wid_3) <- c(13,1)
+colnames(testtop10income_wid_3) <- c("income_wid_3")
+class(testtop10income_wid_3)
+testtop10income_wid_3 <- as.data.frame(testtop10income_wid_3)
+
+testtop10income_wid_3
+round(testtop10income_wid_3, 2)
