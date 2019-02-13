@@ -573,10 +573,185 @@ Top10_p2
 
 ####Test Top 10% alternative berechnung.....
 
+#Top10 
+#2005
+test05 <- silc.rph %>% filter(rb010 == "2005")
 
-table_new__1_1 <- svyby(~posttax, by= ~as.factor(rb010), silc.inc_1.svy, FUN=svyquantile, ~posttax, quantiles = seq(0, 1, 0.1), keep.var = FALSE)
-table_new
+test.svy05 <- svydesign(ids =  ~ id_h,
+                            strata = ~rb020,
+                            weights = ~rb050,
+                            data = test05) %>% convey_prep()
 
-table_new$qsr <- table_new$statistic9/table_new$statistic3
-table_new$qsr <- table_new$qsr/10
-table_new$qsr
+svytotal(~posttax, subset(test.svy05, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy05, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy05, pb020 == "AT"))
+
+#2006
+
+test06 <- silc.rph %>% filter(rb010 == "2006")
+
+test.svy06 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test06) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy06, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy06, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy06, pb020 == "AT"))
+
+
+#2007
+test07 <- silc.rph %>% filter(rb010 == "2007")
+
+test.svy07 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test07) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy07, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy07, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy07, pb020 == "AT"))
+
+
+#2008
+test08 <- silc.rph %>% filter(rb010 == "2008")
+
+test.svy08 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test08) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy08, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy08, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy08, pb020 == "AT"))
+
+#2009
+
+test09 <- silc.rph %>% filter(rb010 == "2009")
+
+test.svy09 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test09) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy09, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy09, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy09, pb020 == "AT"))
+
+#2010
+
+test10 <- silc.rph %>% filter(rb010 == "2010")
+
+test.svy10 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test10) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy10, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy10, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy10, pb020 == "AT"))
+
+#2011
+
+test11 <- silc.rph %>% filter(rb010 == "2011")
+
+test.svy11 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test11) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy11, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy11, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy11, pb020 == "AT"))
+
+#2012
+
+test12 <- silc.rph %>% filter(rb010 == "2012")
+
+test.svy12 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test12) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy12, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy12, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy12, pb020 == "AT"))
+
+#2013
+
+test13 <- silc.rph %>% filter(rb010 == "2013")
+
+test.svy13 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test13) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy13, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy13, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy13, pb020 == "AT"))
+
+#2014
+
+test14 <- silc.rph %>% filter(rb010 == "2014")
+
+test.svy14 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test14) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy14, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy14, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy14, pb020 == "AT"))
+
+#2015
+
+test15 <- silc.rph %>% filter(rb010 == "2015")
+
+test.svy15 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test15) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy15, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy15, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy15, pb020 == "AT"))
+
+#2016
+
+test16 <- silc.rph %>% filter(rb010 == "2016")
+
+test.svy16 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test16) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy16, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy16, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy16, pb020 == "AT"))
+
+#2017
+
+test17 <- silc.rph %>% filter(rb010 == "2017")
+
+test.svy17 <- svydesign(ids =  ~ id_h,
+                        strata = ~rb020,
+                        weights = ~rb050,
+                        data = test17) %>% convey_prep()
+
+svytotal(~posttax, subset(test.svy17, pb020 == "AT" & posttax >= 
+                            as.numeric(
+                              svyquantile(~posttax, test.svy17, quantile = 0.9)))) / 
+  svytotal(~posttax, subset(test.svy17, pb020 == "AT"))
+
