@@ -377,7 +377,7 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 # Pre-tax factor income (Canberra: primary income): Can_inc
 
 table_p1_1 <- data.frame(mean_p1_1$rb010, mean_p1_1$Can_inc, median_p1_1$Can_inc, 
-                         Gini_p1_1$Can_inc, p8020_p1_1$Can_inc, years_top10_p1_1$Can_inc)
+                         Gini_p1_1$Can_inc, p8020_p1_1$Can_inc, testtop10Can_inc$Can_inc)
 
 colnames(table_p1_1)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
@@ -397,7 +397,7 @@ table_p1_2 <- data.frame(mean_p1_2$rb010, mean_p1_2$prenatincom, median_p1_2$pre
 colnames(table_p1_2)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
-table_p1_2
+table_p1_2 
 
 write.csv(table_p1_2, "./reports/AUT/tables/_tables_AUT_p1_2.csv")
 
@@ -411,8 +411,9 @@ table_p1_3 <- data.frame(mean_p1_3$rb010, mean_p1_3$posttax, median_p1_3$posttax
 colnames(table_p1_3)<- c("Year", "Mean" ,"Median", "Gini", "P80/P20", 
                          "Top10%")
 
-table_p1_3
+table_p1_3 <- round(table_p1_3, 4)
 
+table_p1_3
 write.csv(table_p1_3, "./reports/AUT/tables/_tables_AUT_p1_3.csv")
 
 write_rds(table_p1_3, "./reports/AUT/tables/_tables_AUT_p1_3.rds")
