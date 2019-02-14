@@ -568,7 +568,7 @@ gini_p1 <- ggplot() +
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
-  theme(legend.position="bottom", legend.direction = "vertical", 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1))
 
 gini_p1
@@ -591,7 +591,7 @@ gini_p2 <- ggplot() +
        title = "Gini-Koeffizient des Einkommens von \n Personen über 20 Jahren") +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
-  theme(legend.position="bottom", legend.direction="vertical", 
+  theme(legend.position=c(0.7, 0.2), legend.direction="vertical", 
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1))
         
 gini_p2
@@ -616,7 +616,7 @@ Top10_p1 <- ggplot() +
   ylim(0,0.5) +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
-  theme(legend.position="bottom", legend.direction = "vertical", 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Top10_p1
@@ -640,8 +640,139 @@ Top10_p2 <- ggplot() +
   ylim(0,0.5) +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
-  theme(legend.position="bottom", legend.direction = "vertical", 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Top10_p2
+
+###Mean (P1)
+
+Mean_p1 <- ggplot() +
+  geom_line(mapping = aes(y = table_p1_1$"Mean", x = table_p2_1$Year,
+                          color = "Mittelwert vor Steuern (Pre-tax factor income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_2$"Mean", x = table_p2_2$Year,
+                          color = "Mittelwert vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_3$"Mean", x = table_p2_3$Year,
+                          color = "Mittelwert nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Mittelwert vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Mittelwert vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Mittelwert nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Mittelwert", 
+       title = "Mittelwert  der Einkommen der \n gesamten Bevölkerung") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+Mean_p1
+
+###Mean (P2)
+
+Mean_p2 <- ggplot() +
+  geom_line(mapping = aes(y = table_p2_1$"Mean", x = table_p2_1$Year,
+                          color = "Mittelwert vor Steuern (Pre-tax factor income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_2$"Mean", x = table_p2_2$Year,
+                          color = "Mittelwert vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_3$"Mean", x = table_p2_3$Year,
+                          color = "Mittelwert nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Mittelwert vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Mittelwert vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Mittelwert nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Mittelwert", 
+       title = "Mittelwert  der Einkommen der \n Bevölkerung über 20 Jahre") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+Mean_p2
+
+
+###Median (P1)
+
+Median_p1 <- ggplot() +
+  geom_line(mapping = aes(y = table_p1_1$"Median", x = table_p2_1$Year,
+                          color = "Median vor Steuern (Pre-tax factor income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_2$"Median", x = table_p2_2$Year,
+                          color = "Median vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_3$"Median", x = table_p2_3$Year,
+                          color = "Median nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Median vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Median vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Median nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Median", 
+       title = "Median  der Einkommen der \n gesamten Bevölkerung") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+Median_p1
+
+###Mean (P2)
+
+Median_p2 <- ggplot() +
+  geom_line(mapping = aes(y = table_p2_1$"Median", x = table_p2_1$Year,
+                          color = "Median vor Steuern (Pre-tax factor income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_2$"Median", x = table_p2_2$Year,
+                          color = "Median vor Steuern (Pre-tax national income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_3$"Median", x = table_p2_3$Year,
+                          color = "Median nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Median vor Steuern (Pre-tax factor income)' = 'darkred',
+                                'Median vor Steuern (Pre-tax national income)' = 'darkblue', 
+                                'Median nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
+  labs(color = '', x = "Jahr", y = "Median", 
+       title = "Median  der Einkommen der \n Bevölkerung über 20 Jahre") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+Median_p2
+
+#######
+#Mean vs Median nach Steuern (P1)#
+
+MedianMean_p1 <- ggplot() +
+  geom_line(mapping = aes(y = table_p1_3$"Mean", x = table_p1_3$Year,
+                          color = "Mittelwert nach Steuern (Post-tax disposable income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p1_3$"Median", x = table_p1_3$Year,
+                          color = "Median nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Mittelwert nach Steuern (Post-tax disposable income)' = 'darkblue',
+                                'Median nach Steuern (Post-tax disposable income)' = 'lightblue'))+
+  labs(color = '', x = "Jahr", y = "Median/Mittelwert", 
+       title = "Median und Mittelwert der Einkommen der \n gesamten Bevölkerung") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+MedianMean_p1
+#Mean vs Median nach Steuern (P2)#
+
+MedianMean_p2 <- ggplot() +
+  geom_line(mapping = aes(y = table_p2_3$"Mean", x = table_p2_3$Year,
+                          color = "Mittelwert nach Steuern (Post-tax disposable income)"), size = 1) +
+  geom_line(mapping = aes(y = table_p2_3$"Median", x = table_p2_3$Year,
+                          color = "Median nach Steuern (Post-tax disposable income)"), size = 1) +
+  scale_color_manual(values = c('Mittelwert nach Steuern (Post-tax disposable income)' = 'darkblue',
+                                'Median nach Steuern (Post-tax disposable income)' = 'lightblue'))+
+  labs(color = '', x = "Jahr", y = "Median/Mittelwert", 
+       title = "Median und Mittelwert der Einkommen der \n Bevölkerung über 20 Jahre") + 
+  scale_x_discrete(limits=2005:2017) + 
+  guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
+  theme_light()+ 
+  theme(legend.position=c(0.7, 0.2), legend.direction = "vertical", 
+        panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
+
+MedianMean_p2
+
+
+
+####alternative line for the legend position theme(legend.position=c(0.25, 0.5), legend.direction = "vertical", 
 
