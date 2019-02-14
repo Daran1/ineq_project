@@ -564,7 +564,7 @@ gini_p1 <- ggplot() +
                                 'Gini vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Gini nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Gini", 
-       title = "Gini-Koeffizient des Einkommens der \n gesamten Bevölkerung") + 
+       title = "Gini-Koeffizient des Einkommens der gesamten Bevölkerung") + 
   ylim(0, 0.6) +
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
@@ -590,7 +590,7 @@ gini_p2 <- ggplot() +
   scale_x_discrete(limits=2005:2017) + 
   ylim(0, 0.6) +
   labs(color = '', x = "Jahr", y = "Gini", 
-       title = "Gini-Koeffizient des Einkommens von \n Personen über 20 Jahren") +
+       title = "Gini-Koeffizient des Einkommens von Personen über 20 Jahren") +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
   theme(legend.position=c(0.7, 0.2), legend.direction="vertical", 
@@ -613,7 +613,7 @@ Top10_p1 <- ggplot() +
                                 'Top10% vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Top10% nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Top10%", 
-       title = "Top10%  des Einkommens der \n gesamten Bevölkerung") + 
+       title = "Top10%  des Einkommens der gesamten Bevölkerung") + 
   scale_x_discrete(limits=2005:2017) + 
   ylim(0,0.5) +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
@@ -637,7 +637,7 @@ Top10_p2 <- ggplot() +
                                 'Top10% vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Top10% nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Top10%", 
-       title = "Top10%  des Einkommens der \n Bevölkerung über 20 Jahre") + 
+       title = "Top10%  des Einkommens der Bevölkerung über 20 Jahre") + 
   scale_x_discrete(limits=2005:2017) + 
   ylim(0,0.5) +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
@@ -662,7 +662,7 @@ Mean_p1 <- ggplot() +
                                 'Mittelwert vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Mittelwert nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Mittelwert", 
-       title = "Mittelwert  der Einkommen der \n gesamten Bevölkerung") + 
+       title = "Mittelwert  der Einkommen der gesamten Bevölkerung") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
@@ -686,7 +686,7 @@ Mean_p2 <- ggplot() +
                                 'Mittelwert vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Mittelwert nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Mittelwert", 
-       title = "Mittelwert  der Einkommen der \n Bevölkerung über 20 Jahre") + 
+       title = "Mittelwert  der Einkommen der Bevölkerung über 20 Jahre") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
@@ -709,7 +709,7 @@ Median_p1 <- ggplot() +
                                 'Median vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Median nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Median", 
-       title = "Median  der Einkommen der \n gesamten Bevölkerung") + 
+       title = "Median  der Einkommen der gesamten Bevölkerung") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
@@ -733,7 +733,7 @@ Median_p2 <- ggplot() +
                                 'Median vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Median nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   labs(color = '', x = "Jahr", y = "Median", 
-       title = "Median  der Einkommen der \n Bevölkerung über 20 Jahre") + 
+       title = "Median  der Einkommen der Bevölkerung über 20 Jahre") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
@@ -755,7 +755,7 @@ MedianMean_p1 <- ggplot() +
   scale_color_manual(values = c('Mittelwert nach Steuern (Post-tax disposable income)' = 'darkblue',
                                 'Median nach Steuern (Post-tax disposable income)' = 'lightblue'))+
   labs(color = '', x = "Jahr", y = "Median/Mittelwert", 
-       title = "Median und Mittelwert der Einkommen der \n gesamten Bevölkerung") + 
+       title = "Median und Mittelwert der Einkommen der gesamten Bevölkerung") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
@@ -777,7 +777,7 @@ MedianMean_p2 <- ggplot() +
   scale_color_manual(values = c('Mittelwert nach Steuern (Post-tax disposable income)' = 'darkblue',
                                 'Median nach Steuern (Post-tax disposable income)' = 'lightblue'))+
   labs(color = '', x = "Jahr", y = "Median/Mittelwert", 
-       title = "Median und Mittelwert der Einkommen der \n Bevölkerung über 20 Jahre") + 
+       title = "Median und Mittelwert der Einkommen der Bevölkerung über 20 Jahre") + 
   scale_x_discrete(limits=2005:2017) + 
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
   theme_light()+ 
