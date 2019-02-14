@@ -367,6 +367,83 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 
 
 
+
+#------------------------------------------------------------------------------------------
+#
+#including Top 10 shares as calculated in file indicators_base_AUT_top10test.R
+#
+#------------------------------------------------------------------------------------------
+
+
+#Can_inc
+
+testtop10Can_inc <- c(0.31382, 0.31524, 0.32488, 0.32979, 0.33647, 0.34559, 0.33004, 0.33174, 0.33372, 0.33882, 0.33943, 0.33948, 0.34348)
+
+dim(testtop10Can_inc) <- c(13,1)
+colnames(testtop10Can_inc) <- c("Can_inc")
+class(testtop10Can_inc)
+testtop10Can_inc <- as.data.frame(testtop10Can_inc)
+
+testtop10Can_inc
+
+#prenatincom
+
+
+testtop10prenatincom <- c(0.26932, 0.25895, 0.26934, 0.27479, 0.27911, 0.28489, 0.27504, 0.27982, 0.27993, 0.28257, 0.27824, 0.27948, 0.28391)
+
+dim(testtop10prenatincom) <- c(13,1)
+colnames(testtop10prenatincom) <- c("prenatincom")
+class(testtop10prenatincom)
+testtop10prenatincom <- as.data.frame(testtop10prenatincom)
+
+testtop10prenatincom
+
+#posttax
+
+testtop10posttax <- c(0.23741, 0.22731, 0.23249, 0.23776, 0.23726, 0.24316, 0.23451, 0.23646, 0.23388, 0.24363, 0.23903, 0.23585, 0.23703)
+
+dim(testtop10posttax) <- c(13,1)
+colnames(testtop10posttax) <- c("posttax")
+class(testtop10posttax)
+testtop10posttax <- as.data.frame(testtop10posttax)
+
+testtop10posttax
+
+#########################P2 Berechnung
+###############Top10
+
+#income_wid_1
+
+testtop10income_wid_1 <- c(0.31388, 0.30532, 0.31369, 0.32371, 0.32293, 0.33445, 0.32136, 0.3269, 0.32672, 0.32594, 0.31927, 0.31925, 0.32892)
+
+dim(testtop10income_wid_1) <- c(13,1)
+colnames(testtop10income_wid_1) <- c("income_wid_1")
+class(testtop10income_wid_1)
+testtop10income_wid_1 <- as.data.frame(testtop10income_wid_1)
+
+testtop10income_wid_1
+
+#income_wid_2
+
+testtop10income_wid_2 <- c(0.28684, 0.27328, 0.28238, 0.29415, 0.29307, 0.30238, 0.29064, 0.29593, 0.29449, 0.2936, 0.28739, 0.28821, 0.29676)
+
+dim(testtop10income_wid_2) <- c(13,1)
+colnames(testtop10income_wid_2) <- c("income_wid_2")
+class(testtop10income_wid_2)
+testtop10income_wid_2 <- as.data.frame(testtop10income_wid_2)
+
+testtop10income_wid_2
+
+#income_wid_3
+testtop10income_wid_3 <- c(0.28679, 0.27351, 0.27826, 0.29178, 0.2894, 0.29907, 0.28433, 0.28895, 0.28979, 0.28985, 0.28142, 0.28283, 0.28844)
+
+dim(testtop10income_wid_3) <- c(13,1)
+colnames(testtop10income_wid_3) <- c("income_wid_3")
+class(testtop10income_wid_3)
+testtop10income_wid_3 <- as.data.frame(testtop10income_wid_3)
+
+testtop10income_wid_3
+
 #------------------------------------------------------------------------------------------
 #
 #Cretaing tables containig all indicators over the years
