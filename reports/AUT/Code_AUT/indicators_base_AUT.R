@@ -11,6 +11,7 @@ library(survey)
 library(convey)
 library(knitr)
 library(ggplot2)
+library(svglite)
 
 # Source connection 
 # source("R/_connection.R")
@@ -573,6 +574,7 @@ gini_p1 <- ggplot() +
 
 gini_p1
 
+ggsave(file='./reports/AUT/img/Gini1.svg',height=4,width=7)
 
 ### Gini plot für p2
 gini_p2 <- ggplot() +
@@ -595,7 +597,7 @@ gini_p2 <- ggplot() +
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1))
         
 gini_p2
-
+ggsave(file='./reports/AUT/img/Gini2.svg',height=4,width=7)
 
 
 ###Top 10% Share (P1)
@@ -620,7 +622,7 @@ Top10_p1 <- ggplot() +
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Top10_p1
-
+ggsave(file='./reports/AUT/img/Top101.svg',height=4,width=7)
 
 ###Top 10% Share (P2)
 
@@ -645,6 +647,8 @@ Top10_p2 <- ggplot() +
 
 Top10_p2
 
+ggsave(file='./reports/AUT/img/Top102.svg',height=4,width=7)
+
 ###Mean (P1)
 
 Mean_p1 <- ggplot() +
@@ -667,6 +671,8 @@ Mean_p1 <- ggplot() +
 
 Mean_p1
 
+ggsave(file='./reports/AUT/img/Mean1.svg',height=4,width=7)
+
 ###Mean (P2)
 
 Mean_p2 <- ggplot() +
@@ -688,7 +694,7 @@ Mean_p2 <- ggplot() +
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 Mean_p2
-
+ggsave(file='./reports/AUT/img/Mean2.svg',height=4,width=7)
 
 ###Median (P1)
 
@@ -712,6 +718,8 @@ Median_p1 <- ggplot() +
 
 Median_p1
 
+ggsave(file='./reports/AUT/img/Median1.svg',height=4,width=7)
+
 ###Mean (P2)
 
 Median_p2 <- ggplot() +
@@ -734,6 +742,8 @@ Median_p2 <- ggplot() +
 
 Median_p2
 
+ggsave(file='./reports/AUT/img/Median2.svg',height=4,width=7)
+
 #######
 #Mean vs Median nach Steuern (P1)#
 
@@ -753,6 +763,10 @@ MedianMean_p1 <- ggplot() +
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 MedianMean_p1
+
+ggsave(file='./reports/AUT/img/MedianMean1.svg',height=4,width=7)
+
+
 #Mean vs Median nach Steuern (P2)#
 
 MedianMean_p2 <- ggplot() +
@@ -772,7 +786,7 @@ MedianMean_p2 <- ggplot() +
 
 MedianMean_p2
 
-
+ggsave(file='./reports/AUT/img/MedianMean2.svg',height=4,width=7)
 
 ####alternative line for the legend position theme(legend.position=c(0.25, 0.5), legend.direction = "vertical", 
 
