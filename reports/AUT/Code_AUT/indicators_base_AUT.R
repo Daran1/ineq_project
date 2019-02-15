@@ -371,7 +371,7 @@ Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei,
 #----------Poverty rate-------------------------------------------------------------------
 
 
-silc.pov <- silc.rph %>% filter(rb010 > 2006)
+silc.pov <- silc.rph %>% filter(rb010 > 2004)
 
 arop1 <- laeken::arpr(silc.pov$posttax, weights=silc.pov$rb050, 
                       years=silc.pov$rb010)
