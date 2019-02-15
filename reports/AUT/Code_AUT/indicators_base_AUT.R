@@ -12,6 +12,7 @@ library(convey)
 library(knitr)
 library(ggplot2)
 library(svglite)
+library(laeken)
 
 # Source connection 
 # source("R/_connection.R")
@@ -367,7 +368,32 @@ svygei(~income_wid_3, silc.inc_2.svy, epsilon = 1)
 Theil_p2_3 <- svyby(~income_wid_3, by=~rb010, design=silc.inc_2.svy, FUN=svygei, epsilon = 1)
 
 
+#----------Poverty rate-------------------------------------------------------------------
 
+
+silc.pov <- silc.rph %>% filter(rb010 > 2006)
+
+arop1 <- laeken::arpr(silc.pov$posttax, weights=silc.pov$rb050, 
+                      years=silc.pov$rb010)
+arop1
+
+# gender
+# age >=18 
+
+silc.pov18 <- silc.pov %>% filter(age>=18)
+
+arop2 <- laeken::arpr(silc.pov18$posttax, weights=silc.pov18$rb050, breakdown = silc.pov18$rb090, years=silc.pov18$rb010)
+
+arop2
+
+#age: <18, 17-65, >64
+
+silc.povage <- silc.pov %>% mutate(agecl1=cut(age,c(0,17,65,120)))
+
+arop3 <- arpr(silc.povage$posttax, weights=silc.povage$rb050, breakdown = silc.povage$agecl1, years=silc.povage$rb010)
+
+arop3
+#------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------
 #
