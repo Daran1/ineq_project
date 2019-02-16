@@ -255,7 +255,7 @@ Die beiden anderen Altergruppen starten auf einem ähnlichen Niveau zu einander,
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
 table7[2:3] <- format(table7[2:3], digits = 5, big.mark = ",")
-kable(table7, caption = "Armutsgefährdungsquoten in Österreich nach Geschlecht und Alter")
+kable(table7, caption = "Armutsgefährdungsquoten in % in Österreich nach Geschlecht und Alter")
 ```
 
 
