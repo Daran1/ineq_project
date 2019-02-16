@@ -13,7 +13,7 @@ output:
 keywords: a, b, c
 bibliography: references.bib
 subtitle: 2063 - Ökonomie der Verteilung
-abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich.
+abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich. Die Analyse beruht auf EU-SILC Daten für Österreich. Allgmeine Ungleichheitsindikatoren wurden für verschiedene Einkommenskonzepte sowie verschiedene Grundgesamtheiten berechnet. Als Fokusthema wurde die Armutsgefährdung in Österreich gewählt. 
 ---
 
 ```{r setup, include=FALSE}
@@ -61,7 +61,7 @@ Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozes
 
 
 ## Variablen
-Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. aus den Datensätzen wurden die folgenden variablen herangezogen:
+Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. Zur besseren Nachvollziehbarkeit werden nachfolgend alle Variablen aufgezählt, die aus den Datensätzen herangezogen wurden:
 
 (i) Household Register: db010, db020, db030, db040, db090
 (ii) Household Data: hb010, hb020, hb030, hy010, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, hy080g, hy090g, hy110g, hy120g, hy130g, hy140g, hx040, hx050
@@ -69,17 +69,19 @@ Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht
 (iv) Personal Data: pb010, pb020, pb030, pb040, pb150, py010g, py020g, py050g, py050n, 
          py080g, py090g, py100g, py110g, py120g, px010,px030, py130g, py140g
 
-Genauere Beschreibungen dieser Daten werden von GESIS angeboten und sind unter der  Homepage https://www.gesis.org/en/missy/metadata/EU-SILC/ verfügbar. 
+Genauere Beschreibungen dieser Variablen werden von GESIS angeboten und sind unter der  Homepage https://www.gesis.org/en/missy/metadata/EU-SILC/ verfügbar. 
 Die Daten wurden im Anschluss mit Hilfe der Programmiersprache R eingelesen und bearbeitet um in Folge die gewünschten Analysen durchführen zu können. 
 Unter anderem werden in dieser Analyse folgende Indikatoren für Österreich berechnet:   
 
-**Mittelwert**: Der Durschnittliche Wert aller Einkommen.      
-**Median**: Der sich in der Mitte befindende Wert aller Einkommen.  
+**Mittelwert**: Der durschnittliche Wert aller Einkommen, das arithmetische Mittel der Einkommensverteilung.      
+**Median**: Der sich in der Mitte befindende Wert der Einkommensverteilung.  
 **Gini**: Der Gini-Index dient zur Messung, inwieweit die Einkommensverteilung (oder in einigen Fällen die Konsumausgaben) zwischen Einzelpersonen, oder Haushalten innerhalb einer Volkswirtschaft, von einer vollkommen gleichen Verteilung abweicht. Dabei misst er den Bereich zwischen der Lorenz-Kurve und einer hypothetischen Linie der absoluten Gleichheit, ausgedrückt als Prozentsatz der maximalen Fläche unter der Linie. Dabei ist anzumerken, dass ein Gini von 0 perfekte Gleichheit darstellt, wohingegen ein Wert von 1 perfekte ungleichheit signalisiert (OECD).    
 **20/80 Share Ratio**: Die Einkommensquintilanteilsquote oder die S80/S20 Share Ratio ist ein Maß für die Ungleichheit der Einkommensverteilung. Sie wird als Verhältnis des Gesamteinkommens der 20% der Bevölkerung mit dem höchsten Einkommen (dem obersten Quintil) zu dem Einkommen der 20% der Bevölkerung mit dem niedrigsten Einkommen (dem unteren Quintil) berechnet.   
-**Top 10% Income Share**: Anteil des Einkommens das von den zehn höchsten Prozent gehalten wird.   
+**Top 10% Income Share**: Anteil des Gesamteinkommens, der von den zehn höchsten Prozent gehalten wird.
 
-## Einkommens-Versionen
+Als Fokusthema dieser Arbeit wurde die Armutsgefährdungsquote in Österreich festgelegt. Diese wird sowohl für die unterschiedlichen Geschlechter, als auch drei unterschiedliche Altersgruppen betrachet. Als armutsgefährdet werden hierbei jende Personen betrachet, die ein verfügbares Äquivalenzeinkommen ausweisen, das einen Wert der kleiner als 60% des Medianeinkommens der Verteilung einnimmt.
+
+## Einkommensversionen
 
 Die Ergebnisse jeder empirischen untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig @kitterer1981. In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben @kitterer1981. Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
 
@@ -101,13 +103,13 @@ Summe aus:
 (1), (2), (3), (4) Alle anderen erhaltenen Transferzahlungen: survivor' benefits (py110g), sickness benefits (py120g), disability benefits (py130g), education-related allowances (py140g), family/children related allowances (hy050g), social exclusion not elsewhere classified (hy060g), housing allowances (hy070g), regular inter-household cash transfers received (hy080g);   
 abzüglich:  
 (5) alle steuern und sozialversicherungsabgaben:regular taxes on wealth (hy120g), regular inter-household cash transfer paid (hy130g), tax on income and social insurance contributions (hy140g).
-Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschiedene Grundgesamtheiten berechnet. Einerseits werden alle Individuen zur Berechnung hergenommen, und die Einkommen auf alle Individuen aufgeteilt. Andererseits werden die oben angeführten Einkommensaggregate nur für jene Personen berechnet, die zum Zeitpunkt der Befragung das 20. Lebensjahr begonnen haben. 
+Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschiedene Grundgesamtheiten berechnet. Einerseits werden alle Individuen zur Berechnung hergenommen, und die Einkommen auf alle Individuen aufgeteilt ("equal sharing of resources"). Andererseits werden die oben angeführten Einkommensaggregate nur für jene Personen berechnet, die zum Zeitpunkt der Befragung das 20. Lebensjahr begonnen haben ("partial sharing of resources"). 
 
 \newpage
 
-# Ergebnisse
+# Ergebnisse - allgmeine Indikatoren
 
-Im folgenden werden die oben genannten Indikatoren für alle Formen des Einkommens, sowie Anhand der Unterscheidung zwischen den Grundgesamtheiten (Gesamte Bevölkerung sowie Personen über 20 Jahre) berechnet und aufgezeigt werden.    
+Im folgenden Teil werden die oben genannten Indikatoren für alle Formen des Einkommens, sowie Anhand der Unterscheidung zwischen den Grundgesamtheiten (Gesamte Bevölkerung sowie Personen über 20 Jahre) berechnet und besprochen werden.    
 
 ## Grundgesamtheit 1: Gesamte Bevölkerung
 
@@ -122,7 +124,7 @@ table1$`Top10%` <- round(table1$`Top10%`, 2)
 kable(table1, caption = "Pre-tax factor income")
 ```
 
-Betrachtet man das factorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini, also das Maß für ungleichheit, sich konstant zwischen den Werten 0.43 und 0.49 bewegt. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt. Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten 10% verdient wird. Interessant ist es auch zu beobachten wie sich dieser Anteil in den letzten Jahren entwickelt hat. Dabei gab es einen Ansteig von 17% im Jahr 2005 auf beinahe 40% im Jahr 2017. Auch die Einkommensquatilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 72.34576. Jedoch sinkt diese Ratio danach wieder; im Jahr 2017 verdienen die am oberen Ende der Einkommen angesiedelten 20% in etwa 36 mal so viel wie jene am unteren Ende. 
+Betrachtet man das faktorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini sich konstant zwischen den Werten 0.43 und 0.49 bewegt. Ein für den sonst eher trägen Gini-Indikator untypisches Verhalten. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt. Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten zehn Prozent verdient wird. Interessant ist es auch zu beobachten, wie sich dieser Anteil in den letzten Jahren entwickelt hat. Dabei gab es einen Ansteig von 17% im Jahr 2005 auf beinahe 40% im Jahr 2017. Auch die Einkommensquatilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 72.34576. Jedoch sinkt diese Ratio danach wieder; im Jahr 2017 verdienen die am oberen Ende der Einkommen angesiedelten 20% in etwa 36 mal so viel wie jene am unteren Ende. 
 
 ### Table 2: Pre-tax national income
 
@@ -219,15 +221,20 @@ Wie in der oberen Grafik ist die Entwicklung des Gini-Koeffizienten relativ kons
   
 Ähnlich wie in der Analyse der Top10% Income shares der gesamten Bevölkerung entwickelt sich der Indikator für eine Grundgesamtheit die alle über 20-Jährigen berücksichtigt. Insgesamt hat sich der Wert 2017 in etwa verdoppelt verglichen mit dem Ausgangswert von 2005. Auch hier gab es eine rapide, konstante, Entwicklung nach oben welche lediglich zwischen 2005 und 2006 sowie zwischen 2010 un 2012, sowie 2014 und 2015 stagnierte, beziehungsweise Rückläufig war. 
 
-\newpage
-![](img/MedianP1){width=80%}
-![](img/MedianP2){width=80%}
-\newpage
+# Ergebnisse Fokusthema - Armutsgefährdungsquote
+
+
+![](img/pov1){width=80%}
+
+
 # Zusammenfassung
 
-## Ausblick  
-
-Des weiteren sind wir uns noch uneinig welche Spezialisierung wir in unserer Arbeit einbauen werden. Nach derzeitigem Stand wäre es für uns am interessantesten, das Gender-Pay-Gap einzuarbeiten. Jedoch ist sich dies in der derzeitigen Version der Seminararbeit noch nicht möglich und wird im finalen Bericht eingebaut.
+\newpage
+# Abbildungen
+![](img/MedianP1){width=80%}
+ 
+![](img/MedianP2){width=80%}
+\newpage
 
 # Literatur
 
