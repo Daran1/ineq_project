@@ -13,7 +13,7 @@ output:
 keywords: a, b, c
 bibliography: references.bib
 subtitle: 2063 - Ökonomie der Verteilung
-abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich. Die Analyse beruht auf EU-SILC Daten für Österreich. Allgmeine Ungleichheitsindikatoren wurden für verschiedene Einkommenskonzepte sowie verschiedene Grundgesamtheiten berechnet. Als Fokusthema wurde die Armutsgefährdung in Österreich gewählt. 
+abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich. Die Analyse beruht auf EU-SILC Daten für Österreich. Allgmeine Ungleichheitsindikatoren wurden für verschiedene Einkommenskonzepte sowie verschiedene Grundgesamtheiten berechnet. Als Fokusthema wurde die Armutsgefährdung in Österreich gewählt. Dabei wird die Einkommensverteilung in Österreich an Hand con verschiedenen Einkommenskonzepten genauer untersucht. Des weiteren wird untersucht wie hoch die Armutsgefährdungsquote für verschiedene Bevölkerungsschichten in Österreich ist. Dabei soll sowohl zwischen Männern und Frauen unterschieden werden, sowie verschieden Altersgruppen getrennt analysiert werden. 
 ---
 
 ```{r setup, include=FALSE}
@@ -232,17 +232,19 @@ Wie in der oberen Grafik 2 ist die Entwicklung des Gini-Koeffizienten relativ ko
 
 # Ergebnisse Fokusthema - Armutsgefährdungsquote
 
-Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019).
+Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019). Durch die Verwendung nationaler Einkommensgrenzen für die Armutsgefährdung können sie auch im internationalen Vergleich gut angewendet werden (@lelkes2011). 
 
-Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand misst, sondern ein niedriges Einkommen im Vergleich zu anderen nationalen Einkommen misst und daher nicht zwangsläufig mit einem niedrigen Lebensstandard gleichzusetzten ist (@eurostat2019). Im folgenden Teil wird die Armutsgefährdungsquote in Österreich sowohl im Zusammenhang mit dem Geschlecht der Personen als auch für drei verschiedene Altersgruppen untersucht.
+Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand misst, sondern ein niedriges Einkommen im Vergleich zu anderen nationalen Einkommen misst und daher nicht zwangsläufig mit einem niedrigen Lebensstandard gleichzusetzten ist (@eurostat2019). Im folgenden Teil wird die Armutsgefährdungsquote in Österreich sowohl im Zusammenhang mit dem Geschlecht der Personen als auch für drei verschiedene Altersgruppen untersucht. Die Armutsgefährdungquote lag im Jahr 2017 in den EU-28 bei 16,9% Generell ist anzumerken, dass Europaweit die Armutsgefährdungsquote bei Frauen höher ist als bei Männern (17,6% zu 16,3%) (@eurostat2019).
 
 ### Armutsgefährdungsquote und Geschlecht
 
-Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Geschlechter als auch im Gesamten sehr ähnlich. Für das Krisenjahr 2008 zeigt sich ein rapider Anstieg der Armutsgefährdungsquote für beide Geschlechter, was wohl zum einen Teil durch die Finanzkrise ab dem Jahr 2007 und dem damiteinhergehendem wirtschaftlichen Abschwung erklären lässt. Die Armutsgefährdungsquote liegt für Frauen im gesamten beobachteten Zeitraum höher als für Männer, was sich wohl, ähnlich wie die generellen Einkommensunterschiede (siehe @guger2007), durch unterschiedliche Erwerbsstrukturen erklären lässt.
+Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Geschlechter als auch im Gesamten sehr ähnlich. Für das Krisenjahr 2008 zeigt sich ein rapider Anstieg der Armutsgefährdungsquote für beide Geschlechter, was wohl zum einen Teil durch die Finanzkrise ab dem Jahr 2007 und dem damiteinhergehendem wirtschaftlichen Abschwung erklären lässt. Die Armutsgefährdungsquote liegt für Frauen im gesamten  Zeitraum höher als für Männer, was sich wohl, ähnlich wie die generellen Einkommensunterschiede (siehe @guger2007), durch unterschiedliche Erwerbsstrukturen erklären lässt. Auch in Österreich ist das europaweite "Gender Gap" zu beobachten. es zeigt sich eine generell höhere Armutsgefährdung für Frauen im Vergleich zu Männern. Für dieses Phänomen gibt es vieleverschieden Erklärungsversuche, jedoch kann es auch auf die (aus welchen Gründen auch immer) vorhandenen Einkommensunterschiede zwischen Männern und Frauen zurückgeführt werden (siehe @palz2016).  
 
 ![](img/pov1){width=80%}
 
 ### Armutsgefährdungsquote und Alter
+
+Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausgewiesen. Dadurch kann ein Überblick über die Zusammensetzung der Einkommen verschiedener Bevölkerungsschichten erschaffen werden. Im Europäischen Vergleich ist im Jahr 2017 die "At-Risk-of-Poverty Rate" der Bevölkerung unter 18 Jährigen mit 20,2% am höchsten gewesen. Im Vergleich dazu haben die über 65 Jährigen eine Armutsgefähdungsquote von 15,0% gehabt. Leicht unter der gesamten Quote von 16,9% (@eurostat2). 
 
 Abbildung 6 veranschaulicht den zeitlichen Verlauf der Armutsgefährdungsquote für drei unterschiedliche Altergruppen: Unter 18-Jährige, 18- bis 65-Jährige und über 65-Jährige. Dabei lassen sich im Vergleich zur nach Geschlechtern unterteilten Veranschaulichung unterschiedliche Trends ablesen. Wie zu erwarten haben Personen im erwerbsfähigen Alter (18 bis 64) die geringste Armutsgefährdungsquote. Diese Quote bleibt mit Ausnahme eines Anstiegs im Jahr 2008 stabil.
 
@@ -252,10 +254,12 @@ Die beiden anderen Altergruppen starten auf einem ähnlichen Niveau zu einander,
 
 ### Table : Armutsgefährdungsquote nach Alter und Geschlecht
 
+Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österrecih aufweist. Dabei wird diese in verschiedenen Gruppen dargestellt. Einersetis wird die Insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65Jährigen und älteren. Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
+
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
 table7[2:3] <- format(table7[2:3], digits = 5, big.mark = ",")
-kable(table7, caption = "Armutsgefährdungsquoten in % in Österreich nach Geschlecht und Alter")
+kable(table7, caption = "Armutsgefährdungsquoten in % in Österreich nach Geschlecht und Alter (in Prozent)")
 ```
 
 
