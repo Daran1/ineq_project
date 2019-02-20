@@ -612,7 +612,7 @@ gini_p2 <- ggplot() +
                                 'Gini vor Steuern (Pre-tax national income)' = 'darkblue', 
                                 'Gini nach Steuern (Post-tax disposable income)' = 'darkgreen'))+
   scale_x_discrete(limits=2005:2017) + 
-  ylim(0, 0.8) +
+  ylim(0, 0.6) +
   labs(color = '', x = "Jahr", y = "Gini", 
        title = "Gini-Koeffizient des Einkommens von Personen über 20 Jahren") +
   guides(fill=guide_legend(nrow=3, byrow=TRUE)) +
