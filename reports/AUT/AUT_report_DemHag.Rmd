@@ -1,7 +1,7 @@
 ---
 title: "Einkommensverteilung in Österreich"
 author: "Daran Demirol & Matthias Hagen"
-date: "06.01.2019"
+date: "20.01.2019"
 output:
   pdf_document:
     includes:
@@ -259,6 +259,7 @@ Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
 table7[2:3] <- format(table7[2:3], digits = 5, big.mark = ",")
+table7 <- round(table7, 2)
 kable(table7, caption = "Armutsgefährdungsquoten in % in Österreich nach Geschlecht und Alter (in Prozent)")
 ```
 
