@@ -415,15 +415,16 @@ silc.pov <- silc.rph %>% filter(rb010 > 2004)
 arop1 <- laeken::arpr(silc.pov$posttax, weights=silc.pov$rb050, 
                       years=silc.pov$rb010)
 arop1$value
-
+arop1
 
 # gender
 # age >=18 
 
 silc.pov18 <- silc.pov %>% filter(age>=18)
 
-arop2 <- laeken::arpr(silc.pov18$posttax, weights=silc.pov18$rb050, breakdown = silc.pov18$rb090, years=silc.pov18$rb010)
-arop1
+arop2 <- laeken::arpr(silc.pov$posttax, weights=silc.pov$rb050, breakdown = silc.pov$rb090, years=silc.pov$rb010)
+arop2
+
 
 povgender <- arop2$valueByStratum
 povgender <- c(years$Jahr, povgender$value)
@@ -461,6 +462,7 @@ povage
 table_pov <- dplyr::left_join(povtotal, povgender, by="Jahr")
 table_pov <- dplyr::left_join(table_pov, povage, by="Jahr")
 colnames(table_pov) <- c("Jahr", "Insgesamt", "Männer", "Frauen", "Unter 18", "18-65", "Über 65")
+table_pov <- round(table_pov, 2)
 table_pov
 
 write.csv(table_pov, "./reports/AUT/tables/_tables_AUT_pov.csv")
@@ -870,5 +872,9 @@ povgender_plot <- ggplot() +
         panel.grid.major = element_blank(), axis.text.x=element_text(angle = 45, hjust = 1)) 
 
 povgender_plot
-####alternative line for the legend position theme(legend.position=c(0.25, 0.5), legend.direction = "vertical", 
+
+
+
+
+###### Le Fin ############################################################################# 
 
