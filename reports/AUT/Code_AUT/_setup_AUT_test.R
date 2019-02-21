@@ -252,16 +252,12 @@ silc.rph <- left_join(silc.rp, silc.h, by = c("id_h", "rb010" = "hb010",
                                               "rb020" = "hb020", 
                                               "rx030" = "hb030"))
 
-#silc.rphd <- left_join(silc.rph, silc.d)
-#cannot allocate vector of size 220.9Mb (Error)
 
-#Replace not answered NA
-#silc.rph[is.na(silc.rph)] <- 0
 
 ##########################################################
 ######SAVE RPH file!################
 
-save(silc.rph, file="data/rph.rda",compress = 'xz')
+#save(silc.rph, file="data/rph.rda",compress = 'xz')
 #load("data/rph.rda")
 
 ########################################################

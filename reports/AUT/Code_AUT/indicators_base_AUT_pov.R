@@ -82,7 +82,7 @@ for(year in 2005:2017) {
   j <- j + 1
 }
 
-years_top10_p1_1 <- data.frame(top_p1_2 = share)
+years_top10_p1_1 <- data.frame(top_p1_1 = share)
 
 years_top10_p1_1
 
