@@ -127,7 +127,7 @@ kable(table1, caption = "Pre-tax factor income")
 
 Betrachtet man das faktorale Einkommen der gesamten Bevölkerung vor der Versteuerung so lässt sich auf den ersten Blick fesstellen, dass sowohl Mittelwert als auch Median stark gestiegen sind. Darüber hinaus kann man beobachten, dass der Gini in den Jahren 2005 bis 2017 von 0,46 auf 0,51 gesteigert hat, ein für den sonst eher trägen Gini-Indikator untypisches Verhalten. Daher kann man behaupten, dass das Einkommen aus Arbeit und Vermögen einer ungleichmäßigen Verteilung folgt, die sich im Zeitverlauf des letzten Jahrzehnts verschlechtert hat.
 
-Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten zehn Prozent verdient wird. Dieser Anteil weist ebenfalls eine Steigerung von einem sehr hohen Ausgangsniveau von 0,31 auf 0,34 auf. Auch die Einkommensquantilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 697.5. Das bedeutet, orientiert man sich lediglich am Faktoreinkommen, so verdienen die obersten 20 Prozent 615 mal so viel wie die unteren 20 Prozent. 
+Dies zeigt sich auch durch den hohen Anteil des Einkommens der durch die höchsten zehn Prozent verdient wird. Dieser Anteil weist ebenfalls eine Steigerung von einem sehr hohen Ausgangsniveau von 0,29 auf 0,33 auf. Auch die Einkommensquantilsanteile weisen  einen starken Anstieg auf, zwischenzeitlich sogar bis auf 552,8. Das bedeutet, orientiert man sich lediglich am Faktoreinkommen, so verdienen die obersten 20 Prozent in etwa 553 mal so viel wie die unteren 20 Prozent. 
 
 ### Table 2: Pre-tax national income
 
@@ -140,7 +140,7 @@ table2$`Top10%` <- round(table2$`Top10%`, 2)
 kable(table2, caption = "Pre-tax national income")
 ```
  
-Inkludiert man Transferzahlungen wie sowohl Pensionen als auch Arbeitslosengeld, so verändert sich das Bild doch maßgeblich. Sowohl Mittelwert als auch Median weisen höhere werte als beim Faktoreinkommen aus. Der Gini-Koeffizient liegt im Jahr 2017 bei 0.38 und damit auf einem bedeutend niedrigerem Niveau als beim Faktoreinkommen. Dieses Ergebnis überrauscht nur in geringem Maße, sollen doch durch Transferzahlungen Einkommensungleichheiten gegengesteuert werden. Auch die Anteile der oberen 20 Prozent im Vergleich zum unteren Ende verhält sich wesentlich ausgeglichener. Diese bewegt sich zwischen 6,3 und 8.8 und betrug im Jahr 2017 rund 8,6. Somit verdienten die oberen 20% in etwa acht mal so viel wie jene am unteren Ende. Nicht so stark veränderte sich der Anteil der Top10% am Einkommen. Zwar ist dieses geringer als zuvor, beläuft sich aber im Jahr 2017 immer noch 28% und verhält sich relativ stabil im Zeitverlauf.
+Inkludiert man Transferzahlungen wie sowohl Pensionen als auch Arbeitslosengeld, so verändert sich das Bild doch maßgeblich. Sowohl Mittelwert als auch Median weisen höhere werte als beim Faktoreinkommen aus. Der Gini-Koeffizient liegt im Jahr 2017 bei 0.38 und damit auf einem bedeutend niedrigerem Niveau als beim Faktoreinkommen. Dieses Ergebnis überrauscht nur in geringem Maße, sollen doch durch Transferzahlungen Einkommensungleichheiten gegengesteuert werden. Auch die Anteile der oberen 20 Prozent im Vergleich zum unteren Ende verhält sich wesentlich ausgeglichener. Diese bewegt sich zwischen 6,3 und 9,0 und betrug im Jahr 2017 rund 8,9. Somit verdienten die oberen 20% in etwa acht mal so viel wie jene am unteren Ende. Nicht so stark veränderte sich der Anteil der Top10% am Einkommen. Zwar ist dieses geringer als zuvor, beläuft sich aber im Jahr 2017 immer noch 27% und verhält sich relativ stabil im Zeitverlauf. Die einkommen der Top10% machen somit in etwa ein Drittel der Einkommen der gesamten Bevölkerung aus.
  
 ### Table 3: Post-tax disposable income
 
@@ -153,9 +153,9 @@ table3$`Top10%` <- round(table3$`Top10%`, 2)
 kable(table3, caption = "Post-tax disposable income")
 ```
 
-Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte inklusive aller anderen Transferzahlungen abzüglich geleisteter Steuerleistungen. Dieses Einkommenskonzept wird als verfügbares Äquivalenzeinkommen bezeichnet und ist wohl das am häufigsten verwendete und realitätsnäheste Einkommenskonzept, dass auch von Eurostat für Berechnungen von EU-SILC Daten verwendet wird.
+Sinngemäß zeigt Table 3 die Erweiterungen der vorherigen Einkommenskonzepte inklusive aller anderen Transferzahlungen abzüglich geleisteter Steuerleistungen. Dieses Einkommenskonzept wird als verfügbares Äquivalenzeinkommen bezeichnet und ist wohl das am häufigsten verwendete und realitätsnäheste Einkommenskonzept, dass auch von Eurostat für Berechnungen von EU-SILC Daten verwendet wird. Es kann somit als die derzeit wohl gängigste Form der verwendeten Einkommen gesehen werden. Wie in den vorhergegangenen Tabellen wird hierbei die gesamte Bevölkerung als berechnungsgrundlage verwendet. 
 
-Wie zu erwarten sind Mittelwert und Median geringer als bei den obigen Tabellen. Das Österreichische Steuersystem hat unter anderem zum Ziel, Einkommen umzuverteilen. Dieser Effekt lässt sich im Gini-Koeffizienten feststellen. Dieser ist zwar mit über 0.28 im Jahr 2017 noch immer relativ hoch, jedoch deutlich niedriger als in den vorherigen Einkommenskonzepten. Somit kann man sagen, dass eine Umverteilung durch Steuern zumindest in einem gewissen Ausmaß erfolgreich ist. Auch die Einkommensquantile lassen auf eine ausgewogenere Aufteilung der Einkommen schließen. Diese ist jetzt durchgehend kleiner Fünf und ebenfalls relativ stabil im Zeitverlauf. Der Anteil der Top10% am Einkommen hingegen ist sinkt ebenfalls im Vergleich mit den anderen Einkommenskonzepten und wird für das Jahr 2017 mit dem gleichen Wert wie 2005, also 24%, ausgewiesen.
+Wie zu erwarten sind Mittelwert und Median geringer als bei den obigen Tabellen. Sinngemäß folgt dies, da das Österreichische Steuersystem unter anderem zum Ziel, Einkommen umzuverteilen. Dieser Effekt lässt sich im Gini-Koeffizienten feststellen. Dieser ist zwar mit über 0.28 im Jahr 2017 noch immer relativ hoch, jedoch deutlich niedriger als im vergleich mit den EU28 (30,7) (@eurostat3). Auch in einer Gegenüberstellung mit den vorherigen Einkommenskonzepten ist er niedriger. Auch im Somit kann man sagen, dass eine Umverteilung durch Steuern zumindest in einem gewissen Ausmaß erfolgreich ist. Darüber hinaus lassen die Einkommensquantile auf eine ausgewogenere Aufteilung der Einkommen schließen. Diese ist jetzt durchgehend kleiner als Fünf und ebenfalls relativ stabil im Zeitverlauf. Der Anteil der Top10% am Einkommen hingegen ist sinkt ebenfalls im Vergleich mit den anderen Einkommenskonzepten und wird für das Jahr 2017 mit dem gleichen Wert wie 2005, also 22%, ausgewiesen. Somit nehmen die oberen Zehn Prozent in etwa ein Fünftel der gesamten Einkommen ein. 
 
 \newpage
 
@@ -174,7 +174,7 @@ table4$`Top10%` <- round(table4$`Top10%`, 2)
 kable(table4, caption = "Pre-tax factor income (Canberra: primary income)")
 ```
 
-Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient sich aber anders als die obigen Tables einer anderen Grundgesamtheit, nämlich lediglich jenen ÖsterreicherInnen die über 20 Jahre alt sind. Dabei zeigt sich, dass sowohl Mittelwert als auch Median deutlich höher sind als bei Verwendung der anderen Grundgesamtheit. Im Jahr 2017 ist der Mittelwert um etwa 25000 höher, der Median circa um 16000. Die Ungleichheit hingegen ist leicht gestiegen, mit höchstwerten des Gini-Koeffizienten knapp unter der 0.55 Marke. Sichtbar ist das auch durch die Anteile der Top10% am Gesamteinkommen sowie der Einkommensquantil-Ratio, welche beide höhere Werte als in den vorherigen Berechnungen ausweisen. Die Trends der einzelnen Indikatoren verhalten sich hierbei wie in der vorhin besprochen Grundgesamtheit.
+Table 4 zeigt Indikatoren für die Anfangs genannten Einkommenskonzepte, bedient sich aber anders als die obigen Tables einer anderen Grundgesamtheit, nämlich lediglich jenen ÖsterreicherInnen die über 20 Jahre alt sind. Dabei zeigt sich, dass sowohl Mittelwert als auch Median deutlich höher sind als bei Verwendung der anderen Grundgesamtheit. Im Jahr 2017 ist der Mittelwert um etwa 23000 höher, der Median circa um 18000 als im vergleichbaren sample der gesamten Bevölkerung. Die Ungleichheit hingegen ist leicht gestiegen, mit höchstwerten des Gini-Koeffizienten knapp unter der 0.55 Marke. Sichtbar ist das auch durch die Anteile der Top10% am Gesamteinkommen, welche Verglichen zur Einkommensquantil-Ratio nicht gestiegen sind. Letztere weißen weit höhere Werte als die vergleichbaren Berechnungen von vorher ausweisen. Die Trends der einzelnen Indikatoren verhalten sich hierbei wie in der vorhin besprochen Grundgesamtheit.
 
 ### Table 5: Pre-tax national income
 
@@ -187,7 +187,7 @@ table5$`Top10%` <- round(table5$`Top10%`, 2)
 kable(table5, caption = "Pre-tax national income")
 ```
  
-Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskonzept Mittelwert und Median um einen ähnlichen Betrag höher. Der Gini-Koeffizient ist mit 0.44 im Jahr 2017 jedoch noch relativ hoch. In Relation zum obigen Vergleichswert mit anderer Grundgesamtheit ist die 20/80 Share Ratio höher, jedoch der Anteil der obersten 10% am Einkommen ähnlich. 
+Wie in der Analyse der anderen Grundgesamtheit sind auch in diesem Einkommenskonzept Mittelwert und Median um einen ähnlichen Betrag höher. Der Gini-Koeffizient ist mit 0.44 im Jahr 2017 jedoch noch relativ hoch. In Relation zum obigen Vergleichswert (Table 2) mit anderer Grundgesamtheit ist die 20/80 Share Ratio höher, jedoch der Anteil der obersten 10% am Einkommen ähnlich. 
 
 ### Table 6: Post-tax disposable income
 
@@ -200,7 +200,7 @@ table6$`Top10%` <- round(table6$`Top10%`, 2)
 kable(table6, caption = "Post-tax disposable income")
 ```
 
-Hierbei scheint vor allem die ausbleibende Reduktion des Gini durch Steuern interessant. Berechnet man das Einkommen also nur für all jene Personen über 20 Jahren, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus. Der Anteil der oberen 10% am Gesamteinkommen ist im vergleich zum Einkommen vor der Steuer konstant geblieben, beziehungsweise leicht angestiegen. 
+Hierbei scheint vor allem die ausbleibende Reduktion des Gini durch Steuern interessant. Berechnet man das Einkommen also nur für all jene Personen über 20 Jahren, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus, erreicht aber im aktuellen Jahr 2017 einen ähnlichen Wert. Der Anteil der oberen 10% am Gesamteinkommen ist im vergleich zum Einkommen vor der Steuer konstant geblieben, beziehungsweise leicht angestiegen. Dies sowie ein Gini-koeffizient um die 40% Marke zeigen, dass die Einkommen der Personen über 20 keiner gerechten Verteilung folgen. 
 
 \newpage
 
@@ -210,21 +210,21 @@ Im folgenden Abschnitt soll ein Überblick über die Entwicklung des Gini-Koeffi
 
 ### Grundgesamtheit 1: Gesamte Bevölkerung
 
-Im diesem Abshcnitt werden die Indikatoren auf Basis der gesamten Bevölkerung dargestellt. Die Einkommenskonzepte entsprechen den vorher erwähnten und definierten Konzepten. 
+Im diesem Abschnitt werden die Indikatoren auf Basis der gesamten Bevölkerung dargestellt. Die Einkommenskonzepte entsprechen den vorher erwähnten und definierten Konzepten. 
 
 ![](img/Gini1P1){width=80%}
 
-Der Gini-Koeffizient, welcher einen Einblick in die Verteilung von Einkommen gibt, entwickelte sich in allen drei Fällen, wie erwartet, relativ konstant. Auffällig sind hierbei die deutlich gesunkenen Werte nach erledigter Steuerleistung. Dies spricht für eine effiziente Umverteilung der Einkommen durch Steuerzahlungen und Transferleistungen. Die Entwicklung des Gini verhält sich in allen drei Konzepten fast spiegelgleich. Mit einem Wert von knapp 0,28 kann die Einkommensverteilung in Österreich dennoch als relativ ungleich tituliert werden.
+Der Gini-Koeffizient, welcher einen Einblick in die Verteilung von Einkommen gibt, entwickelte sich in allen drei Fällen, wie erwartet, relativ konstant. Auffällig sind hierbei die deutlich gesunkenen Werte nach erledigter Steuerleistung. Dies spricht für eine effiziente Umverteilung der Einkommen durch Steuerzahlungen und Transferleistungen. Die Entwicklung des Gini verhält sich in allen drei Konzepten fast spiegelgleich. Mit einem Wert von knapp 0,28 kann die Einkommensverteilung in Österreich dennoch als relativ ungleich tituliert werden. Hier möge wieder erwähnt werden, dass Österreich im Vergleich mit zumindest beim Vergleichswert der verfügbaren Äquivalenzeinkommen unter dem EU-28 Schnitt von 30,7 (@eurostat3) liegt.
 
 ![](img/Top10P1){width=80%}
   
-Ein ähnliches Bild ergibt sich bei Betrachtung des Anteils der Top 10% am Gesamteinkommen. In allen Einkommenskonzepten ist eine ähnlich Entwicklung beobachtbar. Nach einem kurzen Rückgang zwischen 2005 und 2006 bleibt der Anteil der obersten zehn Prozent im letzten Jahrzehnt für alle Konzepte relativ stabil, wenngleich auch auf anderem Niveau.
+Ein ähnliches Bild ergibt sich bei Betrachtung des Anteils der Top 10% am Gesamteinkommen. In allen Einkommenskonzepten ist eine ähnlich Entwicklung beobachtbar. Nach einem kurzen Rückgang zwischen 2005 und 2006 bleibt der Anteil der obersten zehn Prozent im letzten Jahrzehnt für alle Konzepte relativ stabil, wenngleich auch auf anderem Niveau. IM Jahr 2017 Betrug der Anteil der verfügbaren Äquivalenzeinkommen 22%.  
 
 ### Grundgesamtheit 2: Personen über 20 Jahre
 
 ![](img/GiniP2){width=80%}
   
-Wie in der oberen Grafik 2 ist die Entwicklung des Gini-Koeffizienten relativ konstant. Interessant scheint die Beobachtung zu sein, dass in diesem Fall der Wert für alle Einkommenskonzepte höher ist. Der Unterschied zwischen Post-tax national income und Pre-tax national income im Vergleich zum Pre-tax factor income ist um einiges geringer. Die ersten beiden Konzepte bewegen sich nahe der 0.4 Marke, um einiges höher als in den vorherigen Berechnungen der ersten Grundgesamtheit. 
+Wie in der oberen Grafik 2 ist die Entwicklung des Gini-Koeffizienten relativ konstant. Interessant scheint die Beobachtung zu sein, dass in diesem Fall der Wert für alle Einkommenskonzepte höher ist. Der Unterschied zwischen Post-tax national income und Pre-tax national income im Vergleich zum Pre-tax factor income ist um einiges geringer. Die ersten beiden Konzepte bewegen sich nahe der 0.4 Marke und damit um einiges höher als in den vorherigen Berechnungen der ersten Grundgesamtheit. 
 
 ![](img/Top10P2){width=80%}
   
@@ -232,7 +232,7 @@ Wie in der oberen Grafik 2 ist die Entwicklung des Gini-Koeffizienten relativ ko
 
 # Ergebnisse Fokusthema - Armutsgefährdungsquote
 
-Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019). Durch die Verwendung nationaler Einkommensgrenzen für die Armutsgefährdung können sie auch im internationalen Vergleich gut angewendet werden (@lelkes2011). 
+Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019). Durch die Verwendung nationaler Einkommensgrenzen für die Armutsgefährdung können sie auch im internationalen Vergleich gut angewendet werden (@lelkes2011). In Österreich betrug diese Armutsgefährdungsschwelle im Jahr 2017 14.851 Euro Insgesamt. 
 
 Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand misst, sondern ein niedriges Einkommen im Vergleich zu anderen nationalen Einkommen misst und daher nicht zwangsläufig mit einem niedrigen Lebensstandard gleichzusetzten ist (@eurostat2019). Im folgenden Teil wird die Armutsgefährdungsquote in Österreich sowohl im Zusammenhang mit dem Geschlecht der Personen als auch für drei verschiedene Altersgruppen untersucht. Die Armutsgefährdungquote lag im Jahr 2017 in den EU-28 bei 16,9% Generell ist anzumerken, dass Europaweit die Armutsgefährdungsquote bei Frauen höher ist als bei Männern (17,6% zu 16,3%) (@eurostat1).
 
@@ -244,17 +244,17 @@ Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Ge
 
 ### Armutsgefährdungsquote und Alter
 
-Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausgewiesen. Dadurch kann ein Überblick über die Zusammensetzung der Einkommen verschiedener Bevölkerungsschichten erschaffen werden. Im Europäischen Vergleich ist im Jahr 2017 die "At-Risk-of-Poverty Rate" der Bevölkerung unter 18 Jährigen mit 20,2% am höchsten gewesen. Im Vergleich dazu haben die über 65 Jährigen eine Armutsgefähdungsquote von 15,0% gehabt. Leicht unter der gesamten Quote von 16,9% (@eurostat2). 
+Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausgewiesen. Dadurch kann ein Überblick über die Zusammensetzung der Einkommen verschiedener Bevölkerungsschichten erschaffen werden. Im Europäischen Vergleich ist im Jahr 2017 die "At-Risk-of-Poverty Rate" der Bevölkerung unter 18 Jährigen mit 20,2% am höchsten gewesen. Im Vergleich dazu haben die über 65 Jährigen eine Armutsgefähdungsquote von 15,0% gehabt. Leicht unter der Quote der gesamten Bevölkerung von 16,9% (@eurostat2). 
 
-Abbildung 6 veranschaulicht den zeitlichen Verlauf der Armutsgefährdungsquote für drei unterschiedliche Altergruppen: Unter 18-Jährige, 18- bis 65-Jährige und über 65-Jährige. Dabei lassen sich im Vergleich zur nach Geschlechtern unterteilten Veranschaulichung unterschiedliche Trends ablesen. Wie zu erwarten haben Personen im erwerbsfähigen Alter (18 bis 64) die geringste Armutsgefährdungsquote. Diese Quote bleibt mit Ausnahme eines Anstiegs im Jahr 2008 stabil.
+Abbildung 6 veranschaulicht den zeitlichen Verlauf der Armutsgefährdungsquote für drei unterschiedliche Altergruppen: Unter 18-Jährige, 18- bis 65-Jährige und über 65-Jährige. Dabei lassen sich im Vergleich zur nach Geschlechtern unterteilten Veranschaulichung unterschiedliche Trends ablesen. Wie zu erwarten haben Personen im erwerbsfähigen Alter (18 bis 64) weitestgehend die geringste Armutsgefährdungsquote, werden jedoch ab dem Jahr von den über 65 Jährigen abgelöst. Während sich die Armutsgefährungsqoute der 18-65 Jährigen relativ konstant entwickelt, sinkt jene der über 65 Jährigen nach 2008 kontant und bis 2017 um in etwa 7 Prozentpunkte. 
 
-Die beiden anderen Altergruppen starten auf einem ähnlichen Niveau zu einander, verhalten sich im Zeitverlauf aber relativ unterschiedlich. Während die Armutsgefährdungsquote der Personen im Pensionsalter im Zeitverlauf signifikant abnimmt, ist für die Jugendliche und Kinder unter 18 Jahren eine Steigerung abzulesen. Alle drei Altersgruppen weisen einen signifikanten Anstieg im Krisenjahr 2008 auf.
+Die Altersgruppen der unter 18 Jährigen sowie die über 65 Jährigen starten auf einem ähnlichen Niveau zu einander, verhalten sich im Zeitverlauf aber relativ unterschiedlich. Während die Armutsgefährdungsquote der Personen im Pensionsalter im Zeitverlauf signifikant abnimmt, ist für die Jugendliche und Kinder unter 18 Jahren eine Steigerung abzulesen. Während alle drei Altersgruppen einen signifikanten Anstieg im Krisenjahr 2008 aufweisen, sind es besonders die jungen die sich auch 2017 noch auf einem relativ hohen Niveau knapp unter dem EU-28 Schnitt. 
 
 ![](img/povage){width=80%}
 
 ### Table : Armutsgefährdungsquote nach Alter und Geschlecht
 
-Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österrecih aufweist. Dabei wird diese in verschiedenen Gruppen dargestellt. Einersetis wird die Insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65Jährigen und älteren. Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
+Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österrecih aufweist. Dabei wird diese in verschiedenen Gruppen dargestellt. Einersetis wird die Insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65 Jährigen und darüber Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
 
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
@@ -266,15 +266,15 @@ kable(table7, caption = "Armutsgefährdungsquoten in % in Österreich nach Gesch
 
 # Zusammenfassung
 
-Zusammenfassend lässt sich festhalten, dass das österreichische Steuersystem einen großen Beitrag zur Umverteilung von Einkommen in Österreich beiträgt. Wie sich anhand der in dieser Seminararbeit durchgeführten Berechnungen zeigen lässt werden die ausgewählten Ungleichheitsindikatoren durch Steuern wesentlich gesenkt. Die Werte der Indikatoren hängen stark von der Wahl des Einkommenskonzeptes ab und variieren dementsprechend stark in den Berechnungen, verhalten sich zum Großteil im letzten Jahrzehnt jedoch stabil und haben sich nicht wesentlich verschlechtert. 
+Zusammenfassend lässt sich festhalten, dass das österreichische Steuersystem einen großen Beitrag zur Umverteilung von Einkommen in Österreich beiträgt. Wie sich anhand der in dieser Seminararbeit durchgeführten Berechnungen zeigen lässt werden die ausgewählten Ungleichheitsindikatoren durch Steuern wesentlich gesenkt. Die Werte der Indikatoren hängen stark von der Wahl des Einkommenskonzeptes und der einhergehenden Berechnungsgrundlage ab und variieren dementsprechend stark in , verhalten sich zum Großteil im letzten Jahrzehnt jedoch stabil und haben sich nicht wesentlich verschlechtert.
 
-Betreffend der Armutsgefährdungsquote zeigt sich ein differenzierteres Bild. Diese stieg für alle untersuchten Gruppen im Jahr 2008 rapide an und hat sich ihrem Vorkrisenniveau seitdem nicht angenähert. Besonders besorgniserregend ist nach Ansicht der Autoren hierbei der doch ausgeprägte Unterschied zwischen Männern und Frauen sowie der starke Anstieg der Armutsgefährdungsquote für Kinder und Jugendliche unter 18 Jahren.
+Betreffend der Armutsgefährdungsquote zeigt sich ein differenzierteres Bild. Diese stieg für alle untersuchten Gruppen im Jahr 2008 rapide an und hat sich ihrem Vorkrisenniveau seitdem nicht angenähert. Besonders besorgniserregend ist nach Ansicht der Autoren hierbei das "Gender Gap", also der doch ausgeprägte Unterschied zwischen Männern und Frauen. Selbiges gilt für die Entwicklung der Armutsgefährdungsquote für Kinder und Jugendliche unter 18 Jahren. Im Vergleich zu den anderen Altersgruppen ist der Wert hier hoch und hier hat sich auch in den letzten Jahren eine besorgniserregend Entwicklung dargelegt. 
 
-Es ist anzumerken, dass die durchgeführte Analyse nur einen kleinen Teil des verteilungspolitischen Spektrums abdeckt und im wesentlichen keine Erklärungen für die Beobachtungen treffen kann. Für etwaige Erklärungen sind tiefergehende Analysen notwendig, insbesondere im Bereich der Armutsgefährdungsquote und des beobachteten Anstiegs im Jahr 2008. 
+Es ist anzumerken, dass die durchgeführte Analyse nur einen kleinen Teil des verteilungspolitischen Spektrums abdeckt und im wesentlichen keine Erklärungen für die Beobachtungen treffen kann. Für etwaige Erklärungen sind tiefergehende Analysen notwendig, insbesondere im Bereich der Armutsgefährdungsquote und des beobachteten Anstiegs im Jahr 2008, sowie der darauffolgenden Entwicklung. 
 
 \newpage
 
-# Abbildungen
+# Weitere Abbildungen
 
 ![](img/MedianP1){width=80%}
  
