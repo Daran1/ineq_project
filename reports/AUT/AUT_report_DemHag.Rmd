@@ -13,7 +13,7 @@ output:
 keywords: a, b, c
 bibliography: references.bib
 subtitle: 2063 - Ökonomie der Verteilung
-abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich. Die Analyse beruht auf EU-SILC Daten für Österreich. Allgmeine Ungleichheitsindikatoren wurden für verschiedene Einkommenskonzepte sowie verschiedene Grundgesamtheiten berechnet. Als Fokusthema wurde die Armutsgefährdung in Österreich gewählt. Dabei wird die Einkommensverteilung in Österreich an Hand con verschiedenen Einkommenskonzepten genauer untersucht. Des weiteren wird untersucht wie hoch die Armutsgefährdungsquote für verschiedene Bevölkerungsschichten in Österreich ist. Dabei soll sowohl zwischen Männern und Frauen unterschieden werden, sowie verschieden Altersgruppen getrennt analysiert werden. 
+abstract: Diese Arbeit beschäftigt sich mit der Einkommensverteilung in Österreich. Die Analyse beruht auf EU-SILC Daten für Österreich. Allgmeine Ungleichheitsindikatoren wurden für verschiedene Einkommenskonzepte sowie verschiedene Grundgesamtheiten berechnet. Als Fokusthema wurde die Armutsgefährdung in Österreich gewählt. Dabei wird die Einkommensverteilung in Österreich an Hand con verschiedenen Einkommenskonzepten genauer untersucht. Des weiteren wird untersucht wie hoch die Armutsgefährdungsquote für verschiedene Bevölkerungsschichten in Österreich ist. Dabei soll sowohl zwischen Männern und Frauen unterschieden werden, sowie verschiedene Altersgruppen getrennt analysiert werden. 
 ---
 
 ```{r setup, include=FALSE}
@@ -200,13 +200,13 @@ table6$`Top10%` <- round(table6$`Top10%`, 2)
 kable(table6, caption = "Post-tax disposable income")
 ```
 
-Hierbei scheint vor allem die ausbleibende Reduktion des Gini durch Steuern interessant. Berechnet man das Einkommen also nur für all jene Personen über 20 Jahren, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus, erreicht aber im aktuellen Jahr 2017 einen ähnlichen Wert. Der Anteil der oberen 10% am Gesamteinkommen ist im vergleich zum Einkommen vor der Steuer konstant geblieben, beziehungsweise leicht angestiegen. Dies sowie ein Gini-koeffizient um die 40% Marke zeigen, dass die Einkommen der Personen über 20 keiner gerechten Verteilung folgen. 
+Hierbei scheint vor allem die ausbleibende Reduktion des Gini durch Steuern interessant. Berechnet man das Einkommen also nur für all jene Personen über 20 Jahren, tragen Steuern und weitere Transferleistungen nicht maßgeblich zu einer Umverteilung bei. Lediglich Mittelwert und Median der Einkommen sinken für alle Jahre im Zeitreihenvergelich. Wie in den bisherigen beobachtungen weißt die 20/80 Share Ratio auch hier zwischen den Jahren 2008 und 2014 den höchsten Wert aus, erreicht aber im aktuellen Jahr 2017 einen ähnlichen Wert. Der Anteil der oberen 10% am Gesamteinkommen ist im Vergleich zum Einkommen vor der Steuer konstant geblieben, beziehungsweise leicht angestiegen. Dies, sowie ein Gini-koeffizient um die 40% Marke zeigen, dass die Einkommen der Personen über 20 keiner gerechten Verteilung folgen. 
 
 \newpage
 
 ## Diskussion zur Entwicklung des Gini-Koeffizienten und der Top10% Share Ratio  
 
-Im folgenden Abschnitt soll ein Überblick über die Entwicklung des Gini-Koeffizienten, sowie der Top 10% Share Ratio gegeben werden. Diese beiden Indikatoren wurden ausgewählt, da sie nach Ansicht der Autoren einen allgemeinen Überblick über die Einkommensverteilung eines Landes ermöglichen. Diese Indikatoren werden durch Grafiken für beide Grundgesamtheiten und jeweils alle drei Einkommenskonzepte dargestellt. Darüber hinaus soll der Verlauf und die Entwicklung über im Zeitraum 2005 bis 2017 dargestellt werden. 
+Im folgenden Abschnitt soll ein Überblick über die Entwicklung des Gini-Koeffizienten, sowie der Top 10% Share Ratio gegeben werden. Diese beiden Indikatoren wurden ausgewählt, da sie nach Ansicht der Autoren einen allgemeinen Überblick über die Einkommensverteilung eines Landes ermöglichen. Diese Indikatoren werden durch Grafiken für beide Grundgesamtheiten und jeweils alle drei Einkommenskonzepte dargestellt. Darüber hinaus soll der Verlauf und die Entwicklung im Zeitraum 2005 bis 2017 dargestellt werden. 
 
 ### Grundgesamtheit 1: Gesamte Bevölkerung
 
@@ -232,7 +232,7 @@ Wie in der oberen Grafik 2 ist die Entwicklung des Gini-Koeffizienten relativ ko
 
 # Ergebnisse Fokusthema - Armutsgefährdungsquote
 
-Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019). Durch die Verwendung nationaler Einkommensgrenzen für die Armutsgefährdung können sie auch im internationalen Vergleich gut angewendet werden (@lelkes2011). In Österreich betrug diese Armutsgefährdungsschwelle im Jahr 2017 14.851 Euro Insgesamt. 
+Die Armutsgefährdungsquote wird von Eurostat als Anteil der Personen mit einem verfügbaren Äquivalenzeinkommen unterhalb der Armutsgefährdungsschwelle, die bei 60 % des nationalen verfügbaren Medianäquivalenzeinkommens liegt (beides nach Sozialtransfers; @eurostat2019). Durch die Verwendung nationaler Einkommensgrenzen für die Armutsgefährdung können sie auch im internationalen Vergleich gut angewendet werden (@lelkes2011). In Österreich betrug diese Armutsgefährdungsschwelle im Jahr 2017 14.851 Euro. 
 
 Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand misst, sondern ein niedriges Einkommen im Vergleich zu anderen nationalen Einkommen misst und daher nicht zwangsläufig mit einem niedrigen Lebensstandard gleichzusetzten ist (@eurostat2019). Im folgenden Teil wird die Armutsgefährdungsquote in Österreich sowohl im Zusammenhang mit dem Geschlecht der Personen als auch für drei verschiedene Altersgruppen untersucht. Die Armutsgefährdungquote lag im Jahr 2017 in den EU-28 bei 16,9% Generell ist anzumerken, dass Europaweit die Armutsgefährdungsquote bei Frauen höher ist als bei Männern (17,6% zu 16,3%) (@eurostat1).
 
@@ -240,7 +240,7 @@ Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand m
 
 Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Geschlechter als auch im Gesamten sehr ähnlich. Für das Krisenjahr 2008 zeigt sich ein rapider Anstieg der Armutsgefährdungsquote für beide Geschlechter, was wohl zum einen Teil durch die Finanzkrise ab dem Jahr 2007 und dem damiteinhergehendem wirtschaftlichen Abschwung erklären lässt. Die Armutsgefährdungsquote liegt für Frauen im gesamten  Zeitraum höher als für Männer, was sich wohl, ähnlich wie die generellen Einkommensunterschiede (siehe @guger2007), durch unterschiedliche Erwerbsstrukturen erklären lässt. Auch in Österreich ist das europaweite "Gender Gap" zu beobachten. es zeigt sich eine generell höhere Armutsgefährdung für Frauen im Vergleich zu Männern. Für dieses Phänomen gibt es vieleverschieden Erklärungsversuche, jedoch kann es auch auf die (aus welchen Gründen auch immer) vorhandenen Einkommensunterschiede zwischen Männern und Frauen zurückgeführt werden (siehe @palz2016).  
 
-![](img/pov1){width=80%}
+![](img/gender_pov){width=80%}
 
 ### Armutsgefährdungsquote und Alter
 
@@ -248,13 +248,13 @@ Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausge
 
 Abbildung 6 veranschaulicht den zeitlichen Verlauf der Armutsgefährdungsquote für drei unterschiedliche Altergruppen: Unter 18-Jährige, 18- bis 65-Jährige und über 65-Jährige. Dabei lassen sich im Vergleich zur nach Geschlechtern unterteilten Veranschaulichung unterschiedliche Trends ablesen. Wie zu erwarten haben Personen im erwerbsfähigen Alter (18 bis 64) weitestgehend die geringste Armutsgefährdungsquote, werden jedoch ab dem Jahr von den über 65 Jährigen abgelöst. Während sich die Armutsgefährungsqoute der 18-65 Jährigen relativ konstant entwickelt, sinkt jene der über 65 Jährigen nach 2008 kontant und bis 2017 um in etwa 7 Prozentpunkte. 
 
-Die Altersgruppen der unter 18 Jährigen sowie die über 65 Jährigen starten auf einem ähnlichen Niveau zu einander, verhalten sich im Zeitverlauf aber relativ unterschiedlich. Während die Armutsgefährdungsquote der Personen im Pensionsalter im Zeitverlauf signifikant abnimmt, ist für die Jugendliche und Kinder unter 18 Jahren eine Steigerung abzulesen. Während alle drei Altersgruppen einen signifikanten Anstieg im Krisenjahr 2008 aufweisen, sind es besonders die jungen die sich auch 2017 noch auf einem relativ hohen Niveau knapp unter dem EU-28 Schnitt. 
+Die Altersgruppen der unter 18 Jährigen sowie die über 65 Jährigen starten auf einem ähnlichen Niveau zu einander, verhalten sich im Zeitverlauf aber relativ unterschiedlich. Während die Armutsgefährdungsquote der Personen im Pensionsalter im Zeitverlauf signifikant abnimmt, ist für die Jugendliche und Kinder unter 18 Jahren eine Steigerung abzulesen. Während alle drei Altersgruppen einen signifikanten Anstieg im Krisenjahr 2008 aufweisen, sind es besonders Personen unter 18 Jahren, die sich auch 2017 noch auf einem relativ hohen Niveau knapp unter dem EU-28 Schnitt befinden. 
 
-![](img/povage){width=80%}
+![](img/age_poverrty){width=80%}
 
 ### Table : Armutsgefährdungsquote nach Alter und Geschlecht
 
-Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österrecih aufweist. Dabei wird diese in verschiedenen Gruppen dargestellt. Einersetis wird die Insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65 Jährigen und darüber Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
+Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österreich darstellt. Dabei wird diese in verschiedenen Gruppen dargestellt. Einerseits wird die insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine Unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65 Jährigen und darüber. Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
 
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
