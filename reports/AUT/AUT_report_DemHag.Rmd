@@ -61,7 +61,7 @@ Die Längsschnittdaten dienen zur Identifizierung gewisser Ereignisse und Prozes
 
 
 ## Variablen
-Da es in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. Zur besseren Nachvollziehbarkeit werden nachfolgend alle Variablen aufgezählt, die aus den Datensätzen herangezogen wurden:
+Da in dieser Seminararbeit die Einkommensverteilung in Österreich untersucht werden soll wurden die EU-SILC Daten für Österreich herangezogen. Des Weiteren wurden diese dementsprechend selektiert um das Ziel bestmöglich beschreiben zu können. Zur besseren Nachvollziehbarkeit werden nachfolgend alle Variablen aufgezählt, die aus den Datensätzen herangezogen wurden:
 
 (i) Household Register: db010, db020, db030, db040, db090
 (ii) Household Data: hb010, hb020, hb030, hy010, hy020, hy030g, hy040g, hy050g, hy060g, hy070g, hy080g, hy090g, hy110g, hy120g, hy130g, hy140g, hx040, hx050
@@ -83,7 +83,7 @@ Als Fokusthema dieser Arbeit wurde die Armutsgefährdungsquote in Österreich fe
 
 ## Einkommensversionen
 
-Die Ergebnisse jeder empirischen untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig @kitterer1981. In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben @kitterer1981. Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
+Die Ergebnisse jeder empirischen Untersuchung wird durch die Wahl der untersuchten Indikatoren abhängig @kitterer1981. In dem Fall der Einkommensverteilung in Österreich ist es daher wichtig,  die richtige Basis, also die passenden Einkommenskonzepte zu finden und zu definieren. Sollte dies nicht geschehen sind zum Teil gravierende Unterschiede zu befürchten. Es könnte beispielsweise der Gini-Index variieren. Diese Variation kann prozentuale Änderungen von bis zu 30% zur Folge haben (@kitterer1981). Darüber hinaus ist es wichtig, einheitliche, international vergleichbare Einkommenskonzepte zu definieren und zu verwenden. Nur durch dieses gezielte und akribische Vorgehen wird es möglich, über nationale Grenzen hinweg vergleichbare Werte und Indikatoren zu berechnen. 
 
 Generell ist es möglich zwischen Haushaltseinkommen und persönlichem Einkommen zu unterscheiden. Laut Canberra Group besteht Haushaltseinkommen aus allen Bezügen, monetär oder anderer Art, die von einem Haushalt oder von Individuen dieses Haushaltes in regelmäßigen Abständen erhalten werden (Canberra Group). Darüber hinaus gibt es das persönliche Einkommen welches durch die Individuen kreiert wird und daher auch einen Teil des Haushaltseinkommens bildet. 
 
@@ -102,7 +102,8 @@ Summe aus:
 Summe aus:
 (1), (2), (3), (4) Alle anderen erhaltenen Transferzahlungen: survivor' benefits (py110g), sickness benefits (py120g), disability benefits (py130g), education-related allowances (py140g), family/children related allowances (hy050g), social exclusion not elsewhere classified (hy060g), housing allowances (hy070g), regular inter-household cash transfers received (hy080g);   
 abzüglich:  
-(5) alle steuern und sozialversicherungsabgaben:regular taxes on wealth (hy120g), regular inter-household cash transfer paid (hy130g), tax on income and social insurance contributions (hy140g).
+(5) alle Steuern und Sozialversicherungsabgaben: regular taxes on wealth (hy120g), regular inter-household cash transfer paid (hy130g), tax on income and social insurance contributions (hy140g).
+
 Diese verschiedenen Einkommensaggregate werden in weiterer Folge durch verschiedene Grundgesamtheiten berechnet. Einerseits werden alle Individuen zur Berechnung hergenommen, und die Einkommen auf alle Individuen aufgeteilt ("equal sharing of resources"). Andererseits werden die oben angeführten Einkommensaggregate nur für jene Personen berechnet, die zum Zeitpunkt der Befragung das 20. Lebensjahr begonnen haben ("partial sharing of resources"). 
 
 \newpage
@@ -218,7 +219,7 @@ Der Gini-Koeffizient, welcher einen Einblick in die Verteilung von Einkommen gib
 
 ![](img/Top10P1){width=80%}
   
-Ein ähnliches Bild ergibt sich bei Betrachtung des Anteils der Top 10% am Gesamteinkommen. In allen Einkommenskonzepten ist eine ähnlich Entwicklung beobachtbar. Nach einem kurzen Rückgang zwischen 2005 und 2006 bleibt der Anteil der obersten zehn Prozent im letzten Jahrzehnt für alle Konzepte relativ stabil, wenngleich auch auf anderem Niveau. IM Jahr 2017 Betrug der Anteil der verfügbaren Äquivalenzeinkommen 22%.  
+Ein ähnliches Bild ergibt sich bei Betrachtung des Anteils der Top 10% am Gesamteinkommen. In allen Einkommenskonzepten ist eine ähnlich Entwicklung beobachtbar. Nach einem kurzen Rückgang zwischen 2005 und 2006 bleibt der Anteil der obersten zehn Prozent im letzten Jahrzehnt für alle Konzepte relativ stabil, wenngleich auch auf anderem Niveau. Im Jahr 2017 Betrug der Anteil der verfügbaren Äquivalenzeinkommen 22%.  
 
 ### Grundgesamtheit 2: Personen über 20 Jahre
 
@@ -238,13 +239,13 @@ Es ist jedoch anzumerken, dass dieser Indikator nicht die Armut oder Wohlstand m
 
 ### Armutsgefährdungsquote und Geschlecht
 
-Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Geschlechter als auch im Gesamten sehr ähnlich. Für das Krisenjahr 2008 zeigt sich ein rapider Anstieg der Armutsgefährdungsquote für beide Geschlechter, was wohl zum einen Teil durch die Finanzkrise ab dem Jahr 2007 und dem damiteinhergehendem wirtschaftlichen Abschwung erklären lässt. Die Armutsgefährdungsquote liegt für Frauen im gesamten  Zeitraum höher als für Männer, was sich wohl, ähnlich wie die generellen Einkommensunterschiede (siehe @guger2007), durch unterschiedliche Erwerbsstrukturen erklären lässt. Auch in Österreich ist das europaweite "Gender Gap" zu beobachten. es zeigt sich eine generell höhere Armutsgefährdung für Frauen im Vergleich zu Männern. Für dieses Phänomen gibt es vieleverschieden Erklärungsversuche, jedoch kann es auch auf die (aus welchen Gründen auch immer) vorhandenen Einkommensunterschiede zwischen Männern und Frauen zurückgeführt werden (siehe @palz2016).  
+Wie in Abbildung 5 gezeigt wird, verändern sich die Quoten sowohl für beide Geschlechter als auch im Gesamten sehr ähnlich. Für das Krisenjahr 2008 zeigt sich ein rapider Anstieg der Armutsgefährdungsquote für beide Geschlechter, was sich wohl zum Teil durch die Finanzkrise ab dem Jahr 2007 und dem damiteinhergehendem wirtschaftlichen Abschwung erklären lässt. Die Armutsgefährdungsquote liegt für Frauen im gesamten  Zeitraum höher als für Männer, was sich wohl, ähnlich wie die generellen Einkommensunterschiede (siehe @guger2007), durch unterschiedliche Erwerbsstrukturen erklären lässt. Auch in Österreich ist der europaweite "Gender Gap" zu beobachten. es zeigt sich eine generell höhere Armutsgefährdung für Frauen im Vergleich zu Männern. Für dieses Phänomen gibt es viele verschiedene Erklärungsversuche, jedoch kann es auch auf die vorhandenen Einkommensunterschiede zwischen Männern und Frauen zurückgeführt werden (siehe @palz2016).  
 
 ![](img/gender_pov){width=80%}
 
 ### Armutsgefährdungsquote und Alter
 
-Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausgewiesen. Dadurch kann ein Überblick über die Zusammensetzung der Einkommen verschiedener Bevölkerungsschichten erschaffen werden. Im Europäischen Vergleich ist im Jahr 2017 die "At-Risk-of-Poverty Rate" der Bevölkerung unter 18 Jährigen mit 20,2% am höchsten gewesen. Im Vergleich dazu haben die über 65 Jährigen eine Armutsgefähdungsquote von 15,0% gehabt. Leicht unter der Quote der gesamten Bevölkerung von 16,9% (@eurostat2). 
+Meistens wir die Armutsgefährdung auch in unterschiedlichen Altersgruppen ausgewiesen. Dadurch kann ein Überblick über die Zusammensetzung der Einkommen verschiedener Bevölkerungsschichten erschaffen werden. Im europäischen Vergleich ist im Jahr 2017 die "At-Risk-of-Poverty Rate" der Bevölkerung unter 18 Jährigen mit 20,2% am höchsten gewesen. Im Vergleich dazu haben die über 65 Jährigen eine Armutsgefähdungsquote von 15,0% gehabt. Leicht unter der Quote der gesamten Bevölkerung von 16,9% (@eurostat2). 
 
 Abbildung 6 veranschaulicht den zeitlichen Verlauf der Armutsgefährdungsquote für drei unterschiedliche Altergruppen: Unter 18-Jährige, 18- bis 65-Jährige und über 65-Jährige. Dabei lassen sich im Vergleich zur nach Geschlechtern unterteilten Veranschaulichung unterschiedliche Trends ablesen. Wie zu erwarten haben Personen im erwerbsfähigen Alter (18 bis 64) weitestgehend die geringste Armutsgefährdungsquote, werden jedoch ab dem Jahr von den über 65 Jährigen abgelöst. Während sich die Armutsgefährungsqoute der 18-65 Jährigen relativ konstant entwickelt, sinkt jene der über 65 Jährigen nach 2008 kontant und bis 2017 um in etwa 7 Prozentpunkte. 
 
@@ -254,7 +255,7 @@ Die Altersgruppen der unter 18 Jährigen sowie die über 65 Jährigen starten au
 
 ### Table : Armutsgefährdungsquote nach Alter und Geschlecht
 
-Im folgenden befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österreich darstellt. Dabei wird diese in verschiedenen Gruppen dargestellt. Einerseits wird die insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine Unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65 Jährigen und darüber. Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich und belegt. 
+Im folgenden Teil befindet sich eine Tabelle welche die Armutsgefährdungsqouten für Österreich darstellt. Dabei wird diese in verschiedenen Gruppen dargestellt. Einerseits wird die insgesamte "At-Risk-of-Poverty Rate" ausgewiesen, daneben befinden sich die Daten für Männer und Frauen sowie eine Unterteilung auf die Altersgruppen der unter 18 Jährigen, der 18-64 Jährigen, sowie der 65 Jährigen und darüber. Somit werden die oben gezeigten Ergebnisse durch diese Tabellenansicht verdeutlich.
 
 ```{r echo=FALSE}
 table7 <- readRDS("tables/_tables_AUT_pov.rds")
